@@ -5,8 +5,16 @@ import instagram from "../../assets/footer/instagram.webp";
 import whatapp from "../../assets/footer/whatapp.webp";
 import vimeo from "../../assets/footer/vimeo.webp";
 import linkedin from "../../assets/footer/linkedin.webp";
+import { useRef, useState } from "react";
+import { Transition } from "@headlessui/react";
 
 const Contact = () => {
+    const nameRef = useRef(null);
+    const emailRef = useRef(null);
+    const subjectRef = useRef(null);
+    const messageRef = useRef(null);
+    const [show, setShow] = useState(false);
+
     const links = [
         {
             to: "https://www.facebook.com/BigBrainStudiooo/",
@@ -40,87 +48,164 @@ const Contact = () => {
         },
     ];
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = {
+            name: nameRef.current.value,
+            email: emailRef.current.value,
+            subject: subjectRef.current.value,
+            message: messageRef.current.value,
+        };
+
+        if (!data.name || !data.email || !data.subject || !data.message) {
+            messageRef.current.value =
+                "Please fill all the name and email and subject and message";
+            setShow(true);
+            return;
+        } else {
+            fetch("https://getform.io/f/e4109843-da24-41ca-b68c-8856bfe7a695", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            messageRef.current.value = "Thank you for your message";
+            setShow(true);
+            nameRef.current.value = "";
+            emailRef.current.value = "";
+            subjectRef.current.value = "";
+        }
+    };
+    const handleClose = () => {
+        setShow(false);
+        messageRef.current.value = "";
+    };
+
+    const ShowMessage = () => {
+        return (
+            <>
+                <div className="w-auto h-auto bg-white bg-opacity-80 rounded-md flex flex-col justify-center items-center gap-2 py-10 px-5">
+                    <div className="text-2xl font-bold text-center">
+                        {messageRef.current.value}
+                    </div>
+                    <button
+                        className="bg-lime-700 text-white rounded-md p-2 hover:bg-lime-900 transition-all"
+                        onClick={handleClose}
+                    >
+                        Close
+                    </button>
+                </div>
+            </>
+        );
+    };
+
     return (
-        <div className='w-full max-w-[1100px] animate-fade grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto px-5 md:px-10  items-center  pt-[30px] md:pt-[40px]'>
-            <Title title='Contact' />
-            <div
-                id='contact'
-                className='pt-10 md:pt-5  shadow-lg rounded-md p-3 border-[#dcbcbc36] border-2 h-full '
+        <div className="relative w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto px-5 md:px-10  items-center  pt-[30px] md:pt-[40px]">
+            <Title title="Contact" />
+            <Transition
+                show={show}
+                as={"div"}
+                enter="transform transition duration-[400ms]  ease-in-out"
+                enterFrom="opacity-0  scale-0"
+                enterTo="opacity-100  scale-100"
+                leave="transform duration-[400ms] transition ease-in-out"
+                leaveFrom="opacity-100 scale-100 "
+                leaveTo="opacity-0 scale-0"
+                className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 flex justify-center items-center"
+                onClick={handleClose}
             >
-                <div className='text-[30px] font-bold text-center text-white'>
+                <ShowMessage />
+            </Transition>
+
+            <div className="pt-10 md:pt-5 shadow-lg rounded-md p-3 border-[#dcbcbc36] border-2 h-full flex flex-col items-center justify-center animate-fade">
+                <div className="text-3xl md:text-4xl font-bold text-center text-white mb-5">
                     Contact
                 </div>
 
                 <form
-                    action='https://getform.io/f/e4109843-da24-41ca-b68c-8856bfe7a695'
-                    method='POST'
-                    className=' w-full px-3 flex flex-col gap-2 mt-3 '
+                    className=" w-full px-3 flex flex-col gap-2 mt-3 "
+                    onSubmit={handleSubmit}
                 >
                     {" "}
-                    <div className='flex flex-col md:flex-row gap-2 justify-center items-center'>
+                    <div className="flex flex-col md:flex-row gap-2 justify-center items-center">
                         <input
-                            type='text'
-                            name='name'
-                            placeholder='Name'
-                            className='border-lime-700 border-2 rounded-md  h-10 p-2 w-full md:w-1/2 '
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            className="border-lime-700 border-2 rounded-md  h-10 p-2 w-full md:w-1/2 "
+                            ref={nameRef}
                         />
                         <input
-                            type='email'
-                            name='email'
-                            placeholder='Email'
-                            className='border-lime-700 border-2 rounded-md  h-10 p-2 w-full md:w-1/2'
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            className="border-lime-700 border-2 rounded-md  h-10 p-2 w-full md:w-1/2"
+                            ref={emailRef}
                         />
                     </div>
                     <input
-                        type='text'
-                        name='subject'
-                        placeholder='Subject'
-                        className='border-lime-700 border-2 rounded-md  h-10 p-2 w-full'
+                        type="text"
+                        name="subject"
+                        placeholder="Subject"
+                        className="border-lime-700 border-2 rounded-md  h-10 p-2 w-full"
+                        ref={subjectRef}
                     />
                     <textarea
-                        type='text'
-                        name='message'
+                        type="text"
+                        name="message"
                         cols={20}
                         rows={5}
-                        placeholder='Message'
-                        className='border-lime-700 border-2 rounded-md  h-20 p-2 w-full'
+                        placeholder="Message"
+                        className="border-lime-700 border-2 rounded-md  h-20 p-2 w-full"
+                        ref={messageRef}
                     ></textarea>
                     <button
-                        type='submit'
-                        className='mt-2 w-full md:w-[60%] mx-auto h-10 bg-slate-200 border-lime-700 border-2 rounded-md hover:bg-lime-700 hover:text-white transition-all'
+                        type="submit"
+                        className="text-xl font-bold mt-2 w-full md:w-[60%] mx-auto h-10 bg-lime-600 border-lime-400 border-2 rounded-md hover:bg-lime-900 hover:text-white transition-all"
                     >
                         Send
                     </button>
                 </form>
             </div>
-            <div className='flex flex-col justify-center items-center gap-2 '>
-                <div className='text-base text-center md:text-right text-white w-full'>
-                    <h3>BIG BRAIN STUDIO CO.,LTD.</h3>
+            <div className="flex flex-col justify-center items-center gap-2 animate-fade ">
+                <div className="text-base text-center md:text-right text-white w-full tracking-wide">
+                    <h3 className="tracking-wider text-[18px] font-medium mb-2">
+                        BIG BRAIN STUDIO CO.,LTD.
+                    </h3>
                     <p>151 Sukhumvit 101/1, Bangchak,</p>
                     <p>Phrakhanong, Bangkok 10260, Thailand</p>
                 </div>
-                <div className='flex flex-row  justify-center items-center mx-auto my-1 md:my-0 '>
-                    <div className='mb-0 md:mb-2'>
+                <div className="flex flex-row  justify-center items-center mx-auto my-1 md:my-0 ">
+                    <div className="mb-0 md:mb-2">
                         {links.map((link, index) => (
-                            <img
+                            <a
+                                href={link.to}
                                 key={index}
-                                src={link.src}
-                                alt={link.name}
-                                className='w-[30px] md:w-[40px] inline-block mx-2 hover:scale-110 ease-out duration-200 cursor-pointer'
-                            />
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img
+                                    key={index}
+                                    src={link.src}
+                                    alt={link.name}
+                                    className="w-[38px] md:w-[40px] inline-block mx-2 hover:scale-125 ease-out duration-200 cursor-pointer"
+                                />
+                            </a>
                         ))}
                     </div>
                 </div>
-                <div className='aspect-video w-full'>
+                <div className="aspect-video w-full">
                     <iframe
-                        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.556153671707!2d100.61402207619273!3d13.684731498840582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a16b35ceceb5%3A0xe527940423e3cdf1!2sBig%20Brain%20Studio%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1686721116416!5m2!1sth!2sth'
-                        width='100%'
-                        height='100%'
-                        title='Googld Map'
-                        tabIndex='0'
-                        allow='autoplay; clipboard-write; encrypted-media; picture-in-picture;'
-                        allowFullScreen=''
-                        loading='lazy'
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.556153671707!2d100.61402207619273!3d13.684731498840582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a16b35ceceb5%3A0xe527940423e3cdf1!2sBig%20Brain%20Studio%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1686721116416!5m2!1sth!2sth"
+                        width="100%"
+                        height="100%"
+                        title="Googld Map"
+                        tabIndex="0"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture;"
+                        allowFullScreen=""
+                        loading="lazy"
                     />
                 </div>
             </div>

@@ -1,23 +1,54 @@
-import { useRef } from "react";
+import { animateScroll } from "react-scroll";
+import { cx } from "../components/utils";
+import ScrollListener from "../components/ScrollListener";
+import { useEffect, useState, Fragment } from "react";
+import { Transition } from "@headlessui/react";
 
 const ToTop = () => {
-    const scollToRef = useRef(null);
+    const [show, setShow] = useState(false);
+    const scroll = ScrollListener();
+
+    useEffect(() => {
+        if (scroll.lastY === scroll.y) {
+            return;
+        }
+        if (scroll.y - scroll.lastY > 0) {
+            if (scroll.y > 576) {
+                setShow(true);
+            }
+        } else {
+            setShow(false);
+        }
+    }, [scroll.lastY, scroll.y]);
 
     const scrollToTop = () => {
-        scollToRef.current =
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            }) || scollToRef.current;
+        animateScroll.scrollToTop({
+            duration: 400,
+            delay: 0,
+            smooth: true,
+        });
     };
 
     return (
-        <button
-            onClick={scrollToTop}
-            className='text-sm p-2 rounded-full bg-gray-200 bg-opacity-40 fixed bottom-5 right-5 z-[1000] hover:bg-gray-900 hover:text-white transition duration-300'
+        <Transition
+            show={show}
+            as={Fragment}
+            enter="transform transition duration-[400ms] ease-out"
+            enterFrom="opacity-0 translate-y-full "
+            enterTo="opacity-100 translate-y-0 "
+            leave="transform duration-200 transition ease-in"
+            leaveFrom="opacity-100 translate-y-0  "
+            leaveTo="opacity-0 translate-y-full "
         >
-            to top
-        </button>
+            <button
+                onClick={scrollToTop}
+                className={cx(
+                    "opacity-30 hover:opacity-100 text-sm p-2 rounded-full bg-gray-200 fixed bottom-5 right-5 z-[1000]"
+                )}
+            >
+                to top
+            </button>
+        </Transition>
     );
 };
 

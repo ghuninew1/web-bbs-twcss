@@ -64,37 +64,51 @@ const footerData = [
 
 export default function Footer() {
     return (
-        <footer className='relative w-full bg-black h-auto overflow-hidden animate-fade delay-500 border-t border-[#1d1d1c] '>
-            <div className='flex flex-col md:flex-row md:flex-nowrap justify-center gap-x-[20px] md:gap-x-[40px] px-2 py-3 '>
-                <div className='grow text-start md:text-end text-gray-400 text-[13px] md:text-[14px] font-sans'>
+        <footer className="relative w-full bg-black h-auto overflow-hidden animate-fadeInUp  border-t border-[#1d1d1c] ">
+            <div className="flex flex-col md:flex-row md:flex-nowrap justify-center gap-x-[20px] md:gap-x-[40px] px-2 py-3 ">
+                <div className="grow text-start md:text-end text-gray-400 text-[13px] md:text-[14px] font-sans tracking-wide">
                     <p>{footerData[0].links[0]}</p>
                     <p>{footerData[0].links[1]}</p>
-                    <p className='md:mt-2'>{footerData[0].links[2]}</p>
+                    <p className="md:mt-2">{footerData[0].links[2]}</p>
                 </div>
-                <div className='grow-0 flex flex-row md:flex-col justify-center items-center mx-auto my-1 md:my-0 '>
-                    <div className='mb-0 md:mb-2'>
+                <div className="grow-0 flex flex-row md:flex-col justify-center items-center mx-auto my-1 md:my-0 ">
+                    <div className="mb-0 md:mb-2">
                         {footerData[1].links.map((link, index) => (
-                            <img
+                            <a
+                                href={link.to}
                                 key={index}
-                                src={link.src}
-                                alt={link.name}
-                                className='w-[30px] h-[30px] inline-block mx-1 hover:scale-110 ease-out duration-200 cursor-pointer'
-                            />
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img
+                                    key={index}
+                                    src={link.src}
+                                    alt={link.name}
+                                    className="w-[30px] h-[30px] inline-block mx-1 hover:scale-125 ease-out duration-200 cursor-pointer"
+                                />
+                            </a>
                         ))}
                     </div>
-                    <div className='mb-0'>
+                    <div className="mb-0">
                         {footerData[1].links2.map((link, index) => (
-                            <img
+                            <a
+                                href={link.to}
                                 key={index}
-                                src={link.src}
-                                alt={link.name}
-                                className='w-[30px] h-[30px] inline-block mx-1 hover:scale-110 ease-out duration-200 cursor-pointer'
-                            />
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img
+                                    key={index}
+                                    src={link.src}
+                                    alt={link.name}
+                                    className="w-[30px] h-[30px] inline-block mx-1 hover:scale-125 ease-out duration-200 cursor-pointer"
+                                />
+                            </a>
                         ))}
                     </div>
                 </div>
-                <div className='grow text-end md:text-start text-gray-400 text-[13px] md:text-[14px] font-sans '>
-                    <p className='md:mb-2'>{footerData[2].links[0]}</p>
+                <div className="grow text-end md:text-start text-gray-400 text-[13px] md:text-[14px] font-sans tracking-wide">
+                    <p className="md:mb-2">{footerData[2].links[0]}</p>
                     <p>{footerData[2].links[1]}</p>
                     <p>{footerData[2].links[2]}</p>
                 </div>

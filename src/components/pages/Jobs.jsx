@@ -1,147 +1,160 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import jobImg from "../../assets/we_need_you.webp";
-import { Link, Events, scrollSpy } from "react-scroll";
+import { Link } from "react-scroll";
 import { links, jobsList } from "../../data/JobData";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { cx } from "../utils";
+import Title from "../Title";
+import { Transition } from "@headlessui/react";
 
 const Jobs = () => {
     const [active, setActive] = useState("jobs-img");
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
-        Events.scrollEvent.register("begin", (to, element) => {
-            console.log("begin", to, element);
-            setActive(to);
-        });
-
-        scrollSpy.update();
-
-        return () => {
-            Events.scrollEvent.remove("begin");
-            Events.scrollEvent.remove("end");
-        };
-    }, []);
+        if (active === "jobs-img") {
+            setShow(true);
+        } else {
+            setShow(false);
+        }
+    }, [active]);
 
     const handleSetActive = (to) => {
         setActive(to);
     };
+
     return (
-        <div className=' pt-[30px] md:pt-[40px] flex flex-col justify-center items-center min-h-[50vh] animate-fade'>
+        <div className=" pt-[30px] md:pt-[40px] flex flex-col justify-center items-center min-h-[50vh] ">
+            <Title title="Jobs" />
+            <Link
+                to="jobs-img"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={400}
+                onSetActive={handleSetActive}
+            >
+                <div
+                    className={cx(
+                        "h-[120px] md:w-[300px] w-[200px] md:h-[200px] mb-10 "
+                    )}
+                    id="jobs-img"
+                >
+                    <Transition
+                        show={show}
+                        as={Fragment}
+                        enter="transform transition duration-[400ms]  ease-in-out"
+                        enterFrom="opacity-0  scale-0"
+                        enterTo="opacity-100  scale-100"
+                        leave="transform duration-[400ms] transition ease-in-out"
+                        leaveFrom="opacity-100 scale-100 "
+                        leaveTo="opacity-0 scale-0"
+                    >
+                        <img
+                            src={jobImg}
+                            alt="job"
+                            className="w-full h-auto animate-zoomIn"
+                        />
+                    </Transition>
+                </div>
+            </Link>
+
             <div
-                id='jobs-img'
                 className={cx(
-                    "max-w-[200px] md:max-w-[300px] mb-5 ",
-                    active !== "jobs-img"
-                        ? "opacity-0 transition-opacity duration-500"
-                        : "opacity-100 transition-opacity duration-500"
+                    !show
+                        ? "fixed md:top-[150px] top-[50px] right-0 text-[#425cef] z-10 items-end text-right pr-3 animate-fadeInRight opacity-30 hover:opacity-100 hover:bg-black hover:bg-opacity-80 transition-all duration-300 "
+                        : "items-center mx-auto text-white animate-fadeInLeft",
+                    "transition-all duration-300 flex flex-col justify-center opacity-100"
                 )}
             >
-                <Link
-                    to='jobs-img'
-                    spy={true}
-                    smooth={true}
-                    offset={-50}
-                    duration={400}
-                    onSetActive={handleSetActive}
-                />
-                <img
-                    src={jobImg}
-                    alt='job'
-                    className='w-full h-auto animate-zoomIn'
-                    id='jobs-img'
-                />
+                {links.map((link, index) => (
+                    <Link
+                        key={index}
+                        to={`job${index}`}
+                        spy={true}
+                        smooth={true}
+                        offset={-50}
+                        duration={300}
+                        onSetActive={handleSetActive}
+                    >
+                        <span
+                            className={cx(
+                                "tracking-wide font-sans cursor-pointer hover:text-[#ff4d00] font-medium",
+                                !show
+                                    ? "text-[15px] md:text-[17px] mt-1"
+                                    : "text-xl md:text-2xl mt-0",
+                                active === `job${index}` && "text-[#ff4d00] "
+                            )}
+                        >
+                            {active === `job${index}` && (
+                                <ArrowSmallRightIcon
+                                    className="animate-arrow inline-block mr-2"
+                                    width={30}
+                                />
+                            )}
+
+                            {link.name && link.name}
+                        </span>
+                    </Link>
+                ))}
             </div>
 
             <div
                 className={cx(
-                    active !== "jobs-img"
-                        ? "fixed md:top-[150px] top-[50px] right-0  text-[#425cef] z-10 flex flex-col items-end text-right pr-3 transition-all duration-500"
-                        : "flex flex-col justify-center items-center text-xl font-medium md:text-2xl text-white transition-all duration-500 "
-                )}
-            >
-                {links.map((link, index) => (
-                    <div
-                        key={index}
-                        className={cx(
-                            active !== "jobs-img"
-                                ? " cursor-pointer hover:text-[#ff4d00] opacity-30 hover:opacity-100 bg-black transition-all duration-200 "
-                                : " cursor-pointer hover:text-[#ff4d00] opacity-100",
-                            active === `job${index}` ? "text-[#ff4d00] " : ""
-                        )}
-                    >
-                        <Link
-                            key={index}
-                            to={`job${index}`}
-                            spy={true}
-                            smooth={true}
-                            offset={-50}
-                            duration={400}
-                            onSetActive={handleSetActive}
-                        >
-                            <span
-                                className={cx(
-                                    "flex items-center",
-                                    active === `job${index}`
-                                        ? "text-[#ff4d00] "
-                                        : ""
-                                )}
-                            >
-                                {active === `job${index}` && (
-                                    <ArrowSmallRightIcon
-                                        className='animate-arrow inline-block mr-2'
-                                        width={30}
-                                    />
-                                )}
-                                {link.name && link.name}
-                            </span>
-                        </Link>
-                    </div>
-                ))}
-            </div>
-            <div
-                className={cx(
-                    active === "jobs-img"
-                        ? "opacity-0 transition-opacity duration-500"
-                        : "opacity-100 transition-opacity duration-500"
+                    "transition-opacity duration-300",
+                    active === "jobs-img" ? "opacity-0 " : "opacity-100 "
                 )}
             >
                 {jobsList.map((job, idx) => (
                     <div
                         key={idx}
                         id={`job${idx}`}
-                        className='min-h-[100vh] max-w-[1100px] flex flex-col justify-center  mx-auto mt-10 text-white p-5'
+                        className="min-h-[100vh] max-w-[1100px] flex flex-col justify-center mx-auto mt-10 text-white p-5 tracking-wide"
                     >
-                        <div className='mb-10 mx-auto '>
-                            <img
-                                src={`/img/jobs/icon_jobs_${idx + 1}.webp`}
-                                className='w-[80px] h-[80px] md:w-[100px] md:h-[100px] mx-auto'
-                            />
-                        </div>
-                        <div className='text-center'>
-                            <h1 className='text-2xl md:text-3xl font-bold'>
-                                {" "}
-                                {job.name}
-                            </h1>
-                            <h1 className='text-xl md:text-2xl font-medium my-3 text-left'>
-                                {job.jobdescription.title}
-                            </h1>
-                            <p className='first-letter:ml-10 px-1 text-left text-sm md:text-base'>
-                                {job.jobdescription.description}
-                            </p>
-                        </div>
-                        <div className='mt-10'>
-                            <h1 className='text-xl md:text-2xl font-medium text-left mb-3'>
-                                {job.requirements.title}
-                            </h1>
-                            {job.requirements.list.map((requirement, idxx) => (
-                                <li
-                                    key={idxx}
-                                    className='first-letter:list-decimal px-1 text-left text-sm md:text-base'
-                                >
-                                    {requirement}
-                                </li>
-                            ))}
-                        </div>
+                        <Transition
+                            show={!show}
+                            as={"div"}
+                            enter="transform transition duration-[300ms]  ease-in-out"
+                            enterFrom="opacity-0 transform translate-y-full"
+                            enterTo="opacity-100 transform translate-y-0"
+                            leave="transform duration-[300ms] transition ease-in-out"
+                            leaveFrom="opacity-100 transform translate-y-0"
+                            leaveTo="opacity-0 transform translate-y-full"
+                        >
+                            <div className="mb-10 mx-auto ">
+                                <img
+                                    src={`/img/jobs/icon_jobs_${idx + 1}.webp`}
+                                    className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] mx-auto"
+                                />
+                            </div>
+                            <div className="text-center">
+                                <h1 className="text-2xl md:text-3xl font-bold">
+                                    {" "}
+                                    {job.name}
+                                </h1>
+                                <h1 className="text-xl md:text-2xl font-medium my-3 text-left">
+                                    {job.jobdescription.title}
+                                </h1>
+                                <p className="first-letter:ml-10 px-1 text-left text-sm md:text-base">
+                                    {job.jobdescription.description}
+                                </p>
+                            </div>
+                            <div className="mt-10">
+                                <h1 className="text-xl md:text-2xl font-medium text-left mb-3">
+                                    {job.requirements.title}
+                                </h1>
+                                {job.requirements.list.map(
+                                    (requirement, idxx) => (
+                                        <li
+                                            key={idxx}
+                                            className="first-letter:list-decimal px-1 text-left text-sm md:text-base"
+                                        >
+                                            {requirement}
+                                        </li>
+                                    )
+                                )}
+                            </div>
+                        </Transition>
                     </div>
                 ))}
             </div>

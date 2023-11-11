@@ -19,11 +19,11 @@ const Layout = () => {
             return;
         }
         if (scroll.y - scroll.lastY > 0) {
-            if (scroll.y > 573) {
+            if (scroll.y > 576) {
                 setActive(true);
                 setBanner(false);
             }
-        } else if (scroll.y < 573) {
+        } else if (scroll.y < 576) {
             setActive(false);
             setBanner(true);
         } else {
@@ -32,27 +32,27 @@ const Layout = () => {
     }, [scroll.lastY, scroll.y]);
     return (
         <>
-            <div className='relative w-screen min-h-[calc(100vh)] pt-0 bg-black'>
+            <div className="relative w-screen min-h-[calc(100vh)] bg-black">
                 <img
                     src={logo}
-                    alt='logo'
-                    className='hidden md:block relative top-0 left-0 w-full max-w-[700px] h-[573px] mx-auto z-0 animate-zoomIn'
+                    alt="logo"
+                    className="hidden md:block relative top-0 left-0 w-full max-w-[700px] h-[573px] mx-auto z-0 animate-zoomIn"
                 />
                 <Suspense fallback={<Fallback />}>
                     <header
                         className={cx(
-                            banner ? "fixed md:relative" : "sticky md:sticky ",
-                            "top-0 left-0 z-50 w-ful animate-fade",
+                            banner ? "fixed md:relative" : "sticky",
+                            "top-0 inset-x-0 z-[50] w-ful transform transition duration-[400ms]",
                             active
-                                ? "translate-y-[-100%] transition-all duration-400 ease-in transform  w-full z-40"
-                                : "translate-y-0 transition-all duration-400 ease-out transform w-full z-40 "
+                                ? "-translate-y-full opacity-50 ease-in"
+                                : "translate-y-0 opacity-100 ease-out"
                         )}
                     >
                         <Hader />
                         <Navbar />
                     </header>
 
-                    <div className='relative w-full flex flex-col items-center min-h-[calc(100vh-179px)] md:min-h-[calc(100vh-235px)] pt-[50px] md:pt-[100px]'>
+                    <div className="relative w-full flex flex-col justify-between items-center min-h-[calc(100vh-179px)] md:min-h-[calc(100vh-235px)] pt-[50px] md:pt-[100px] overflow-hidden">
                         <Suspense fallback={<Fallback />}>
                             <Outlet />
                         </Suspense>

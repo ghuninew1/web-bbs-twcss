@@ -1,3 +1,53 @@
+.service-main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 727px;
+    margin-top: -100px;
+}
+@media screen and (max-width: 768px) {
+    .service-main {
+        transform: scale(0.52) translateX(0%);
+        transition: all 0.2s ease;
+        margin: 0 auto;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        margin-top: -150px;
+        margin-bottom: -120px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .service-content {
+        transform: scale(0.8) translateX(0%);
+        transition: all 0.2s ease;
+        margin: 0 auto;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+}
+.service-content {
+    background: no-repeat center/100% url("/img/service/bg.webp");
+    width: 860px;
+    height: 727px;
+    min-width: 860px;
+    position: relative;
+    margin: 0 auto;
+}
+.service-img img {
+    border: none;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .service-content {
+        max-width: 860px;
+        max-height: 727px;
+        background-size: 100%;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
 .service-item-1 {
     position: absolute;
     left: 345px;
@@ -5,181 +55,133 @@
 }
 .service-item-2 {
     position: absolute;
-
     left: 209px;
-
     top: 81px;
 }
 .service-item-3 {
     position: absolute;
-
     left: 498px;
-
     top: 56px;
 }
 .service-item-4 {
     position: absolute;
-
     left: 376px;
-
     top: 104px;
 }
 .service-item-5 {
     position: absolute;
-
     left: 588px;
-
     top: 107px;
 }
 .service-item-6 {
     position: absolute;
-
     left: 95px;
-
     top: 153px;
     z-index: 50;
 }
 .service-item-7 {
     position: absolute;
-
     left: 275px;
-
     top: 183px;
 }
 .service-item-8 {
     position: absolute;
-
     left: 94px;
-
     top: 255px;
     z-index: 101;
 }
 .service-item-9 {
     position: absolute;
-
     left: 302px;
-
     top: 262px;
     z-index: 100;
 }
 .service-item-10 {
     position: absolute;
-
     left: 492px;
-
     top: 185px;
 }
 .service-item-11 {
     position: absolute;
-
     left: 680px;
-
     top: 192px;
 }
 .service-item-12 {
     position: absolute;
-
     left: 534px;
-
     top: 274px;
     z-index: 1;
 }
 .service-item-13 {
     position: absolute;
-
     left: 641px;
-
     top: 252px;
     z-index: 5;
 }
 .service-item-14 {
     position: absolute;
-
     left: 20px;
-
     top: 319px;
 }
 .service-item-15 {
     position: absolute;
-
     left: 173px;
-
     top: 345px;
     z-index: 1;
 }
 .service-item-16 {
     position: absolute;
-
     left: 260px;
-
     top: 376px;
     z-index: 555;
 }
 .service-item-17 {
     position: absolute;
-
     left: 496px;
-
     top: 338px;
     z-index: 50;
 }
 .service-item-18 {
     position: absolute;
-
     left: 718px;
-
     top: 361px;
     z-index: 1;
 }
 .service-item-19 {
     position: absolute;
-
     left: 25px;
-
     top: 405px;
     z-index: 50;
 }
 .service-item-20 {
     position: absolute;
-
     left: 205px;
-
     top: 477px;
 }
 .service-item-21 {
     position: absolute;
-
     left: 405px;
-
     top: 463px;
     z-index: 55;
 }
 .service-item-22 {
     position: absolute;
-
     left: 645px;
-
     top: 425px;
     z-index: 1;
 }
 .service-item-23 {
     position: absolute;
-
     left: 82px;
-
     top: 531px;
 }
 .service-item-24 {
     position: absolute;
-
     left: 194px;
-
     top: 580px;
 }
 .service-item-25 {
     position: absolute;
-
     left: 350px;
-
     top: 560px;
 }

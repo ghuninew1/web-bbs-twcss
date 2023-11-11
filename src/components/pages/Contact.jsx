@@ -86,7 +86,7 @@ const Contact = () => {
     const ShowMessage = () => {
         return (
             <>
-                <div className="w-auto h-auto bg-white bg-opacity-80 rounded-md flex flex-col justify-center items-center gap-2 py-10 px-5">
+                <div className="w-auto h-auto bg-white bg-opacity-80 rounded-md flex flex-col justify-center items-center mx-auto gap-2 py-10 px-5">
                     <div className="text-2xl font-bold text-center">
                         {messageRef.current.value}
                     </div>
@@ -102,7 +102,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="relative w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto px-5 md:px-10  items-center  pt-[30px] md:pt-[40px]">
+        <div className="relative w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-2 mx-auto px-2 md:px-5 items-center mb-10">
             <Title title="Contact" />
             <Transition
                 show={show}
@@ -119,7 +119,7 @@ const Contact = () => {
                 <ShowMessage />
             </Transition>
 
-            <div className="pt-10 md:pt-5 shadow-lg rounded-md p-3 border-[#dcbcbc36] border-2 h-full flex flex-col items-center justify-center animate-fade">
+            <div className="pt-10 md:pt-5 shadow-lg rounded-md p-3 border-[#dcbcbc36] md:border-2 h-full flex flex-col items-center justify-center animate-fade">
                 <div className="text-3xl md:text-4xl font-bold text-center text-white mb-5">
                     Contact
                 </div>
@@ -169,7 +169,7 @@ const Contact = () => {
                     </button>
                 </form>
             </div>
-            <div className="flex flex-col justify-center items-center gap-2 animate-fade ">
+            <div className="flex flex-col justify-center items-center gap-2 animate-fade ml-0 md:ml-1 rounded-md p-3 border-[#dcbcbc36] md:border-2 ">
                 <div className="text-base text-center md:text-right text-white w-full tracking-wide">
                     <h3 className="tracking-wider text-[18px] font-medium mb-2">
                         BIG BRAIN STUDIO CO.,LTD.
@@ -177,7 +177,7 @@ const Contact = () => {
                     <p>151 Sukhumvit 101/1, Bangchak,</p>
                     <p>Phrakhanong, Bangkok 10260, Thailand</p>
                 </div>
-                <div className="flex flex-row  justify-center items-center mx-auto my-1 md:my-0 ">
+                <div className="flex flex-row  justify-center items-center mx-auto my-2 md:my-1 ">
                     <div className="mb-0 md:mb-2">
                         {links.map((link, index) => (
                             <a

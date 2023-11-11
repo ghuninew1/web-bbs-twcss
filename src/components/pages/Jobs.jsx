@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment, useRef } from "react";
 import jobImg from "../../assets/we_need_you.webp";
 import { Link } from "react-scroll";
 import { links, jobsList } from "../../data/JobData";
@@ -6,10 +6,20 @@ import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { cx } from "../utils";
 import Title from "../Title";
 import { Transition } from "@headlessui/react";
+import useOnScreen from "../utils/useOnScreen";
 
 const Jobs = () => {
     const [active, setActive] = useState("jobs-img");
     const [show, setShow] = useState(false);
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const ref = Array.from({ length: jobsList.length }, () => useRef());
+
+    const isVisible = [];
+    for (let i = 0; i < jobsList.length; i++) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        isVisible.push(useOnScreen(ref[i]));
+    }
 
     useEffect(() => {
         if (active === "jobs-img") {
@@ -24,7 +34,7 @@ const Jobs = () => {
     };
 
     return (
-        <div className=" pt-[30px] md:pt-[40px] flex flex-col justify-center items-center min-h-[50vh] ">
+        <div className="pt-[30px] md:pt-[0px] min-h-[50vh] flex flex-col mx-auto items-center justify-center px-2">
             <Title title="Jobs" />
             <Link
                 to="jobs-img"
@@ -43,9 +53,9 @@ const Jobs = () => {
                     <Transition
                         show={show}
                         as={Fragment}
-                        enter="transform transition duration-[400ms]  ease-in-out"
-                        enterFrom="opacity-0  scale-0"
-                        enterTo="opacity-100  scale-100"
+                        enter="transform transition duration-[400ms] ease-in-out"
+                        enterFrom="opacity-0 scale-0"
+                        enterTo="opacity-100 scale-100"
                         leave="transform duration-[400ms] transition ease-in-out"
                         leaveFrom="opacity-100 scale-100 "
                         leaveTo="opacity-0 scale-0"
@@ -101,60 +111,54 @@ const Jobs = () => {
 
             <div
                 className={cx(
-                    "transition-opacity duration-300",
+                    "transition-all duration-300",
                     active === "jobs-img" ? "opacity-0 " : "opacity-100 "
                 )}
             >
                 {jobsList.map((job, idx) => (
                     <div
+                        ref={ref[idx]}
                         key={idx}
                         id={`job${idx}`}
-                        className="min-h-[100vh] max-w-[1100px] flex flex-col justify-center mx-auto mt-10 text-white p-5 tracking-wide"
+                        className={cx(
+                            isVisible[idx]
+                                ? "opacity-100 translate-x-0 delay-[200ms]"
+                                : "opacity-0 -translate-x-[100px] delay-[200ms]",
+                            "transition-all duration-[400ms] transform ease-in-out",
+                            "min-h-[100vh] max-w-[1100px] flex flex-col justify-center mx-auto mt-10 text-white p-5 tracking-wide"
+                        )}
                     >
-                        <Transition
-                            show={!show}
-                            as={"div"}
-                            enter="transform transition duration-[300ms]  ease-in-out"
-                            enterFrom="opacity-0 transform translate-y-full"
-                            enterTo="opacity-100 transform translate-y-0"
-                            leave="transform duration-[300ms] transition ease-in-out"
-                            leaveFrom="opacity-100 transform translate-y-0"
-                            leaveTo="opacity-0 transform translate-y-full"
-                        >
-                            <div className="mb-10 mx-auto ">
-                                <img
-                                    src={`/img/jobs/icon_jobs_${idx + 1}.webp`}
-                                    className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] mx-auto"
-                                />
-                            </div>
-                            <div className="text-center">
-                                <h1 className="text-2xl md:text-3xl font-bold">
-                                    {" "}
-                                    {job.name}
-                                </h1>
-                                <h1 className="text-xl md:text-2xl font-medium my-3 text-left">
-                                    {job.jobdescription.title}
-                                </h1>
-                                <p className="first-letter:ml-10 px-1 text-left text-sm md:text-base">
-                                    {job.jobdescription.description}
-                                </p>
-                            </div>
-                            <div className="mt-10">
-                                <h1 className="text-xl md:text-2xl font-medium text-left mb-3">
-                                    {job.requirements.title}
-                                </h1>
-                                {job.requirements.list.map(
-                                    (requirement, idxx) => (
-                                        <li
-                                            key={idxx}
-                                            className="first-letter:list-decimal px-1 text-left text-sm md:text-base"
-                                        >
-                                            {requirement}
-                                        </li>
-                                    )
-                                )}
-                            </div>
-                        </Transition>
+                        <div className="mb-10 mx-auto ">
+                            <img
+                                src={`/img/jobs/icon_jobs_${idx + 1}.webp`}
+                                className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] mx-auto"
+                            />
+                        </div>
+                        <div className="text-center">
+                            <h1 className="text-2xl md:text-3xl font-bold">
+                                {" "}
+                                {job.name}
+                            </h1>
+                            <h1 className="text-xl md:text-2xl font-medium my-3 text-left">
+                                {job.jobdescription.title}
+                            </h1>
+                            <p className="first-letter:ml-10 px-1 text-left text-sm md:text-base">
+                                {job.jobdescription.description}
+                            </p>
+                        </div>
+                        <div className="mt-10">
+                            <h1 className="text-xl md:text-2xl font-medium text-left mb-3">
+                                {job.requirements.title}
+                            </h1>
+                            {job.requirements.list.map((requirement, idxx) => (
+                                <li
+                                    key={idxx}
+                                    className="first-letter:list-decimal px-1 text-left text-sm md:text-base"
+                                >
+                                    {requirement}
+                                </li>
+                            ))}
+                        </div>
                     </div>
                 ))}
             </div>

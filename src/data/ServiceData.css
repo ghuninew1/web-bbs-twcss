@@ -1,19 +1,11 @@
 .service-main {
     position: relative;
-    width: 100%;
-    height: 100%;
     min-height: 727px;
-    margin-top: -100px;
 }
 @media screen and (max-width: 768px) {
     .service-main {
         transform: scale(0.52) translateX(0%);
         transition: all 0.2s ease;
-        margin: 0 auto;
-        padding-bottom: 0px;
-        padding-top: 0px;
-        margin-top: -150px;
-        margin-bottom: -120px;
     }
 }
 
@@ -21,9 +13,6 @@
     .service-content {
         transform: scale(0.8) translateX(0%);
         transition: all 0.2s ease;
-        margin: 0 auto;
-        padding-bottom: 0px;
-        padding-top: 0px;
     }
 }
 .service-content {
@@ -32,11 +21,6 @@
     height: 727px;
     min-width: 860px;
     position: relative;
-    margin: 0 auto;
-}
-.service-img img {
-    border: none;
-    width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -44,8 +28,6 @@
         max-width: 860px;
         max-height: 727px;
         background-size: 100%;
-        width: 100%;
-        margin: 0 auto;
     }
 }
 .service-item-1 {

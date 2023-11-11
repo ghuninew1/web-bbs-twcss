@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { cx } from "./utils";
 import logo from "../assets/logo.webp";
 import { animateScroll } from "react-scroll";
+import { Transition } from "@headlessui/react";
 
 const navlinks = [
     { to: "/", name: "Home", hidden: false },
@@ -41,19 +42,19 @@ export default function Navbar() {
 
     return (
         <nav className="md:relative bg-black top-0 inset-x-0 h-[50px] md:h-[70px] transition-all">
-            <div className="mx-auto w-full ">
-                <div className="relative flex items-center justify-between ">
-                    <div className="flex flex-1  justify-start items-stretch md:justify-center md:items-center mx-auto">
+            <div className="">
+                <div className="relative flex items-center ">
+                    <div className="flex flex-1 justify-start items-stretch md:justify-center md:items-center mx-auto">
                         <span className="flex flex-shrink-0 items-start mr-0 md:mr-3 ml-1 md:ml-0 hover:scale-110 ease-out duration-200">
                             <Link to={"/"}>
                                 <img
-                                    className="h-[40px] md:h-[60px] w-full object-contain"
+                                    className="h-[40px] md:h-[60px] "
                                     src={logo}
                                     alt="Your Company"
                                 />
                             </Link>
                         </span>
-                        <div className="hidden md:block w-full max-w-[1000px] transition-all">
+                        <div className="hidden md:block max-w-[1000px] transition-all">
                             <div className="flex gap-2 justify-center items-center mx-auto tracking-wide">
                                 {navlinks.map((item) => (
                                     <NavLink
@@ -92,31 +93,37 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-            <div
+            <Transition
+                show={open}
+                as={"div"}
+                enter="transform transition-all duration-[200ms] ease-out"
+                enterFrom="scale-y-0"
+                enterTo="scale-y-100 "
+                leave="transform transition-all duration-[200ms] ease-in"
+                leaveFrom="scale-y-100"
+                leaveTo="scale-y-0"
                 className={cx(
-                    open ? "opacity-100 scale-y-100" : "opacity-5 scale-y-0",
-                    "absolute space-y-1 top-[50px] inset-x-0 py-2 bg-[#000] flex flex-col ease-out duration-300 origin-top md:hidden z-[999] text-center transition-all tracking-wide "
+                    "absolute space-y-1 top-[50px] inset-x-0 py-2 bg-[#000] flex flex-col md:hidden z-[999] origin-top text-center tracking-wide "
                 )}
             >
-                {open &&
-                    navlinks.map((item) => (
-                        <NavLink
-                            key={item.name}
-                            onClick={scrollTo}
-                            to={item.to}
-                            end={item.to === "/" ? true : false}
-                            className={({ isActive, isPending }) =>
-                                isPending
-                                    ? "transition-all animate-pulse"
-                                    : isActive
-                                    ? "text-slate-900 bg-[#d7742d] hover:bg-[#007700] hover:text-white rounded-lg px-3 py-2 text-[16px] font-bold hover:translate-x-2 ease-out duration-200"
-                                    : " text-gray-300 hover:bg-[#007700] hover:text-white rounded-lg px-3 py-2 text-[16px] font-medium  hover:translate-x-2 ease-out duration-200"
-                            }
-                        >
-                            {item.name}
-                        </NavLink>
-                    ))}
-            </div>
+                {navlinks.map((item) => (
+                    <NavLink
+                        key={item.name}
+                        onClick={scrollTo}
+                        to={item.to}
+                        end={item.to === "/" ? true : false}
+                        className={({ isActive, isPending }) =>
+                            isPending
+                                ? "transition-all animate-pulse"
+                                : isActive
+                                ? "text-slate-900 bg-[#d7742d] hover:bg-[#007700] hover:text-white rounded-lg px-3 py-2 text-[16px] font-bold hover:translate-x-2 ease-out duration-200"
+                                : " text-gray-300 hover:bg-[#007700] hover:text-white rounded-lg px-3 py-2 text-[16px] font-medium  hover:translate-x-2 ease-out duration-200"
+                        }
+                    >
+                        {item.name}
+                    </NavLink>
+                ))}
+            </Transition>
         </nav>
     );
 }

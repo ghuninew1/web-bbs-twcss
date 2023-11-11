@@ -17,7 +17,7 @@ const Studio = () => {
     return (
         <>
             <Title title="Studio" />
-            <div className=" pt-[30px] md:pt-[40px]">
+            <div className=" pt-[30px] md:pt-[0px]">
                 <Transition
                     show={!titles}
                     as={Fragment}

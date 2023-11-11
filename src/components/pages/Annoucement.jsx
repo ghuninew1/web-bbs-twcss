@@ -2,9 +2,9 @@ import Title from "../Title";
 
 const Annoucement = () => {
     return (
-        <div className=" pt-[30px] md:pt-[40px] max-w-[900px]">
+        <div className=" max-w-[900px] flex flex-col mx-auto items-center justify-center px-2 pt-[30px] md:pt-[0px]">
             <Title title="Annoucement" />
-            <div className="mx-3 px-2 animate-fade ">
+            <div className="mx-3 px-2 animate-fade">
                 <div className="text-white md:text-base text-sm font-sans font-normal tracking-wide">
                     <h3 className="text-center text-xl md:text-2xl font-bold">
                         ประกาศแจ้งบุคคลพ้นสภาพการเป็นพนักงาน

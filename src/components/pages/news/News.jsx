@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { dataNews } from "../../../data/NewsData";
 import { cx } from "../../utils";
 import NewsSlide from "./NewsSlide";
@@ -6,12 +6,21 @@ import NewsIframe from "./NewsIframe";
 import Totop from "../../Totop";
 import Title from "../../Title";
 import { Transition } from "@headlessui/react";
+import useOnScreen from "../../utils/useOnScreen";
 
 const News = () => {
     const [image, setImage] = useState(null);
     const [showIframe, setShowIframe] = useState(null);
     const [show, setShow] = useState(false);
     const [showframe, setShowframe] = useState(false);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const ref = Array.from({ length: dataNews.length }, () => useRef());
+
+    const isVisible = [];
+    for (let i = 0; i < dataNews.length; i++) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        isVisible.push(useOnScreen(ref[i]));
+    }
 
     const handleImage = (e) => {
         if (e?.to.toString().startsWith("http")) {
@@ -32,10 +41,11 @@ const News = () => {
     return (
         <div
             id="news"
-            className=" pt-[30px] md:pt-[40px]  px-2 max-w-[1100px] "
+            className="pt-[30px] md:pt-[0px] px-2 max-w-[1100px] flex flex-col mx-auto items-center justify-center"
         >
             <Title title="ข่าวสาร" />
-            <Totop />
+            {!show && !showframe && <Totop />}
+
             <Transition
                 show={show}
                 as={"div"}
@@ -72,9 +82,14 @@ const News = () => {
             </Transition>
             {dataNews.map((item, index) => (
                 <div
+                    ref={ref[index]}
                     key={index}
                     className={cx(
-                        "flex flex-col md:flex-row  border border-[#ffffff0e] rounded-md mb-[200px] max-h-[600px] overflow-hidden animate-fade duration-600 ",
+                        isVisible[index]
+                            ? "opacity-100 translate-y-0 delay-[200ms]"
+                            : "opacity-0 translate-y-[20px] delay-[200ms]",
+                        "transition-all duration-[400ms] transform ease-in-out",
+                        "flex flex-col md:flex-row  border border-[#ffffff0e] rounded-md mb-[200px] max-h-[600px] overflow-hidden ",
                         index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
                     )}
                 >

@@ -6,20 +6,16 @@ import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { cx } from "../utils";
 import Title from "../Title";
 import { Transition } from "@headlessui/react";
-import useOnScreen from "../utils/useOnScreen";
+import UseOnScreen from "../utils/useOnScreen";
 
 const Jobs = () => {
     const [active, setActive] = useState("jobs-img");
     const [show, setShow] = useState(false);
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const ref = Array.from({ length: jobsList.length }, () => useRef());
+    const refs = Array.from({ length: jobsList.length }, () => useRef());
 
-    const isVisible = [];
-    for (let i = 0; i < jobsList.length; i++) {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        isVisible.push(useOnScreen(ref[i]));
-    }
+    const isVisible = refs.map((ref) => UseOnScreen(ref));
 
     useEffect(() => {
         if (active === "jobs-img") {
@@ -117,7 +113,7 @@ const Jobs = () => {
             >
                 {jobsList.map((job, idx) => (
                     <div
-                        ref={ref[idx]}
+                        ref={refs[idx]}
                         key={idx}
                         id={`job${idx}`}
                         className={cx(

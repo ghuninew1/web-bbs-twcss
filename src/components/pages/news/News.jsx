@@ -6,21 +6,18 @@ import NewsIframe from "./NewsIframe";
 import Totop from "../../Totop";
 import Title from "../../Title";
 import { Transition } from "@headlessui/react";
-import useOnScreen from "../../utils/useOnScreen";
+import UseOnScreen from "../../utils/useOnScreen";
 
 const News = () => {
     const [image, setImage] = useState(null);
     const [showIframe, setShowIframe] = useState(null);
     const [show, setShow] = useState(false);
     const [showframe, setShowframe] = useState(false);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const ref = Array.from({ length: dataNews.length }, () => useRef());
 
-    const isVisible = [];
-    for (let i = 0; i < dataNews.length; i++) {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        isVisible.push(useOnScreen(ref[i]));
-    }
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const refs = Array.from({ length: dataNews.length }, () => useRef());
+
+    const isVisible = refs.map((ref) => UseOnScreen(ref));
 
     const handleImage = (e) => {
         if (e?.to.toString().startsWith("http")) {
@@ -82,7 +79,7 @@ const News = () => {
             </Transition>
             {dataNews.map((item, index) => (
                 <div
-                    ref={ref[index]}
+                    ref={refs[index]}
                     key={index}
                     className={cx(
                         isVisible[index]

@@ -1,6 +1,6 @@
 import { animateScroll } from "react-scroll";
 import { cx } from "../components/utils";
-import ScrollListener from "../components/ScrollListener";
+import ScrollListener from "../components/utils/ScrollListener";
 import { useEffect, useState, Fragment, useRef } from "react";
 import { Transition } from "@headlessui/react";
 

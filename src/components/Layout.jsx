@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import { Suspense, useEffect, useState } from "react";
 import Fallback from "./Fallback";
 import Hader from "./Hader";
-import Scroll from "./ScrollListener";
+import Scroll from "./utils/ScrollListener";
 import { cx } from "./utils";
 import logo from "../assets/logo.gif";
 

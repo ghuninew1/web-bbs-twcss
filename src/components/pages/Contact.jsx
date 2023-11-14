@@ -1,10 +1,10 @@
 import Title from "../Title";
-import facebook from "../../assets/footer/facebook.webp";
-import youtube from "../../assets/footer/youtube.webp";
-import instagram from "../../assets/footer/instagram.webp";
-import whatapp from "../../assets/footer/whatapp.webp";
-import vimeo from "../../assets/footer/vimeo.webp";
-import linkedin from "../../assets/footer/linkedin.webp";
+import facebook from "../../assets/footer/facebook.avif";
+import youtube from "../../assets/footer/youtube.avif";
+import instagram from "../../assets/footer/instagram.avif";
+import whatapp from "../../assets/footer/whatapp.avif";
+import vimeo from "../../assets/footer/vimeo.avif";
+import linkedin from "../../assets/footer/linkedin.avif";
 import { useRef, useState } from "react";
 import { Transition } from "@headlessui/react";
 
@@ -113,14 +113,14 @@ const Contact = () => {
                 leave="transform duration-[400ms] transition ease-in-out"
                 leaveFrom="opacity-100 scale-100 "
                 leaveTo="opacity-0 scale-0"
-                className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 flex justify-center items-center"
+                className="fixed top-0 left-0 w-full min-h-screen bg-black bg-opacity-70 flex justify-center items-center"
                 onClick={handleClose}
             >
                 <ShowMessage />
             </Transition>
 
-            <div className="pt-10 md:pt-5 shadow-lg rounded-md p-3 border-[#dcbcbc36] md:border-2 h-full flex flex-col items-center justify-center animate-fade">
-                <div className="text-3xl md:text-4xl font-bold text-center text-white mb-5">
+            <div className="pt-10 md:pt-5 shadow-lg rounded-md p-3 border-[#dcbcbc36] md:border-2 h-full flex flex-col items-center justify-center animate-fadeInLeft">
+                <div className="text-3xl md:text-4xl font-medium text-center text-white mb-5">
                     Contact
                 </div>
 
@@ -169,8 +169,8 @@ const Contact = () => {
                     </button>
                 </form>
             </div>
-            <div className="flex flex-col justify-center items-center gap-2 animate-fade ml-0 md:ml-1 rounded-md p-3 border-[#dcbcbc36] md:border-2 ">
-                <div className="text-base text-center md:text-right text-white w-full tracking-wide">
+            <div className="flex flex-col justify-center items-center gap-2 ml-0 md:ml-1 rounded-md p-3 border-[#dcbcbc36] md:border-2 animate-fadeInRight">
+                <div className="text-base text-center md:text-right text-white w-full tracking-wide animate-fade">
                     <h3 className="tracking-wider text-[18px] font-medium mb-2">
                         BIG BRAIN STUDIO CO.,LTD.
                     </h3>
@@ -178,7 +178,7 @@ const Contact = () => {
                     <p>Phrakhanong, Bangkok 10260, Thailand</p>
                 </div>
                 <div className="flex flex-row  justify-center items-center mx-auto my-2 md:my-1 ">
-                    <div className="mb-0 md:mb-2">
+                    <div className="mb-0 md:mb-2 animate-fade">
                         {links.map((link, index) => (
                             <a
                                 href={link.to}
@@ -196,7 +196,7 @@ const Contact = () => {
                         ))}
                     </div>
                 </div>
-                <div className="aspect-video w-full">
+                <div className="aspect-video w-full animate-fade">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.556153671707!2d100.61402207619273!3d13.684731498840582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a16b35ceceb5%3A0xe527940423e3cdf1!2sBig%20Brain%20Studio%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1686721116416!5m2!1sth!2sth"
                         width="100%"

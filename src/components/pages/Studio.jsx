@@ -1,5 +1,5 @@
 import { useState, useEffect, Fragment } from "react";
-import ptum from "../../assets/ptum.webp";
+import ptum from "../../assets/ptum.avif";
 import { cx } from "../utils";
 import Title from "../Title";
 import { Transition } from "@headlessui/react";
@@ -34,7 +34,7 @@ const Studio = () => {
                             "flex justify-center items-center min-h-[20vh] w-full"
                         )}
                     >
-                        <h1 className="text-orange-500 text-[40px] md:text-[50px] font-bold font-font2 tracking-wide">
+                        <h1 className="text-orange-500 text-[40px] md:text-[50px] font-bold font-font1 tracking-wide">
                             <span className="text-[25px] md:text-[35px]">
                                 WE{" "}
                             </span>{" "}
@@ -103,11 +103,11 @@ const Studio = () => {
                             </div>
                         </div>
                         <div className="flex-0 mb-10">
-                            <div className="max-w-[400px] mt-5 md:mt-0 mx-2">
+                            <div className="max-w-[400px] mt-5 md:mt-0 mx-2 animate-fadeInRight">
                                 <img
                                     src={ptum}
                                     alt="ptum"
-                                    className="w-full rounded-md"
+                                    className="rounded-md"
                                 />
                             </div>
                         </div>

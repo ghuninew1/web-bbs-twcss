@@ -8,7 +8,7 @@ const Service = () => {
         <div className="pt-[0px] md:pt-[0px] flex flex-col mx-auto items-center justify-center px-2 mb-10">
             <Title title="Service" />
             <div className="service-main mt-[-50px] md:mt-[0px]">
-                <div className="service-content ">
+                <div className="service-content animate-fade">
                     {ServiceData &&
                         ServiceData.map((item, idx) => (
                             <span

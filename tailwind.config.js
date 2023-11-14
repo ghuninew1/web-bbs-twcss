@@ -21,19 +21,19 @@ export default {
                     to: { opacity: 0 },
                 },
                 fadeInDown: {
-                    from: { opacity: 0, transform: "translateY(-100%)" },
+                    from: { opacity: 0, transform: "translateY(-50%)" },
                     to: { opacity: 100, transform: "translateY(0)" },
                 },
                 fadeInUp: {
-                    from: { opacity: 0, transform: "translateY(100%)" },
+                    from: { opacity: 0, transform: "translateY(50%)" },
                     to: { opacity: 100, transform: "translateY(0)" },
                 },
                 fadeInLeft: {
-                    from: { opacity: 0, transform: "translateX(-100%)" },
+                    from: { opacity: 0, transform: "translateX(-50%)" },
                     to: { opacity: 100, transform: "translateX(0)" },
                 },
                 fadeInRight: {
-                    from: { opacity: 0, transform: "translateX(100%)" },
+                    from: { opacity: 0, transform: "translateX(50%)" },
                     to: { opacity: 100, transform: "translateX(0)" },
                 },
                 zoomIn: {

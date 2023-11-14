@@ -1,10 +1,10 @@
 import { useRef } from "react";
-import facebook from "../assets/footer/facebook.webp";
-import youtube from "../assets/footer/youtube.webp";
-import instagram from "../assets/footer/instagram.webp";
-import whatapp from "../assets/footer/whatapp.webp";
-import vimeo from "../assets/footer/vimeo.webp";
-import linkedin from "../assets/footer/linkedin.webp";
+import facebook from "../assets/footer/facebook.avif";
+import youtube from "../assets/footer/youtube.avif";
+import instagram from "../assets/footer/instagram.avif";
+import whatapp from "../assets/footer/whatapp.avif";
+import vimeo from "../assets/footer/vimeo.avif";
+import linkedin from "../assets/footer/linkedin.avif";
 import useOnScreen from "./utils/useOnScreen";
 import { cx } from "./utils";
 
@@ -79,7 +79,7 @@ export default function Footer() {
                     isVisible
                         ? "opacity-100 translate-y-0 delay-[100ms]"
                         : "opacity-0 translate-y-[30px]",
-                    "transition-all duration-[400ms] ease-out",
+                    "transition duration-[400ms] ease-out",
                     "flex flex-col md:flex-row md:flex-nowrap justify-center gap-x-[20px] md:gap-x-[40px] px-2 py-3 "
                 )}
             >

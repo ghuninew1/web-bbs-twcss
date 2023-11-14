@@ -1,174 +1,174 @@
 [
     {
-        "src": "/img/service/vfx.webp",
+        "src": "/img/service/vfx.avif",
         "width": "135px",
         "high": "79px",
         "alt": "Visual Effects",
         "id": 1
     },
     {
-        "src": "/img/service/layout.webp",
+        "src": "/img/service/layout.avif",
         "width": "163px",
         "high": "79px",
         "alt": "Layout",
         "id": 2
     },
     {
-        "src": "/img/service/rendering.webp",
+        "src": "/img/service/rendering.avif",
         "width": "146px",
         "high": "58px",
         "alt": "Animation",
         "id": 3
     },
     {
-        "src": "/img/service/texture.webp",
+        "src": "/img/service/texture.avif",
         "width": "176px",
         "high": "92px",
         "alt": "Color",
         "id": 4
     },
     {
-        "src": "/img/service/storyboard.webp",
+        "src": "/img/service/storyboard.avif",
         "width": "152px",
         "high": "83px",
         "alt": "Rotoscoping",
         "id": 5
     },
     {
-        "src": "/img/service/short.webp",
+        "src": "/img/service/short.avif",
         "width": "174px",
         "high": "94px",
         "alt": "short",
         "id": 6
     },
     {
-        "src": "/img/service/script.webp",
+        "src": "/img/service/script.avif",
         "width": "146px",
         "high": "70px",
         "alt": "script",
         "id": 7
     },
     {
-        "src": "/img/service/development.webp",
+        "src": "/img/service/development.avif",
         "width": "196px",
         "high": "78px",
         "alt": "development",
         "id": 8
     },
     {
-        "src": "/img/service/lighting.webp",
+        "src": "/img/service/lighting.avif",
         "width": "218px",
         "high": "97px",
         "alt": "lighting",
         "id": 9
     },
     {
-        "src": "/img/service/production.webp",
+        "src": "/img/service/production.avif",
         "width": "166px",
         "high": "80px",
         "alt": "production",
         "id": 10
     },
     {
-        "src": "/img/service/rigging.webp",
+        "src": "/img/service/rigging.avif",
         "width": "111px",
         "high": "53px",
         "alt": "rigging",
         "id": 11
     },
     {
-        "src": "/img/service/long.webp",
+        "src": "/img/service/long.avif",
         "width": "95px",
         "high": "55px",
         "alt": "long",
         "id": 12
     },
     {
-        "src": "/img/service/model.webp",
+        "src": "/img/service/model.avif",
         "width": "199px",
         "high": "99px",
         "alt": "model",
         "id": 13
     },
     {
-        "src": "/img/service/series.webp",
+        "src": "/img/service/series.avif",
         "width": "138px",
         "high": "81px",
         "alt": "series",
         "id": 14
     },
     {
-        "src": "/img/service/tvc.webp",
+        "src": "/img/service/tvc.avif",
         "width": "97px",
         "high": "63px",
         "alt": "tvc",
         "id": 15
     },
     {
-        "src": "/img/service/creative.webp",
+        "src": "/img/service/creative.avif",
         "width": "246px",
         "high": "96px",
         "alt": "creative",
         "id": 16
     },
     {
-        "src": "/img/service/interlectual.webp",
+        "src": "/img/service/interlectual.avif",
         "width": "214px",
         "high": "103px",
         "alt": "interlectual",
         "id": 17
     },
     {
-        "src": "/img/service/post_pro.webp",
+        "src": "/img/service/post_pro.avif",
         "width": "125px",
         "high": "57px",
         "alt": "post_pro",
         "id": 18
     },
     {
-        "src": "/img/service/composite.webp",
+        "src": "/img/service/composite.avif",
         "width": "229px",
         "high": "88px",
         "alt": "composite",
         "id": 19
     },
     {
-        "src": "/img/service/conceptual.webp",
+        "src": "/img/service/conceptual.avif",
         "width": "185px",
         "high": "91px",
         "alt": "conceptual",
         "id": 20
     },
     {
-        "src": "/img/service/animation.webp",
+        "src": "/img/service/animation.avif",
         "width": "244px",
         "high": "116px",
         "alt": "animation",
         "id": 21
     },
     {
-        "src": "/img/service/3d.webp",
+        "src": "/img/service/3d.avif",
         "width": "110px",
         "high": "74px",
         "alt": "3d",
         "id": 22
     },
     {
-        "src": "/img/service/previs.webp",
+        "src": "/img/service/previs.avif",
         "width": "136px",
         "high": "65px",
         "alt": "previs",
         "id": 23
     },
     {
-        "src": "/img/service/pre_pro.webp",
+        "src": "/img/service/pre_pro.avif",
         "width": "148px",
         "high": "73px",
         "alt": "pre_pro",
         "id": 24
     },
     {
-        "src": "/img/service/2d.webp",
+        "src": "/img/service/2d.avif",
         "width": "98px",
         "high": "69px",
         "alt": "2d",

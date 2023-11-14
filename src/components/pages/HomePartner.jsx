@@ -102,11 +102,11 @@ const Partner = () => {
                             ))}
                         </span>
                     </div>
-                    <span className=" max-w-[80px] scale-[0.8] md:scale-[1]  ">
+                    <span className=" max-w-[100px] scale-[0.8] md:scale-[1]  ">
                         <img
                             src={HomePartner[24]?.url}
                             alt={HomePartner[24]?.alt}
-                            className="w-full"
+                            className="w-full md:max-w-[80px] max-w-[90px]"
                         />
                     </span>
                 </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useOnScreen = (ref, rootMargin = "0px") => {
+const useOnScreen = (ref, rootMargin, threshold) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -9,7 +9,8 @@ const useOnScreen = (ref, rootMargin = "0px") => {
                 setIsVisible(entry?.isIntersecting);
             },
             {
-                rootMargin,
+                threshold: threshold && threshold > 0 ? threshold : 0,
+                rootMargin: rootMargin ? rootMargin : "0px",
             }
         );
         const currentElement = ref?.current;
@@ -20,7 +21,7 @@ const useOnScreen = (ref, rootMargin = "0px") => {
         return () => {
             observer.unobserve(currentElement);
         };
-    }, [ref, rootMargin]);
+    }, [ref, rootMargin, threshold]);
 
     return isVisible;
 };

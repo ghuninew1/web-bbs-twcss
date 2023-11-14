@@ -8,4 +8,7 @@ export default defineConfig({
         open: true,
         host: true,
     },
+    // build: {
+    //     manifest: true,
+    // },
 });

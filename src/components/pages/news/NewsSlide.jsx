@@ -38,73 +38,78 @@ const NewsSlide = ({ image, handlClose }) => {
     };
 
     return (
-        <div className="fixed w-full min-h-screen top-0 left-0 z-50 px-1">
-            <div className="relative w-full h-full mt-1 md:mt-10 z-[40]">
-                <div className="relative h-[60vh] w-full overflow-hidden rounded-lg z-[100]">
+        <div className="fixed w-full min-h-screen top-0 left-0 z-[60] my-4 overflow-auto">
+            <section
+                aria-label="Image Slider"
+                className="relative w-full h-full mt-3 px-1 "
+            >
+                <div className=" w-full h-full flex mx-auto items-center overflow-hidden max-w-[1100px] p-0">
                     {image &&
                         image.to?.map((item, index) => (
-                            <div
+                            <img
                                 key={index}
+                                src={item.src}
+                                aria-hidden={current !== index}
+                                alt={item.alt}
+                                style={{ translate: `${-100 * current}%` }}
                                 className={cx(
-                                    " duration-500 ease-in-out transition-all max-w-full md:max-w-[1000px] w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
-                                    index === current
-                                        ? " opacity-100 "
-                                        : "opacity-0 "
+                                    "block flex-grow-0 flex-shrink-0  w-full h-full object-cover max-h-[70vh] object-center transition-all ease-in-out duration-500 transform"
                                 )}
-                            >
-                                <img
-                                    src={item.src}
-                                    className="w-full h-full max-h-max md:max-h-[70vh] object-cover object-center"
-                                />
-                            </div>
+                            />
                         ))}
                 </div>
-                <div className="absolute flex space-x-3 -translate-x-1/2 bottom-10 left-1/2 z-[100]">
-                    {image.to?.map((item, index) => (
+                <div className="absolute flex bottom-2 gap-2 left-1/2 -translate-x-1/2">
+                    {image.to?.map((_, index) => (
                         <button
                             key={index}
+                            aria-label={`View Image ${index + 1}`}
                             className={cx(
-                                "w-[5px] h-[5px] md:h-2 md:w-2 rounded-full shadow-lg drop-shadow-lg focus:outline-none",
-                                index === current
-                                    ? "bg-white"
-                                    : "bg-[#ffffff67]"
+                                "z-[70] block md:h-3 md:w-3 h-2 w-2 cursor-pointer rounded-full transition-all ease-in-out hover:scale-125 transform duration-200  ",
+                                current === index
+                                    ? "bg-slate-200 border-2  border-black/80  scale-125"
+                                    : "bg-slate-600 "
                             )}
                             onClick={() => setCurrent(index)}
                         ></button>
                     ))}
                 </div>
 
-                <button className="opacity-30 hover:opacity-100 absolute top-1 right-1 z-[9991] shadow-lg inline-flex w-[50px] h-[50px] rounded-full ">
+                <button className="opacity-40 hover:opacity-100 absolute top-0 right-3 z-[9991] shadow-lg inline-flex w-[50px] h-[50px] rounded-full">
                     <XCircleIcon
+                        aria-hidden
                         width={50}
                         color="white"
-                        className="hover:scale-110 transform transition-all duration-200 ease-in-out hover:text-red-600 text-[#c6c5c5]"
+                        className="hover:scale-110 transform transition-all duration-200 ease-in-out hover:text-red-600 text-[#a74747]"
                         onClick={handlClose}
                     />
                 </button>
 
-                <span
-                    className="opacity-30 hover:opacity-100 absolute top-1/2 left-0 z-[100] inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 hover:bg-white/50 cursor-pointer"
+                <button
+                    aria-label="View Previous Image"
+                    className="hidden md:block opacity-30 hover:opacity-100 absolute top-0 left-0 z-[100]  w-10 h-full cursor-pointer bg-slate-400/0 hover:bg-slate-500/40 group-hover:bg-slate-500/100"
                     onClick={handlePrev}
                 >
                     <ArrowSmallLeftIcon
-                        className="text-white hover:text-black"
-                        width={30}
+                        className="text-white/60 hover:text-black rounded-full bg-slate-700 hover:bg-slate-500/100"
+                        width={35}
+                        aria-hidden
                     />
-                </span>
+                </button>
 
-                <span
-                    className="opacity-30 hover:opacity-100 absolute top-1/2 right-0 z-[100] inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 hover:bg-white/50 cursor-pointer"
+                <button
+                    aria-label="View Next Image"
+                    className="hidden md:block opacity-30 hover:opacity-100 absolute top-0 right-0 z-[100] w-10 h-full cursor-pointer bg-slate-400/0 hover:bg-slate-500/40 group-hover:bg-slate-500/100"
                     onClick={handleNext}
                 >
                     <ArrowSmallRightIcon
-                        className=" text-white hover:text-black"
-                        width={30}
+                        className="text-white/60 hover:text-black rounded-full bg-slate-700 hover:bg-slate-500/100"
+                        width={35}
+                        aria-hidden
                     />
-                </span>
-            </div>
+                </button>
+            </section>
             <div
-                className="text-white max-w-[1000px] mx-auto tracking-wide mb-10"
+                className="absolute text-white w-full mx-auto tracking-wide pb-5 pt-3 animate-fadeInRight px-2 max-w-6xl left-1/2 -translate-x-1/2 "
                 onClick={handlClose}
             >
                 <div className="text-sm md:text-base p-3 text-center">

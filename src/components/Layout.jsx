@@ -14,37 +14,52 @@ const Layout = () => {
     const scroll = Scroll();
 
     useEffect(() => {
-        if (scroll.lastY === scroll.y) {
-            return;
-        }
-        if (scroll.y - scroll.lastY > 0) {
+        if (
+            scroll.y - scroll.lastY > 0 &&
+            scroll.y - scroll.lastY < 10 &&
+            !active
+        ) {
             if (scroll.y > 576) {
                 setActive(true);
                 setBanner(false);
+                console.log("down");
             }
         } else if (scroll.y < 576) {
             setActive(false);
             setBanner(true);
-        } else {
-            setActive(false);
         }
-    }, [scroll.lastY, scroll.y]);
+        if (
+            scroll.lastY - scroll.y > 0 &&
+            scroll.lastY - scroll.y < 10 &&
+            active
+        ) {
+            setActive(false);
+            console.log("up");
+        }
+
+        return () => {
+            // cleanup
+        };
+    }, [active, scroll.lastY, scroll.y]);
 
     return (
         <div className="relative w-screen min-h-[calc(100vh)] bg-black">
             <img
                 src={logo}
                 alt="logo"
-                className="hidden md:block relative top-0 left-0 w-full max-w-[700px] h-[573px] mx-auto z-0 animate-zoomIn"
+                className={cx(
+                    banner ? "animate-zoomIn" : "animate-zoomOut",
+                    "hidden md:block w-full max-w-[700px] h-[573px] mx-auto"
+                )}
             />
             <Suspense fallback={<Fallback />}>
                 <header
                     className={cx(
                         banner ? "fixed md:relative" : "sticky",
-                        "top-0 inset-x-0 z-[50] w-ful transform transition duration-[300ms]",
+                        "top-0 inset-x-0 z-[40] w-ful transition-all  bg-black",
                         active
-                            ? "-translate-y-full ease-in"
-                            : "translate-y-0  ease-out"
+                            ? "-translate-y-full ease-in delay-500 duration-[400ms]"
+                            : "translate-y-0  ease-out delay-100 duration-[400ms]"
                     )}
                 >
                     <Hader />

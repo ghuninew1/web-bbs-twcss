@@ -3,7 +3,7 @@ import { cx } from "../utils";
 
 const Partner = () => {
     return (
-        <div className="w-full py-5 animate-fade">
+        <div className="w-full py-5 animate-fadeInUp">
             <h1 className="text-center text-black font-sans font-normal text-[20px] md:text-[25px]">
                 Thank You Our Clients & Partners
             </h1>

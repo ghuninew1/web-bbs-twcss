@@ -83,7 +83,7 @@ export default function Footer() {
                     "flex flex-col md:flex-row md:flex-nowrap justify-center gap-x-[20px] md:gap-x-[40px] px-2 py-3 "
                 )}
             >
-                <div className="grow text-start md:text-end text-gray-400 text-[13px] md:text-[14px] tracking-wide">
+                <div className="grow text-start md:text-end text-gray-400 text-[13px] md:text-[14px] tracking-wide antialiased">
                     <p>{footerData[0].links[0]}</p>
                     <p>{footerData[0].links[1]}</p>
                     <p className="md:mt-2">{footerData[0].links[2]}</p>
@@ -124,7 +124,7 @@ export default function Footer() {
                         ))}
                     </div>
                 </div>
-                <div className="grow text-end md:text-start text-gray-400 text-[13px] md:text-[14px] tracking-wide">
+                <div className="grow text-end md:text-start text-gray-400 text-[13px] md:text-[14px] tracking-wide antialiased">
                     <p className="md:mb-2">{footerData[2].links[0]}</p>
                     <p>{footerData[2].links[1]}</p>
                     <p>{footerData[2].links[2]}</p>

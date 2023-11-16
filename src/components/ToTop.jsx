@@ -1,8 +1,6 @@
-import { animateScroll } from "react-scroll";
 import { cx } from "../components/utils";
 import ScrollListener from "../components/utils/ScrollListener";
-import { useEffect, useState, Fragment, useRef } from "react";
-import { Transition } from "@headlessui/react";
+import { useEffect, useState, useRef } from "react";
 
 const ToTop = () => {
     const [show, setShow] = useState(false);
@@ -35,10 +33,9 @@ const ToTop = () => {
     }, [scroll.lastY, scroll.y]);
 
     const scrollToTop = () => {
-        animateScroll.scrollToTop({
-            duration: 400,
-            delay: 0,
-            smooth: true,
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
         });
     };
 
@@ -47,27 +44,18 @@ const ToTop = () => {
             <progress
                 value={scollToRef.current}
                 max="100"
-                className="fixed top-0 left-0 w-full h-[1px] bg-red-600 border-none z-[1000]"
+                className="fixed top-0 left-0 w-full h-[1px] md:h-[2px] bg-red-600 border-none z-[1000]"
             />
-            <Transition
-                show={show}
-                as={Fragment}
-                enter="transform transition duration-[200ms] ease-out"
-                enterFrom="opacity-0 translate-y-full"
-                enterTo="opacity-100 translate-y-0 "
-                leave="transform duration-[200ms] transition ease-in"
-                leaveFrom="opacity-100 translate-y-0"
-                leaveTo="opacity-0 translate-y-full"
+
+            <button
+                onClick={scrollToTop}
+                className={cx(
+                    "opacity-30 hover:opacity-100 text-sm p-2 rounded-full bg-gray-200 fixed bottom-5 right-5 z-[1000] transition-all ease-out duration-300 transform",
+                    show ? "translate-y-0" : "translate-y-[170%]"
+                )}
             >
-                <button
-                    onClick={scrollToTop}
-                    className={cx(
-                        "opacity-30 hover:opacity-100 text-sm p-2 rounded-full bg-gray-200 fixed bottom-5 right-5 z-[1000]"
-                    )}
-                >
-                    to top
-                </button>
-            </Transition>
+                to top
+            </button>
         </>
     );
 };

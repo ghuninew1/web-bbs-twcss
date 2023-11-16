@@ -22,19 +22,16 @@ const Layout = () => {
             if (scroll.y > 576) {
                 setActive(true);
                 setBanner(false);
-                console.log("down");
             }
         } else if (scroll.y < 576) {
             setActive(false);
             setBanner(true);
-        }
-        if (
+        } else if (
             scroll.lastY - scroll.y > 0 &&
             scroll.lastY - scroll.y < 10 &&
             active
         ) {
             setActive(false);
-            console.log("up");
         }
 
         return () => {
@@ -48,18 +45,18 @@ const Layout = () => {
                 src={logo}
                 alt="logo"
                 className={cx(
-                    banner ? "animate-zoomIn" : "animate-zoomOut",
-                    "hidden md:block w-full max-w-[700px] h-[573px] mx-auto"
+                    banner ? "scale-100 " : "scale-0",
+                    "hidden md:block w-full max-w-[700px] h-[573px] mx-auto transition-all duration-500 ease-in-out transform "
                 )}
             />
             <Suspense fallback={<Fallback />}>
                 <header
                     className={cx(
-                        banner ? "fixed md:relative" : "sticky",
-                        "top-0 inset-x-0 z-[40] w-ful transition-all  bg-black",
+                        banner ? "fixed md:relative" : "sticky ",
+                        "z-[40] top-0 inset-x-0 w-ful transition-all bg-black duration-[400ms]",
                         active
-                            ? "-translate-y-full ease-in delay-500 duration-[400ms]"
-                            : "translate-y-0  ease-out delay-100 duration-[400ms]"
+                            ? "-translate-y-full ease-in delay-[300ms] "
+                            : "translate-y-0 ease-out delay-[0ms]"
                     )}
                 >
                     <Hader />

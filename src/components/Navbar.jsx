@@ -3,8 +3,6 @@ import { NavLink, Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { cx } from "./utils";
 import logo from "../assets/logo.avif";
-import { animateScroll } from "react-scroll";
-import { Transition } from "@headlessui/react";
 
 const navlinks = [
     { to: "/", name: "Home", hidden: false },
@@ -26,57 +24,53 @@ export default function Navbar() {
     const scrollTo = () => {
         setOpen(false);
         if (window.innerWidth > 768) {
-            animateScroll.scrollTo(573, {
-                duration: 200,
-                delay: 0,
-                smooth: true,
+            window.scrollTo({
+                top: 573,
+                behavior: "smooth",
             });
         } else {
-            animateScroll.scrollTo(0, {
-                duration: 400,
-                delay: 0,
-                smooth: true,
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
             });
         }
     };
 
     return (
-        <nav className="md:relative bg-black top-0 inset-x-0 h-auto py-1">
-            <div className="max-w-full">
-                <div className="flex md:justify-center md:items-center mx-auto">
-                    <Link
-                        to={"/"}
-                        className="mr-0 md:mr-3 ml-1 md:ml-0 min-w-[40px] md:min-w-[60px] hover:scale-110 md:hover:scale-125 ease-out duration-200"
-                    >
-                        <img
-                            className="h-[40px] w-full md:h-[60px]"
-                            src={logo}
-                            alt="Your Company"
-                        />
-                    </Link>
-                    <div className="hidden md:block w-full md:max-w-[1000px]">
-                        <div className="flex md:gap-2 justify-center items-center mx-auto tracking-wide antialiased ">
-                            {navlinks.map((item) => (
-                                <NavLink
-                                    key={item.name}
-                                    to={item.to}
-                                    end={item.to === "/" ? true : false}
-                                    onClick={scrollTo}
-                                    className={({ isActive, isPending }) =>
-                                        isPending
-                                            ? "transition animate-pulse"
-                                            : isActive
-                                            ? "text-slate-900 bg-[#d7742d] hover:bg-[#007700] hover:text-white rounded-md text-[17px] px-5 py-2 mr-2 font-medium  hover:translate-y-1 ease-out duration-300 text-center w-full"
-                                            : " text-white hover:bg-[#007700] hover:text-slate-950 rounded-md text-[17px] px-5 py-2 mr-2 font-medium hover:translate-y-1 ease-out duration-300 text-center w-full"
-                                    }
-                                >
-                                    {item.name}
-                                </NavLink>
-                            ))}
-                        </div>
+        <nav className="md:relative bg-black top-0 inset-x-0 space-x-0 w-full py-1 transition-all ease-out duration-300">
+            <div className="flex justify-between md:justify-center items-center w-full mx-auto px-1 transition-all ease-out duration-300">
+                <Link
+                    to={"/"}
+                    className="min-w-[40px] md:min-w-[60px] mx-1  hover:scale-110 md:hover:scale-125 ease-out duration-200"
+                >
+                    <img
+                        className="h-full w-[40px] md:w-[60px] mr-0 md:mr-5"
+                        src={logo}
+                        alt="Your Company"
+                    />
+                </Link>
+                <div className="hidden md:block w-full md:max-w-[1000px]">
+                    <div className="flex md:gap-2 justify-center items-center mx-auto tracking-wide antialiased ">
+                        {navlinks.map((item) => (
+                            <NavLink
+                                key={item.name}
+                                to={item.to}
+                                end={item.to === "/" ? true : false}
+                                onClick={scrollTo}
+                                className={({ isActive, isPending }) =>
+                                    isPending
+                                        ? "transition animate-pulse"
+                                        : isActive
+                                        ? "text-slate-900 bg-[#d7742d] hover:bg-[#007700] hover:text-white rounded-md px-5 py-2 mr-2 text-[18px] font-[600] hover:translate-y-1 ease-out duration-300 text-center w-full"
+                                        : " text-white hover:bg-[#007700] hover:text-slate-950 rounded-md px-5 py-2 mr-2 text-[18px] font-[600]  hover:translate-y-1 ease-out duration-300 text-center w-full"
+                                }
+                            >
+                                {item.name}
+                            </NavLink>
+                        ))}
                     </div>
                 </div>
-                <div className="absolute inset-y-0 right-0 md:hidden">
+                <div className="md:hidden">
                     {/* Mobile menu button*/}
                     <button
                         onClick={handleOpen}
@@ -92,17 +86,10 @@ export default function Navbar() {
                     </button>
                 </div>
             </div>
-            <Transition
-                show={open}
-                as={"div"}
-                enter="transition duration-[300ms] ease-out origin-top"
-                enterFrom="scale-y-0 opacity-50"
-                enterTo="scale-y-100"
-                leave="transition duration-[300ms] ease-in origin-top"
-                leaveFrom="scale-y-100"
-                leaveTo="scale-y-0 opacity-50"
+            <div
                 className={cx(
-                    "absolute top-[45px] inset-x-0 space-y-1 bg-[#000] flex flex-col md:hidden z-[35]  text-center tracking-wide antialiased"
+                    "absolute top-[45px] inset-x-0 space-y-2 pb-2 bg-[#000] flex flex-col md:hidden z-[35] text-center tracking-wide antialiased transition-all transform ease-out duration-300 origin-top ",
+                    open ? "scale-y-100" : "scale-y-0"
                 )}
             >
                 {navlinks.map((item) => (
@@ -115,14 +102,14 @@ export default function Navbar() {
                             isPending
                                 ? "transition animate-pulse"
                                 : isActive
-                                ? "text-slate-900 bg-[#d7742d] hover:bg-[#007700] hover:text-white rounded-lg px-3 py-2 text-[16px] font-bold hover:translate-y-1 ease-out duration-200"
-                                : " text-gray-300 hover:bg-[#007700] hover:text-black rounded-lg px-3 py-2 text-[16px] font-medium  hover:translate-y-1 ease-out duration-200"
+                                ? "text-slate-900 bg-[#d7742d] hover:bg-[#007700] hover:text-white rounded-lg px-3 py-2 text-base font-bold hover:translate-y-1 ease-out duration-200"
+                                : " text-gray-300 hover:bg-[#007700] hover:text-black rounded-lg px-3 py-2 text-base font-[600]  hover:translate-y-1 ease-out duration-200"
                         }
                     >
                         {item.name}
                     </NavLink>
                 ))}
-            </Transition>
+            </div>
         </nav>
     );
 }

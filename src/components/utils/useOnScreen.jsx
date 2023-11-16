@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useOnScreen = (ref, rootMargin, threshold) => {
+export const UseOnScreen = (ref, rootMargin, threshold) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -26,4 +26,4 @@ const useOnScreen = (ref, rootMargin, threshold) => {
     return isVisible;
 };
 
-export default useOnScreen;
+export default UseOnScreen;

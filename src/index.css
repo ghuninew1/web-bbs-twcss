@@ -2,10 +2,6 @@
     font-family: "font1";
     src: url("/font/file_nb.woff") format("woff");
 }
-@font-face {
-    font-family: "font2";
-    src: url("/font/file_B.woff") format("woff");
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

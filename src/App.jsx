@@ -21,14 +21,20 @@ const App = () => {
         { path: "/annoucement", element: <Annoucement /> },
         { path: "/contact", element: <Contact /> },
     ];
-    const router = createBrowserRouter([
+    const routes = [
         {
             path: "/",
             element: <Layout />,
             errorElement: <Fallback />,
             children: [...pages],
         },
-    ]);
+    ];
+    const router = createBrowserRouter(routes, {
+        future: {
+            v7_normalizeFormMethod: true,
+            v7_fetcherPersist: true,
+        },
+    });
 
     return <RouterProvider router={router} />;
 };

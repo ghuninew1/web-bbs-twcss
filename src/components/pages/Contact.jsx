@@ -6,7 +6,7 @@ import whatapp from "../../assets/footer/whatapp.avif";
 import vimeo from "../../assets/footer/vimeo.avif";
 import linkedin from "../../assets/footer/linkedin.avif";
 import { useRef, useState } from "react";
-import { Transition } from "@headlessui/react";
+import { cx } from "../utils";
 
 const Contact = () => {
     const nameRef = useRef(null);
@@ -86,7 +86,7 @@ const Contact = () => {
     const ShowMessage = () => {
         return (
             <>
-                <div className="w-auto h-auto bg-white bg-opacity-80 rounded-md flex flex-col justify-center items-center mx-auto gap-2 py-10 px-5">
+                <div className="w-auto h-auto bg-white rounded-md flex flex-col justify-center items-center mx-auto gap-2 py-10 px-5">
                     <div className="text-2xl font-bold text-center">
                         {messageRef.current.value}
                     </div>
@@ -104,20 +104,17 @@ const Contact = () => {
     return (
         <div className="relative w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-2 mx-auto px-2 md:px-5 items-center mb-10">
             <Title title="Contact" />
-            <Transition
-                show={show}
-                as={"div"}
-                enter="transform transition duration-[400ms]  ease-in-out"
-                enterFrom="opacity-0  scale-0"
-                enterTo="opacity-100  scale-100"
-                leave="transform duration-[400ms] transition ease-in-out"
-                leaveFrom="opacity-100 scale-100 "
-                leaveTo="opacity-0 scale-0"
-                className="fixed top-0 left-0 w-full min-h-screen bg-black bg-opacity-70 flex justify-center items-center"
-                onClick={handleClose}
-            >
-                <ShowMessage />
-            </Transition>
+            {show && (
+                <div
+                    className={cx(
+                        "fixed top-0 left-0 w-full min-h-screen flex justify-center items-center",
+                        show ? "animate-zoom" : "animate-zoomOut"
+                    )}
+                    onClick={handleClose}
+                >
+                    <ShowMessage />
+                </div>
+            )}
 
             <div className="pt-10 md:pt-5 shadow-lg rounded-md p-3 border-[#dcbcbc36] md:border-2 h-full flex flex-col items-center justify-center animate-fadeInLeft">
                 <div className="text-3xl md:text-4xl font-medium text-center text-white mb-5">
@@ -134,14 +131,14 @@ const Contact = () => {
                             type="text"
                             name="name"
                             placeholder="Name"
-                            className="border-lime-700 border-2 rounded-md  h-10 p-2 w-full md:w-1/2 "
+                            className="border-lime-700 border-2 rounded-md h-10 p-2 w-full md:w-1/2 "
                             ref={nameRef}
                         />
                         <input
                             type="email"
                             name="email"
                             placeholder="Email"
-                            className="border-lime-700 border-2 rounded-md  h-10 p-2 w-full md:w-1/2"
+                            className="border-lime-700 border-2 rounded-md h-10 p-2 w-full md:w-1/2"
                             ref={emailRef}
                         />
                     </div>
@@ -149,7 +146,7 @@ const Contact = () => {
                         type="text"
                         name="subject"
                         placeholder="Subject"
-                        className="border-lime-700 border-2 rounded-md  h-10 p-2 w-full"
+                        className="border-lime-700 border-2 rounded-md h-10 p-2 w-full"
                         ref={subjectRef}
                     />
                     <textarea
@@ -158,7 +155,7 @@ const Contact = () => {
                         cols={20}
                         rows={5}
                         placeholder="Message"
-                        className="border-lime-700 border-2 rounded-md  h-20 p-2 w-full"
+                        className="border-lime-700 border-2 rounded-md h-20 p-2 w-full"
                         ref={messageRef}
                     ></textarea>
                     <button
@@ -170,14 +167,14 @@ const Contact = () => {
                 </form>
             </div>
             <div className="flex flex-col justify-center items-center gap-2 ml-0 md:ml-1 rounded-md p-3 border-[#dcbcbc36] md:border-2 animate-fadeInRight">
-                <div className="text-base text-center md:text-right text-white w-full tracking-wide animate-fade">
+                <div className="text-base text-center md:text-right text-white w-full tracking-wide animate-fade antialiased">
                     <h3 className="tracking-wider text-[18px] font-medium mb-2">
                         BIG BRAIN STUDIO CO.,LTD.
                     </h3>
                     <p>151 Sukhumvit 101/1, Bangchak,</p>
                     <p>Phrakhanong, Bangkok 10260, Thailand</p>
                 </div>
-                <div className="flex flex-row  justify-center items-center mx-auto my-2 md:my-1 ">
+                <div className="flex flex-row justify-center items-center mx-auto my-2 md:my-1">
                     <div className="mb-0 md:mb-2 animate-fade">
                         {links.map((link, index) => (
                             <a
@@ -196,16 +193,14 @@ const Contact = () => {
                         ))}
                     </div>
                 </div>
-                <div className="aspect-video w-full animate-fade">
+                <div className="aspect-video w-full animate-zoom">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.556153671707!2d100.61402207619273!3d13.684731498840582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a16b35ceceb5%3A0xe527940423e3cdf1!2sBig%20Brain%20Studio%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1686721116416!5m2!1sth!2sth"
                         width="100%"
                         height="100%"
                         title="Googld Map"
-                        tabIndex="0"
                         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture;"
-                        allowFullScreen=""
-                        loading="lazy"
+                        allowFullScreen
                     />
                 </div>
             </div>

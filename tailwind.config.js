@@ -5,7 +5,6 @@ export default {
         extend: {
             fontFamily: {
                 font1: ["font1"],
-                font2: ["font2"],
             },
             keyframes: {
                 arrow: {
@@ -36,6 +35,13 @@ export default {
                     from: { opacity: 0, transform: "translateX(50%)" },
                     to: { opacity: 100, transform: "translateX(0)" },
                 },
+                zoom: {
+                    from: {
+                        opacity: 0,
+                        transform: "scale(0) ",
+                    },
+                    to: { opacity: 100, transform: "scale(1)" },
+                },
                 zoomIn: {
                     from: {
                         opacity: 0,
@@ -44,7 +50,10 @@ export default {
                     to: { opacity: 100, transform: "scale(1) translateY(0)" },
                 },
                 zoomOut: {
-                    from: { opacity: 100, transform: "scale(1)" },
+                    from: {
+                        opacity: 100,
+                        transform: "scale(1)",
+                    },
                     to: { opacity: 0, transform: "scale(0)" },
                 },
             },
@@ -52,12 +61,15 @@ export default {
                 arrow: "arrow 1s ease-in-out infinite",
                 fade: "fade 1s ease-in-out",
                 fadeOut: "fadeOut 1s ease-out",
+                zoom: "zoom 0.6s ease-in-out",
                 zoomIn: "zoomIn 0.6s ease-in-out",
                 zoomOut: "zoomOut 0.6s ease-out",
                 fadeInDown: "fadeInDown 0.6s ease-in-out",
                 fadeInUp: "fadeInUp 0.6s ease-in-out",
                 fadeInLeft: "fadeInLeft 0.6s ease-in-out",
+                fadeInLeftDelay: "fadeInLeft 0.6s ease-in-out 0.3s",
                 fadeInRight: "fadeInRight 0.6s ease-in-out",
+                fadeInRightDelay: "fadeInRight 0.6s ease-in-out 0.3s",
             },
         },
     },

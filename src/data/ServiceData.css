@@ -1,20 +1,53 @@
 .service-main {
     position: relative;
     min-height: 727px;
+    transform: scale(1);
+    transition: all 0.2s ease;
 }
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 1000px) {
     .service-main {
-        transform: scale(0.52) translateX(0%);
+        transform: scale(0.9);
+        transition: all 0.2s ease;
+    }
+}
+@media screen and (max-width: 900px) {
+    .service-main {
+        transform: scale(0.8);
+        transition: all 0.2s ease;
+    }
+}
+@media screen and (max-width: 800px) {
+    .service-main {
+        transform: scale(0.7);
+        transition: all 0.2s ease;
+    }
+}
+@media screen and (max-width: 700px) {
+    .service-main {
+        transform: scale(0.6);
+        transition: all 0.2s ease;
+    }
+}
+@media screen and (max-width: 600px) {
+    .service-main {
+        transform: scale(0.5);
+        transition: all 0.2s ease;
+    }
+}
+@media screen and (max-width: 500px) {
+    .service-main {
+        transform: scale(0.45);
+        transition: all 0.2s ease;
+    }
+}
+@media screen and (max-width: 400px) {
+    .service-main {
+        transform: scale(0.4);
         transition: all 0.2s ease;
     }
 }
 
-@media screen and (max-width: 900px) {
-    .service-content {
-        transform: scale(0.8) translateX(0%);
-        transition: all 0.2s ease;
-    }
-}
 .service-content {
     background: no-repeat center/100% url("/img/service/bg.avif");
     width: 860px;

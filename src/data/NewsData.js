@@ -356,8 +356,8 @@ export const dataNews = [
     {
         id: 1,
         date: "September 30, 2023",
-        title: "Kre8tif 2023: ",
-        title2: "Latest Project Pitch and Big Brain Studio Showcase at KLCC, Kuala Lumpur",
+        title2: "Kre8tif 2023: ",
+        title: "Latest Project Pitch and Big Brain Studio Showcase at KLCC, Kuala Lumpur",
         src: "/img/news2/08.avif",
         content: `Ker8tif 2023 brought a wave of excitement! We felt incredibly honored to have the opportunity to be a part of elevator pitch session to present our groundbreaking ideas to esteemed judges from leading broadcasters and respected industry experts. The invaluable feedback and insights we received were genuinely enriching. Showcasing our creative journey at our booth was equally delightful. Meeting and connecting with fellow creative minds and exploring potential collaborations was an incredibly positive experience. We are grateful for the memorable time we had in Kuala Lumpur!`,
         to: dataNews08,
@@ -375,8 +375,8 @@ export const dataNews = [
     {
         id: 3,
         date: "June 21, 2023",
-        title: "Glad to Host: ",
-        title2: "Armada TMT Studio, the French Embassy, Warner Bros Discovery, and Yomzeo Studio Pay Us a Friendly Visit!",
+        title2: "Glad to Host: ",
+        title: "Armada TMT Studio, the French Embassy, Warner Bros Discovery, and Yomzeo Studio Pay Us a Friendly Visit!",
         src: "/img/news2/06.avif",
         content: `Our studio was delighted to welcome our esteemed guests. We extend our gratitude to Ms. Onmadee 'Cherry' Purapati from TACGA for arranging the visit, which included Mr. Sidi Benlarbi from Armada TMT/Xilam Studio (VN/FR), as well as Mr. Jérémy Segay and Mr. Julien Lacorne from the French Embassy. We also had the pleasure of hosting Mr. Andre Seungwook Lee from Yomzeo (KR/FR), and last but not least, Ms. Carlene Tan from Warner Bros Discovery (SG). We had an amazing time together, and we're eagerly anticipating future collaborative opportunities. Stay tuned for exciting ventures!`,
         to: dataNews06,
@@ -385,8 +385,8 @@ export const dataNews = [
     {
         id: 4,
         date: "June 18, 2023",
-        title: "Back Onsite: ",
-        title2: "Big Brain Studio at Bangkok International Digital Content Festival 2023",
+        title2: "Back Onsite: ",
+        title: "Big Brain Studio at Bangkok International Digital Content Festival 2023",
         src: "/img/news2/05.avif",
         content: `Big Brain Studio was honored to have been included in the Thailand Pavilion at the esteemed Annecy Animation Festival 2023. It was a delightful experience engaging with talented individuals and studios from across the globe, as we shared and exchanged our creative insights during this exhilarating event. We look forward to reuniting next year!`,
         to: dataNews05,

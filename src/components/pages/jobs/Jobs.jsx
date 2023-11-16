@@ -5,7 +5,6 @@ import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { cx } from "../../utils";
 import Title from "../../Title";
 import JobsData from "./JobsData";
-// import useHover from "../../utils/useHover";
 
 const Jobs = () => {
     const [show, setShow] = useState(0);
@@ -20,19 +19,13 @@ const Jobs = () => {
     };
 
     return (
-        <div className="pt-[30px] md:pt-[0px] min-h-[50vh] px-2">
+        <div className="pt-[30px] md:pt-[0px] min-h-[60vh] px-2 mb-10">
             <Title title="Jobs" />
-            <div
-                className={cx(
-                    "mx-auto flex w-full flex-col justify-center items-center"
-                )}
-            >
+            <div className="mx-auto flex w-full flex-col justify-center items-center">
                 <div
                     className={cx(
                         "h-[120px] md:w-[300px] w-[200px] md:min-h-[200px] mb-10 transition",
-                        show === 0
-                            ? "animate-zoomIn"
-                            : "animate-zoomOut scale-0"
+                        show === 0 ? "animate-zoomIn" : "animate-zoomOut"
                     )}
                 >
                     <img src={jobImg} alt="job" />
@@ -40,7 +33,7 @@ const Jobs = () => {
                 <div
                     className={cx(
                         "flex flex-col justify-center mx-auto items-center z-0 mb-10 gap-2 ",
-                        show === 0 ? "animate-zoomIn" : "animate-zoomOut"
+                        show === 0 ? "animate-fadeInUp" : "animate-zoomOut"
                     )}
                 >
                     {links.map((link, index) => (
@@ -50,7 +43,7 @@ const Jobs = () => {
                             onMouseLeave={() => handleHover(false)}
                             onClick={() => handleShow(index + 1)}
                             className={cx(
-                                "relative transition-all antialiased font-medium hover:font-bold md:text-xl text-white hover:text-orange-500 cursor-pointer",
+                                "relative antialiased font-medium hover:font-bold md:text-xl text-white hover:text-orange-500 cursor-pointer transition-all duration-300 ease-in-out",
                                 haveRing === index + 1
                                     ? "translate-x-2"
                                     : "translate-x-0"
@@ -67,7 +60,16 @@ const Jobs = () => {
                     ))}
                 </div>
             </div>
-            {show > 0 && <JobsData index={show - 1} setShow={setShow} />}
+            <div
+                className={cx(
+                    "transition-all ease-in-out duration-500 fixed top-0 left-0 z-[50] w-full h-full min-h-screen flex justify-center items-center origin-bottom bg-black/50",
+                    show === 0
+                        ? "scale-y-0 opacity-0"
+                        : "scale-y-100 opacity-100"
+                )}
+            >
+                <JobsData index={show} setShow={setShow} />
+            </div>
         </div>
     );
 };

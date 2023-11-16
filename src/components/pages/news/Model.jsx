@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect } from "react";
-// Import Swiper React components
+import { useRef } from "react";
+import { dataNews } from "../../../data/NewsData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PropTypes from "prop-types";
 import { XCircleIcon } from "@heroicons/react/24/outline";
@@ -9,20 +9,31 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { Autoplay, Pagination, Navigation, Keyboard } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-export default function Model({ image, handlClose }) {
+export default function Model({ indexImg = 0, handlClose }) {
+    const dataRef = useRef(dataNews).current;
+
     const progressCircle = useRef(null);
     const progressContent = useRef(null);
     const onAutoplayTimeLeft = (s, time, progress) => {
+        if (dataRef[indexImg - 1]?.to.length <= 1) return;
         progressCircle.current.style.setProperty("--progress", 1 - progress);
         progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     };
 
     return (
-        <>
-            <div className="fixed top-0 right-0 left-0 bottom-0 z-[50] bg-[#000000] overflow-auto">
-                <section className="relative w-full mt-3 px-1 max-w-[1100px] mx-auto block max-h-full animate-fade">
+        (indexImg !== 0 && (
+            <div className="fixed top-0 right-0 left-0 z-[50] min-h-screen w-screen bg-[#000000] overflow-auto">
+                <div className="relative w-full px-1 max-w-[1100px] mx-auto h-auto flex flex-col items-center justify-center mt-3 md:mt-5">
+                    <button className="opacity-60 hover:opacity-100 absolute top-3 right-2 z-[9991] shadow-lg inline-flex rounded-full">
+                        <XCircleIcon
+                            aria-hidden
+                            color="white"
+                            className="hover:scale-110 transition duration-200 ease-in-out hover:text-red-600 text-[#a74747] w-[50px] h-[50px]"
+                            onClick={handlClose}
+                        />
+                    </button>
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}
@@ -30,67 +41,67 @@ export default function Model({ image, handlClose }) {
                             delay: 5000,
                             disableOnInteraction: false,
                         }}
-                        loop={false}
                         pagination={{
                             clickable: true,
                         }}
-                        navigation
-                        modules={[Autoplay, Pagination, Navigation, Keyboard]}
-                        keyboard={true}
+                        navigation={true}
+                        modules={[Autoplay, Pagination, Navigation]}
                         onAutoplayTimeLeft={onAutoplayTimeLeft}
                     >
-                        {image &&
-                            image.to?.map((item, index) => (
-                                <SwiperSlide key={index}>
-                                    <img
-                                        src={item.src}
-                                        alt={item.alt}
-                                        className={
-                                            "md:max-h-[60vh] max-h-[70vh] w-full object-center object-cover"
-                                        }
-                                    />
-                                </SwiperSlide>
-                            ))}
+                        {dataRef[indexImg - 1]?.to.map((item, index) => (
+                            <SwiperSlide key={index}>
+                                <img
+                                    src={item.src}
+                                    alt={item.alt}
+                                    className="md:max-h-[60vh] max-h-[70vh] w-full object-center h-full object-cover"
+                                />
+                            </SwiperSlide>
+                        ))}
 
-                        <div className="autoplay-progress" slot="container-end">
-                            <svg viewBox="0 0 48 48" ref={progressCircle}>
-                                <circle cx="24" cy="24" r="20"></circle>
-                            </svg>
-                            <span ref={progressContent}></span>
-                        </div>
-                    </Swiper>{" "}
-                    <button className="opacity-40 hover:opacity-100 absolute top-0 right-3 z-[9991] shadow-lg inline-flex w-[50px] h-[50px] rounded-full">
-                        <XCircleIcon
-                            aria-hidden
-                            width={50}
-                            color="white"
-                            className="hover:scale-110 transition duration-200 ease-in-out hover:text-red-600 text-[#a74747]"
-                            onClick={handlClose}
-                        />
-                    </button>
-                </section>
-                <div
-                    className="absolute text-white w-full mx-auto tracking-wide pb-5 pt-3 animate-fade px-2 max-w-6xl left-1/2 -translate-x-1/2 "
-                    onClick={handlClose}
-                >
-                    <div className="text-sm md:text-base p-3 text-center">
-                        {image?.title && <p>{image?.title}</p>}
-                        {image?.title2 && <p>{image?.title2}</p>}
-                    </div>
-                    <div className="text-sm md:text-base p-3">
-                        {image?.content && (
-                            <p className="first-letter:ml-5">
-                                {image?.content}
-                            </p>
+                        {dataRef[indexImg - 1]?.to.length > 1 && (
+                            <div
+                                className="autoplay-progress"
+                                slot="container-end"
+                            >
+                                <svg viewBox="0 0 48 48" ref={progressCircle}>
+                                    <circle cx="24" cy="24" r="20"></circle>
+                                </svg>
+                                <span ref={progressContent}></span>
+                            </div>
                         )}
+                    </Swiper>
+                    <div
+                        className="block z-[60] text-white w-full h-[20vh] mx-auto tracking-wide p-2 max-w-6xl my-5 min-h-[20vh]"
+                        onClick={handlClose}
+                    >
+                        <div className="p-3 text-center antialiased">
+                            {dataRef[indexImg - 1]?.title2 && (
+                                <p className="text-[15px] md:text-[17px] font-[600] ">
+                                    {dataRef[indexImg - 1]?.title2}
+                                </p>
+                            )}
+                            {dataRef[indexImg - 1]?.title && (
+                                <p className="text-[14px] md:text-[16px] font-[300]">
+                                    {dataRef[indexImg - 1]?.title}
+                                </p>
+                            )}
+                        </div>
+                        <div className="text-[14px] md:text-[16px] p-3 font-[300] antialiased">
+                            {dataRef[indexImg - 1]?.content && (
+                                <p className="first-letter:ml-5">
+                                    {dataRef[indexImg - 1]?.content}
+                                </p>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
-        </>
+        )) ||
+        null
     );
 }
 
 Model.propTypes = {
-    image: PropTypes.object,
+    indexImg: PropTypes.number,
     handlClose: PropTypes.func,
 };

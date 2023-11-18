@@ -1,0 +1,32 @@
+[
+    {
+        "to": "https://www.facebook.com/BigBrainStudiooo/",
+        "src": "/img/footer/facebook.avif",
+        "name": "Facebook"
+    },
+    {
+        "to": "https://www.youtube.com/channel/UCRzFBsaHEEDe57EyQ48LQHQ",
+        "src": "/img/footer/youtube.avif",
+        "name": "Youtube"
+    },
+    {
+        "to": "https://www.instagram.com/bigbrain_studio/",
+        "src": "/img/footer/instagram.avif",
+        "name": "Instagram"
+    },
+    {
+        "to": "tel:+66945395991",
+        "src": "/img/footer/whatapp.avif",
+        "name": "Whatapp"
+    },
+    {
+        "to": "https://vimeo.com/user140518698",
+        "src": "/img/footer/vimeo.avif",
+        "name": "Vimeo"
+    },
+    {
+        "to": "http://www.linkedin.com/in/bigbrain-studio",
+        "src": "/img/footer/linkedin.avif",
+        "name": "Linkedin"
+    }
+]

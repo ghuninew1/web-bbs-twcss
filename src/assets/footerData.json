@@ -1,0 +1,55 @@
+[
+    {
+        "title": "left",
+        "links": [
+            "151 Sukhumvit 101/1, Bangchak,",
+            "Phrakhanong, Bangkok 10260, Thailand",
+            "Copyright ©Big Brain Studio"
+        ]
+    },
+    {
+        "title": "center",
+        "links": [
+            {
+                "to": "https://www.facebook.com/BigBrainStudiooo/",
+                "src": "/img/footer/facebook.avif",
+                "name": "Facebook"
+            },
+            {
+                "to": "https://www.youtube.com/channel/UCRzFBsaHEEDe57EyQ48LQHQ",
+                "src": "/img/footer/youtube.avif",
+                "name": "Youtube"
+            },
+            {
+                "to": "https://www.instagram.com/bigbrain_studio/",
+                "src": "/img/footer/instagram.avif",
+                "name": "Instagram"
+            }
+        ],
+        "links2": [
+            {
+                "to": "tel:+66945395991",
+                "src": "/img/footer/whatapp.avif",
+                "name": "Whatapp"
+            },
+            {
+                "to": "https://vimeo.com/user140518698",
+                "src": "/img/footer/vimeo.avif",
+                "name": "Vimeo"
+            },
+            {
+                "to": "http://www.linkedin.com/in/bigbrain-studio",
+                "src": "/img/footer/linkedin.avif",
+                "name": "Linkedin"
+            }
+        ]
+    },
+    {
+        "title": "right",
+        "links": [
+            "Email: contact@bigbrain-studio.com",
+            "Fax: +662 118 3624  Tel: +662 118 3920",
+            "Cell: +669 4539 5991"
+        ]
+    }
+]

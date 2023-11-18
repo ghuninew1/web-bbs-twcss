@@ -1,13 +1,13 @@
-import HomePartner from "../../data/HomePartner.json";
-import { cx } from "../utils";
+import HomePartner from "./HomePartner.json";
+import { cx } from "../../utils";
 
 const Partner = () => {
     return (
-        <div className="w-full py-5 animate-fadeInUp">
+        <div className="w-full py-5 ">
             <h1 className="text-center text-black font-sans font-normal text-[20px] md:text-[25px]">
                 Thank You Our Clients & Partners
             </h1>
-            <div className="flex relative flex-col justify-center items-center mx-auto px-2">
+            <div className="flex relative flex-col justify-center items-center mx-auto px-2 animate-fade">
                 <div className="flex flex-row items-center gap-2">
                     {HomePartner.filter((id) => id.id <= 7).map((data, idx) => (
                         <span
@@ -24,6 +24,7 @@ const Partner = () => {
                             <img
                                 src={data.url}
                                 alt={data.alt}
+                                loading="lazy"
                                 className="w-full"
                             />
                         </span>
@@ -48,6 +49,7 @@ const Partner = () => {
                                 <img
                                     src={data.url}
                                     alt={data.alt}
+                                    loading="lazy"
                                     className="w-full"
                                 />
                             </span>
@@ -73,6 +75,7 @@ const Partner = () => {
                                     <img
                                         src={data.url}
                                         alt={data.alt}
+                                        loading="lazy"
                                         className="w-full"
                                     />
                                 </span>
@@ -96,6 +99,7 @@ const Partner = () => {
                                     <img
                                         src={data.url}
                                         alt={data.alt}
+                                        loading="lazy"
                                         className="w-full"
                                     />
                                 </span>
@@ -106,6 +110,7 @@ const Partner = () => {
                         <img
                             src={HomePartner[24]?.url}
                             alt={HomePartner[24]?.alt}
+                            loading="lazy"
                             className="w-full md:max-w-[80px] max-w-[90px]"
                         />
                     </span>

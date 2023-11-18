@@ -1,14 +1,14 @@
-import Title from "../Title";
+import Title from "../../Title";
 import HomePartner from "./HomePartner";
 
 const Home = () => {
     return (
-        <div className="w-full pt-[30px] md:pt-[0px] flex flex-col mx-auto items-center justify-center min-h-[50vh]">
+        <div className="flex flex-col mx-auto items-center justify-center min-h-[50vh] animate-fade">
             <Title title="Home" />
             <h1 className="text-center font-sans font-medium text-3xl md:text-4xl mb-5 text-white tracking-wide animate-fadeInUp">
                 Showreel
             </h1>
-            <div className="w-full aspect-video mx-auto md:rounded-md max-w-[1100px] mb-20 animate-zoom">
+            <div className="w-full aspect-video mx-auto md:rounded-md max-w-[1100px] mb-20 animate-fade">
                 <iframe
                     width="100%"
                     height="100%"
@@ -16,9 +16,10 @@ const Home = () => {
                     title="Showreel"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                ></iframe>
+                    loading="lazy"
+                />
             </div>
-            <div className=" bg-white w-full animate-fade">
+            <div className=" bg-white w-full">
                 <HomePartner />
             </div>
         </div>

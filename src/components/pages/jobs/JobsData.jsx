@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel } from "swiper/modules";
-import { jobsList } from "../../../data/JobData";
+import jobsList from "./JobData.json";
 import { cx } from "../../utils";
 import PropTypes from "prop-types";
 import { XCircleIcon } from "@heroicons/react/24/outline";
@@ -13,7 +13,6 @@ const JobsData = ({ index, setShow }) => {
     const pagination = {
         clickable: true,
         renderBullet: (idx, className) => {
-            console.log(idx, index);
             return `<span class="job-swiper ${className}">
                 <img src='/img/jobs/icon_jobs_${
                     idx + 1
@@ -23,8 +22,8 @@ const JobsData = ({ index, setShow }) => {
 
     return (
         index !== 0 && (
-            <div className="fixed w-full min-h-screen top-0 inset-0 z-50 bg-black text-white">
-                <div className="absolute top-0 left-0 right-0 h-1/2 min-h-screen bg-gradient-to-b from-black to-transparent ">
+            <div className="fixed w-full min-h-screen top-0 inset-0 z-50 px-3 bg-black text-white">
+                <div className="absolute top-0 left-0 right-0 h-1/2 min-h-screen animate-fade">
                     <Swiper
                         direction={"vertical"}
                         slidesPerView={1}

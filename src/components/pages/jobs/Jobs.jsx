@@ -1,6 +1,6 @@
 import { useState } from "react";
 import jobImg from "../../../assets/we_need_you.avif";
-import { links } from "../../../data/JobData";
+import jobData from "./JobData.json";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { cx } from "../../utils";
 import Title from "../../Title";
@@ -19,16 +19,16 @@ const Jobs = () => {
     };
 
     return (
-        <div className="pt-[30px] md:pt-[0px] min-h-[60vh] px-2 mb-10">
+        <div className=" min-h-[60vh] px-2 mb-10">
             <Title title="Jobs" />
             <div className="mx-auto flex w-full flex-col justify-center items-center">
                 <div
                     className={cx(
                         "h-[120px] md:w-[300px] w-[200px] md:min-h-[200px] mb-10 transition",
-                        show === 0 ? "animate-zoomIn" : "animate-zoomOut"
+                        show === 0 ? "animate-fadeInDown" : "animate-zoomOut"
                     )}
                 >
-                    <img src={jobImg} alt="job" />
+                    <img src={jobImg} alt="job" width={300} height={200} />
                 </div>
                 <div
                     className={cx(
@@ -36,7 +36,7 @@ const Jobs = () => {
                         show === 0 ? "animate-fadeInUp" : "animate-zoomOut"
                     )}
                 >
-                    {links.map((link, index) => (
+                    {jobData.map((link, index) => (
                         <button
                             key={index}
                             onMouseEnter={() => handleHover(index + 1)}
@@ -62,10 +62,8 @@ const Jobs = () => {
             </div>
             <div
                 className={cx(
-                    "transition-all ease-in-out duration-500 fixed top-0 left-0 z-[50] w-full h-full min-h-screen flex justify-center items-center origin-bottom bg-black/50",
-                    show === 0
-                        ? "scale-y-0 opacity-0"
-                        : "scale-y-100 opacity-100"
+                    "transition-all ease-in-out duration-500 fixed top-0 left-0 z-[50] w-full h-full min-h-screen flex justify-center items-center  bg-black/50",
+                    show === 0 ? "scale-0 opacity-0" : "scale-100 opacity-100"
                 )}
             >
                 <JobsData index={show} setShow={setShow} />

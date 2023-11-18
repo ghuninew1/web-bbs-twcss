@@ -1,12 +1,7 @@
-import Title from "../Title";
-import facebook from "../../assets/footer/facebook.avif";
-import youtube from "../../assets/footer/youtube.avif";
-import instagram from "../../assets/footer/instagram.avif";
-import whatapp from "../../assets/footer/whatapp.avif";
-import vimeo from "../../assets/footer/vimeo.avif";
-import linkedin from "../../assets/footer/linkedin.avif";
+import Title from "../../Title";
 import { useRef, useState } from "react";
-import { cx } from "../utils";
+import { cx } from "../../utils";
+import contactData from "./contactData.json";
 
 const Contact = () => {
     const nameRef = useRef(null);
@@ -14,39 +9,6 @@ const Contact = () => {
     const subjectRef = useRef(null);
     const messageRef = useRef(null);
     const [show, setShow] = useState(false);
-
-    const links = [
-        {
-            to: "https://www.facebook.com/BigBrainStudiooo/",
-            src: facebook,
-            name: "Facebook",
-        },
-        {
-            to: "https://www.youtube.com/channel/UCRzFBsaHEEDe57EyQ48LQHQ",
-            src: youtube,
-            name: "Youtube",
-        },
-        {
-            to: "https://www.instagram.com/bigbrain_studio/",
-            src: instagram,
-            name: "Instagram",
-        },
-        {
-            to: "tel:+66945395991",
-            src: whatapp,
-            name: "Whatapp",
-        },
-        {
-            to: "https://vimeo.com/user140518698",
-            src: vimeo,
-            name: "Vimeo",
-        },
-        {
-            to: "http://www.linkedin.com/in/bigbrain-studio",
-            src: linkedin,
-            name: "Linkedin",
-        },
-    ];
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -86,7 +48,7 @@ const Contact = () => {
     const ShowMessage = () => {
         return (
             <>
-                <div className="w-auto h-auto bg-white rounded-md flex flex-col justify-center items-center mx-auto gap-2 py-10 px-5">
+                <div className="bg-white rounded-md flex flex-col justify-center items-center mx-auto gap-2 py-10 px-5">
                     <div className="text-2xl font-bold text-center">
                         {messageRef.current.value}
                     </div>
@@ -104,17 +66,16 @@ const Contact = () => {
     return (
         <div className="relative w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-2 mx-auto px-2 md:px-5 items-center mb-10">
             <Title title="Contact" />
-            {show && (
-                <div
-                    className={cx(
-                        "fixed top-0 left-0 w-full min-h-screen flex justify-center items-center",
-                        show ? "animate-zoom" : "animate-zoomOut"
-                    )}
-                    onClick={handleClose}
-                >
-                    <ShowMessage />
-                </div>
-            )}
+
+            <div
+                className={cx(
+                    "fixed top-0 left-0 w-full min-h-screen flex justify-center items-center transition-all duration-500 ease-in-out bg-black/80",
+                    show ? "scale-100" : "scale-0 opacity-0"
+                )}
+                onClick={handleClose}
+            >
+                {show && <ShowMessage />}
+            </div>
 
             <div className="pt-10 md:pt-5 shadow-lg rounded-md p-3 border-[#dcbcbc36] md:border-2 h-full flex flex-col items-center justify-center animate-fadeInLeft">
                 <div className="text-3xl md:text-4xl font-medium text-center text-white mb-5">
@@ -122,7 +83,7 @@ const Contact = () => {
                 </div>
 
                 <form
-                    className=" w-full px-3 flex flex-col gap-2 mt-3 "
+                    className=" w-full px-3 flex flex-col gap-2 mt-3 animate-fade"
                     onSubmit={handleSubmit}
                 >
                     {" "}
@@ -176,7 +137,7 @@ const Contact = () => {
                 </div>
                 <div className="flex flex-row justify-center items-center mx-auto my-2 md:my-1">
                     <div className="mb-0 md:mb-2 animate-fade">
-                        {links.map((link, index) => (
+                        {contactData.map((link, index) => (
                             <a
                                 href={link.to}
                                 key={index}
@@ -187,13 +148,16 @@ const Contact = () => {
                                     key={index}
                                     src={link.src}
                                     alt={link.name}
+                                    width={40}
+                                    height={40}
+                                    loading="lazy"
                                     className="w-[38px] md:w-[40px] inline-block mx-2 hover:scale-125 ease-out duration-200 cursor-pointer"
                                 />
                             </a>
                         ))}
                     </div>
                 </div>
-                <div className="aspect-video w-full animate-zoom">
+                <div className="aspect-video w-full animate-fade">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.556153671707!2d100.61402207619273!3d13.684731498840582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a16b35ceceb5%3A0xe527940423e3cdf1!2sBig%20Brain%20Studio%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1686721116416!5m2!1sth!2sth"
                         width="100%"
@@ -201,6 +165,7 @@ const Contact = () => {
                         title="Googld Map"
                         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture;"
                         allowFullScreen
+                        loading="lazy"
                     />
                 </div>
             </div>

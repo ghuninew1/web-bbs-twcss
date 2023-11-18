@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { dataNews } from "../../../data/NewsData";
+import { dataNews } from "./NewsData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PropTypes from "prop-types";
 import { XCircleIcon } from "@heroicons/react/24/outline";
@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { cx } from "../../utils";
 
 export default function Model({ indexImg = 0, handlClose }) {
     const dataRef = useRef(dataNews).current;
@@ -24,8 +25,8 @@ export default function Model({ indexImg = 0, handlClose }) {
 
     return (
         (indexImg !== 0 && (
-            <div className="fixed top-0 right-0 left-0 z-[50] min-h-screen w-screen bg-[#000000] overflow-auto">
-                <div className="relative w-full px-1 max-w-[1100px] mx-auto h-auto flex flex-col items-center justify-center mt-3 md:mt-5">
+            <div className="fixed top-0 inset-x-0 z-[50] min-h-screen w-screen h-full bg-black overflow-y-scroll">
+                <div className="relative w-full md:max-w-[1100px] min-h-[90vh] mx-auto flex flex-col items-center justify-center my-3 md:my-5 ">
                     <button className="opacity-60 hover:opacity-100 absolute top-3 right-2 z-[9991] shadow-lg inline-flex rounded-full">
                         <XCircleIcon
                             aria-hidden
@@ -47,14 +48,18 @@ export default function Model({ indexImg = 0, handlClose }) {
                         navigation={true}
                         modules={[Autoplay, Pagination, Navigation]}
                         onAutoplayTimeLeft={onAutoplayTimeLeft}
+                        className="animate-fadeInLeft"
                     >
                         {dataRef[indexImg - 1]?.to.map((item, index) => (
                             <SwiperSlide key={index}>
-                                <img
-                                    src={item.src}
-                                    alt={item.alt}
-                                    className="md:max-h-[60vh] max-h-[70vh] w-full object-center h-full object-cover"
-                                />
+                                <div className="md:w-full">
+                                    <img
+                                        src={item.src}
+                                        alt={item.alt}
+                                        loading="lazy"
+                                        className="md:max-h-[70vh] md:min-h-[650px] min-h-full max-h-[60vh] w-full object-center h-full object-cover"
+                                    />
+                                </div>
                             </SwiperSlide>
                         ))}
 
@@ -71,10 +76,10 @@ export default function Model({ indexImg = 0, handlClose }) {
                         )}
                     </Swiper>
                     <div
-                        className="block z-[60] text-white w-full h-[20vh] mx-auto tracking-wide p-2 max-w-6xl my-5 min-h-[20vh]"
+                        className="block z-[60] h-full text-white w-full mx-auto tracking-wide max-w-6xl my-3 min-h-[20vh] animate-fadeInRight"
                         onClick={handlClose}
                     >
-                        <div className="p-3 text-center antialiased">
+                        <div className="p-2 text-center antialiased">
                             {dataRef[indexImg - 1]?.title2 && (
                                 <p className="text-[15px] md:text-[17px] font-[600] ">
                                     {dataRef[indexImg - 1]?.title2}
@@ -86,7 +91,7 @@ export default function Model({ indexImg = 0, handlClose }) {
                                 </p>
                             )}
                         </div>
-                        <div className="text-[14px] md:text-[16px] p-3 font-[300] antialiased">
+                        <div className="text-[14px] md:text-[16px] px-3 font-[300] antialiased">
                             {dataRef[indexImg - 1]?.content && (
                                 <p className="first-letter:ml-5">
                                     {dataRef[indexImg - 1]?.content}

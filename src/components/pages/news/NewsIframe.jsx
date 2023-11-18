@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const NewsIframe = ({ src, handlClose }) => {
     return (
         <div
-            className="fixed w-full min-h-screen bg-black top-0 left-0 z-50 animate-zoom"
+            className="fixed w-full min-h-screen bg-black top-0 left-0 z-50 animate-fade"
             onClick={handlClose}
         >
             <section className="relative w-full h-full mt-1 md:mt-10 px-2">
@@ -15,6 +15,7 @@ const NewsIframe = ({ src, handlClose }) => {
                                 src={src}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                                 allowFullScreen
+                                loading="lazy"
                                 onClick={(e) =>
                                     window.open(e.target.src, "_blank")
                                 }

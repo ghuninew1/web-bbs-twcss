@@ -20,25 +20,29 @@ const Studio = () => {
                 <div
                     className={cx(
                         "transition-all duration-500 ease-in-out transform origin-center absolute top-0 inset-0 ",
-                        titles ? "scale-0" : "animate-zoomIn scale-100"
+                        titles ? "scale-0" : "animate-zoom scale-100"
                     )}
                 >
                     {/* {!titles && ( */}
-                    <h1 className="text-orange-500 text-[40px] md:text-[50px] font-bold font-font1 tracking-wide flex justify-center items-center min-h-[20vh] w-full">
-                        <span className="text-[25px] md:text-[35px]">WE </span>{" "}
+                    <h1 className="text-orange-500 text-[40px] md:text-[50px] font-[600] font-font1 tracking-wide flex justify-center items-center min-h-[20vh] w-full">
+                        <span className="text-[23px] md:text-[28px] mx-3 md:mx-4">
+                            WE{" "}
+                        </span>{" "}
                         CHANGED{" "}
-                        <span className="text-[25px] md:text-[35px]">THE </span>
+                        <span className="text-[23px] md:text-[28px] mx-3 md:mx-4">
+                            THE{" "}
+                        </span>
                         NAME!!
                     </h1>
                     {/* )} */}
                 </div>
 
                 {titles && (
-                    <div className="px-4 mx-auto max-w-[1100px]">
+                    <div className="px-2 mx-auto max-w-[1100px]">
                         <div className="flex flex-col md:flex-row md:justify-between items-center mx-auto">
                             <div className="flex-1 animate-fadeInLeft">
                                 <div className="text-sm md:text-base px-3 tracking-wide">
-                                    <h2 className="text-green-600 text-2xl font-bold">
+                                    <h2 className="text-green-600 text-xl md:text-2xl font-bold">
                                         Our Story :
                                     </h2>
                                     <p className="text-slate-300 font-sans mt-2 first-letter:pl-5 antialiased">
@@ -69,7 +73,7 @@ const Studio = () => {
                                         design to meet quality demand and
                                         industry directions.
                                     </p>
-                                    <h2 className="text-green-600 mt-5  text-2xl font-bold">
+                                    <h2 className="text-green-600 mt-5 text-xl md:text-2xl font-bold">
                                         Our Team :
                                     </h2>
                                     <p className="text-slate-300 mt-2 first-letter:pl-5 antialiased">
@@ -86,7 +90,10 @@ const Studio = () => {
                                     <img
                                         src={ptum}
                                         alt="ptum"
-                                        className="rounded-md"
+                                        loading="lazy"
+                                        width={304}
+                                        height={367}
+                                        className="rounded-md w-full h-full"
                                     />
                                 </div>
                             )}

@@ -6,4 +6,6 @@ export const Studio = lazy(() => import("./Studio"));
 export const Annoucement = lazy(() => import("./Annoucement"));
 export const Service = lazy(() => import("./service/Service"));
 export const Jobs = lazy(() => import("./jobs/Jobs"));
-export const News = lazy(() => import("./news/News"));
+export const News = lazy(() =>
+    import("./news/News").then((module) => ({ default: module.News }))
+);

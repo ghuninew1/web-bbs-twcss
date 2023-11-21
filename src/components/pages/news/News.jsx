@@ -1,11 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, useRef, lazy, Suspense, memo } from "react";
 import { dataNews } from "./NewsData";
 import { cx } from "../../utils";
 import Totop from "../../Totop";
 import Title from "../../Title";
 import Observer from "../../utils/Observer";
-import NewsIframe from "./NewsIframe";
-import Model from "./Model";
+import Fallback from "../../Fallback";
+
+const NewsIframe = lazy(() => import("./NewsIframe"));
+const Model = lazy(() => import("./Model"));
 
 const News = () => {
     const [image, setImage] = useState(0);
@@ -38,7 +40,9 @@ const News = () => {
                     image !== 0 ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 )}
             >
-                <Model indexImg={image} handlClose={handlClose} />
+                <Suspense fallback={<Fallback />}>
+                    <Model indexImg={image} handlClose={handlClose} />
+                </Suspense>
             </div>
 
             <div
@@ -48,7 +52,9 @@ const News = () => {
                 )}
             >
                 {showIframe && (
-                    <NewsIframe src={showIframe} handlClose={handlClose} />
+                    <Suspense fallback={<Fallback />}>
+                        <NewsIframe src={showIframe} handlClose={handlClose} />
+                    </Suspense>
                 )}
             </div>
             {dataRef &&
@@ -125,4 +131,6 @@ const News = () => {
     );
 };
 
-export default News;
+const memoNews = memo(News);
+
+export { memoNews as News };

@@ -1,7 +1,8 @@
 import Title from "../../Title";
-import { useRef, useState } from "react";
-import { cx } from "../../utils";
+import { useRef, useState, memo } from "react";
+// import { cx } from "../../utils";
 import contactData from "./contactData.json";
+import Portal from "../../utils/Portal";
 
 const Contact = () => {
     const nameRef = useRef(null);
@@ -47,19 +48,17 @@ const Contact = () => {
 
     const ShowMessage = () => {
         return (
-            <>
-                <div className="bg-white rounded-md flex flex-col justify-center items-center mx-auto gap-2 py-10 px-5">
-                    <div className="text-2xl font-bold text-center">
-                        {messageRef.current.value}
-                    </div>
-                    <button
-                        className="bg-lime-700 text-white rounded-md p-2 hover:bg-lime-900 transition-all"
-                        onClick={handleClose}
-                    >
-                        Close
-                    </button>
+            <div className="bg-white rounded-md flex flex-col justify-center items-center mx-auto gap-2 py-10 px-5">
+                <div className="text-2xl font-bold text-center">
+                    {messageRef.current.value}
                 </div>
-            </>
+                <button
+                    className="bg-lime-700 text-white rounded-md p-2 hover:bg-lime-900 transition-all"
+                    onClick={handleClose}
+                >
+                    Close
+                </button>
+            </div>
         );
     };
 
@@ -67,15 +66,9 @@ const Contact = () => {
         <div className="relative w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-2 mx-auto px-2 md:px-5 items-center mb-10">
             <Title title="Contact" />
 
-            <div
-                className={cx(
-                    "fixed top-0 left-0 w-full min-h-screen flex justify-center items-center transition-all duration-500 ease-in-out bg-black/80",
-                    show ? "scale-100" : "scale-0 opacity-0"
-                )}
-                onClick={handleClose}
-            >
-                {show && <ShowMessage />}
-            </div>
+            <Portal isOpen={show} closeModal={handleClose}>
+                <ShowMessage />
+            </Portal>
 
             <div className="pt-10 md:pt-5 shadow-lg rounded-md p-3 border-[#dcbcbc36] md:border-2 h-full flex flex-col items-center justify-center animate-fadeInLeft">
                 <div className="text-3xl md:text-4xl font-medium text-center text-white mb-5">
@@ -86,7 +79,6 @@ const Contact = () => {
                     className=" w-full px-3 flex flex-col gap-2 mt-3 animate-fade"
                     onSubmit={handleSubmit}
                 >
-                    {" "}
                     <div className="flex flex-col md:flex-row gap-2 justify-center items-center">
                         <input
                             type="text"
@@ -175,4 +167,6 @@ const Contact = () => {
 
 Contact.displayName = "Contact";
 
-export default Contact;
+const MemoContact = memo(Contact);
+
+export default MemoContact;

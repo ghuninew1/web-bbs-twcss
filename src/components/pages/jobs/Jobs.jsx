@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import jobImg from "../../../assets/we_need_you.avif";
 import jobData from "./JobData.json";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { cx } from "../../utils";
 import Title from "../../Title";
-import JobsData from "./JobsData";
+import Fallback from "../../Fallback";
+
+const JobsData = lazy(() => import("./JobsData"));
 
 const Jobs = () => {
     const [show, setShow] = useState(0);
@@ -66,7 +68,9 @@ const Jobs = () => {
                     show === 0 ? "scale-0 opacity-0" : "scale-100 opacity-100"
                 )}
             >
-                <JobsData index={show} setShow={setShow} />
+                <Suspense fallback={<Fallback />}>
+                    <JobsData index={show} setShow={setShow} />
+                </Suspense>
             </div>
         </div>
     );

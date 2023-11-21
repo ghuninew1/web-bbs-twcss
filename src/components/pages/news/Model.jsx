@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { dataNews } from "./NewsData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PropTypes from "prop-types";
@@ -10,9 +10,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { cx } from "../../utils";
+// import { cx } from "../../utils";
 
-export default function Model({ indexImg = 0, handlClose }) {
+function Model({ indexImg = 0, handlClose }) {
     const dataRef = useRef(dataNews).current;
 
     const progressCircle = useRef(null);
@@ -110,3 +110,5 @@ Model.propTypes = {
     indexImg: PropTypes.number,
     handlClose: PropTypes.func,
 };
+const ModelMemo = memo(Model);
+export default ModelMemo;

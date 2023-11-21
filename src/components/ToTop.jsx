@@ -1,5 +1,5 @@
 import { cx, scrollTo } from "../components/utils";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import ScrollProsess from "./utils/ScrollProsess";
 
 const ToTop = () => {
@@ -33,4 +33,6 @@ const ToTop = () => {
     );
 };
 
-export default ToTop;
+const MemoToTop = memo(ToTop);
+
+export default MemoToTop;

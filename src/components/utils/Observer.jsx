@@ -1,27 +1,46 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-function Observer(ref) {
+function Observer(ref, rootMargin, threshold) {
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
+        const currentRef = ref?.current;
+        if (!currentRef) return;
+        if (typeof IntersectionObserver === "undefined") {
+            setVisible(true);
+            return;
+        } // Fallback for Safari
+
         if ("IntersectionObserver" in window) {
             let observer = new IntersectionObserver(
                 ([entry]) => {
                     setVisible(entry.isIntersecting);
                 },
                 {
-                    threshold: 0,
-                    rootMargin: "0px 0px 0px 0px",
+                    threshold: threshold || 0,
+                    rootMargin: rootMargin || "0px",
                 }
             );
-            observer.observe(ref.current);
+            if (currentRef) {
+                observer.observe(currentRef);
+            }
             return () => {
                 observer.disconnect();
+                if (currentRef) {
+                    observer.unobserve(currentRef);
+                }
             };
         }
-    }, [ref]);
+    }, [ref, rootMargin, threshold]);
 
     return visible;
 }
+
+Observer.propTypes = {
+    ref: PropTypes.object,
+    rootMargin: PropTypes.string,
+    threshold: PropTypes.number,
+};
 
 export default Observer;

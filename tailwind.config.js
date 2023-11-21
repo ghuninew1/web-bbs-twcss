@@ -64,7 +64,7 @@ export default {
                 arrow: "arrow 1s ease-in-out infinite",
                 fade: "fade 1s ease-in-out",
                 fadeOut: "fadeOut 1s ease-out",
-                zoom: "zoom 0.8s ease-in-out",
+                zoom: "zoom 0.6s ease-in-out",
                 zoomIn: "zoomIn 0.6s ease-in-out",
                 zoomOut: "zoomOut 0.8s ease-out",
                 fadeInDown: "fadeInDown 0.8s ease-in-out",

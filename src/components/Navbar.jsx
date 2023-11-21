@@ -31,8 +31,8 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="md:relative bg-black py-[5px] px-1">
-            <div className="flex justify-between md:justify-center items-center">
+        <nav className="w-full" role="navigation">
+            <div className="flex justify-between md:justify-center items-center py-[5px] px-1">
                 <div className="hidden md:block w-full">
                     <div className="flex items-center justify-center max-w-[1100px] mx-auto gap-1">
                         <Link
@@ -80,6 +80,7 @@ export default function Navbar() {
                 </Link>
                 {/* Mobile menu button*/}
                 <button
+                    aria-label="Open Menu"
                     onClick={handleOpen}
                     className="md:hidden inline-flex items-center justify-center rounded-lg hover:bg-[#00770065] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white animate-fade"
                 >
@@ -94,7 +95,7 @@ export default function Navbar() {
             </div>
             <div
                 className={cx(
-                    "absolute top-[50px] inset-x-0 space-y-1 pb-2 bg-black flex flex-col md:hidden z-[35] text-center tracking-wide antialiased transition-all ease-out duration-300 origin-top border-b border-[#2f2f2f]",
+                    "absolute top-[50px] inset-x-0 space-y-1 pb-2 bg-black flex flex-col md:hidden z-[35] text-center tracking-wide antialiased transition-all ease-out duration-300 origin-top border-b border-[#2f2f2f] py-1",
                     open ? "scale-y-100" : "scale-y-0"
                 )}
             >

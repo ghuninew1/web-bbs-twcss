@@ -1,11 +1,14 @@
-import { useRef } from "react";
-import Observer from "./utils/Observer";
 import { cx } from "./utils";
 import footerData from "../assets/footerData.json";
+import { useIntersectionObserver } from "../hook/useIntersectionObserver";
 
 export default function Footer() {
-    const ref = useRef();
-    const isVisible = Observer(ref);
+    const [ref, entry] = useIntersectionObserver({
+        threshold: 0,
+        root: null,
+        rootMargin: "0px",
+    });
+    const isVisible = entry?.isIntersecting;
 
     return (
         <footer

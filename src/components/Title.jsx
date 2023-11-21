@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 import PropTypes from "prop-types";
 
 const Title = ({ title }) => {
@@ -18,4 +18,5 @@ Title.propTypes = {
     title: PropTypes.string,
 };
 
-export default Title;
+const TitleMemo = memo(Title);
+export default TitleMemo;

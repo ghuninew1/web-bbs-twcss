@@ -1,4 +1,5 @@
-import Layout from "./components/Layout";
+// import { memo } from "react";
+import Layout from "./components/Layout.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
     Home,
@@ -9,7 +10,7 @@ import {
     Jobs,
     News,
 } from "./components/pages";
-import Fallback from "./components/Fallback";
+import Fallback from "./components/Fallback.jsx";
 
 const App = () => {
     const pages = [

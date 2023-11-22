@@ -1,5 +1,4 @@
-// import { memo } from "react";
-import Layout from "./components/Layout.jsx";
+import { Layout, Fallback } from "./components";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
     Home,
@@ -10,7 +9,6 @@ import {
     Jobs,
     News,
 } from "./components/pages";
-import Fallback from "./components/Fallback.jsx";
 
 const App = () => {
     const pages = [
@@ -30,12 +28,7 @@ const App = () => {
             children: [...pages],
         },
     ];
-    const router = createBrowserRouter(routes, {
-        future: {
-            v7_normalizeFormMethod: true,
-            v7_fetcherPersist: true,
-        },
-    });
+    const router = createBrowserRouter(routes);
 
     return <RouterProvider router={router} />;
 };

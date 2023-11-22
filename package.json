@@ -1,8 +1,9 @@
 {
-    "name": "web-bbs",
+    "name": "web-bbs-master",
     "private": true,
-    "version": "2.0.0",
+    "version": "3.0.0",
     "type": "module",
+    "author": "GhuniNew",
     "scripts": {
         "dev": "vite",
         "build": "vite build",

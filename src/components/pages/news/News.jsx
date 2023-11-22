@@ -1,10 +1,8 @@
 import { useState, useRef, lazy, Suspense, memo } from "react";
 import { dataNews } from "./NewsData";
 import { cx } from "../../utils";
-import Totop from "../../Totop";
-import Title from "../../Title";
+import { Title, ToTop, Fallback } from "../../";
 import Observer from "../../utils/Observer";
-import Fallback from "../../Fallback";
 
 const NewsIframe = lazy(() => import("./NewsIframe"));
 const Model = lazy(() => import("./Model"));
@@ -33,7 +31,7 @@ const News = () => {
     return (
         <div className="pt-[30px] md:pt-[0px] px-2 max-w-[1100px] min-h-screen w-full flex flex-col mx-auto items-center justify-center">
             <Title title="News" />
-            {image === 0 && !showIframe && <Totop />}
+            {image === 0 && !showIframe && <ToTop />}
             <div
                 className={cx(
                     "fixed top-0 left-0 right-0 h-full z-50 w-screen bg-black bg-opacity-50 transition-all duration-500 ease-in-out transform",

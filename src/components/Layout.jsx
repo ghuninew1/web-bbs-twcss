@@ -1,9 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import { Navbar, Fallback, Footer, Header } from "./";
 import { Suspense, useEffect, useState, memo } from "react";
-import Fallback from "./Fallback";
-import Hader from "./Hader";
 import Scroll from "./utils/ScrollListener";
 import { cx } from "./utils";
 import { useIntersectionObserver } from "../hook/useIntersectionObserver";
@@ -66,7 +63,7 @@ const Layout = () => {
                             : "translate-y-0 ease-out"
                     )}
                 >
-                    <Hader />
+                    <Header />
                     <Navbar />
                 </header>
 

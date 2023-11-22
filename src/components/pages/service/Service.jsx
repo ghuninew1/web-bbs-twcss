@@ -1,7 +1,7 @@
 import ServiceData from "./ServiceData.json";
 import "./ServiceData.css";
 import { cx } from "../../utils";
-import Title from "../../Title";
+import { Title } from "../../";
 
 const Service = () => {
     return (

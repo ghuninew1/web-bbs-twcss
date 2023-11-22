@@ -1,4 +1,4 @@
-import Title from "../../Title";
+import { Title, Iframe } from "../../";
 import HomePartner from "./HomePartner";
 
 const Home = () => {
@@ -9,14 +9,9 @@ const Home = () => {
                 Showreel
             </h1>
             <div className="w-full aspect-video mx-auto md:rounded-md max-w-[1100px] mb-20 animate-fade">
-                <iframe
-                    width="100%"
-                    height="100%"
+                <Iframe
                     src="https://www.youtube.com/embed/BuuDEn1r8GY"
-                    title="Showreel"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
+                    isOn={true}
                 />
             </div>
             <div className=" bg-white w-full">

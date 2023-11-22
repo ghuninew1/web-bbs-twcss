@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ptum from "../../assets/ptum.avif";
 import { cx } from "../utils";
-import Title from "../Title";
+import { Title } from "../";
 
 const Studio = () => {
     const [titles, setTitles] = useState(false);

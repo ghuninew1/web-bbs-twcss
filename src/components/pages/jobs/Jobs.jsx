@@ -3,8 +3,7 @@ import jobImg from "../../../assets/we_need_you.avif";
 import jobData from "./JobData.json";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { cx } from "../../utils";
-import Title from "../../Title";
-import Fallback from "../../Fallback";
+import { Title, Fallback } from "../../";
 
 const JobsData = lazy(() => import("./JobsData"));
 

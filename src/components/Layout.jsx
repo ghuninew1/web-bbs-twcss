@@ -10,7 +10,7 @@ const Layout = () => {
     const scroll = Scroll();
 
     const [ref, entry] = useIntersectionObserver({
-        threshold: 0.1,
+        threshold: 0.0,
         root: null,
         rootMargin: "0px",
     });
@@ -31,7 +31,7 @@ const Layout = () => {
     }, [active, onScreen, scroll.lastY, scroll.y]);
 
     return (
-        <div className="relative min-h-[calc(100vh)] bg-black">
+        <div className="relative min-h-screen bg-black overflow-hidden">
             <div
                 className="hidden md:block h-[573px] w-[700px] mx-auto overflow-hidden"
                 ref={ref}
@@ -56,8 +56,8 @@ const Layout = () => {
             <Suspense fallback={<Fallback />}>
                 <header
                     className={cx(
-                        "z-[40] top-0 left-0 right-0 transition-all bg-black duration-[400ms] ",
-                        onScreen ? "sticky md:relative" : "sticky",
+                        "z-[40] top-0 left-0 right-0 transition-all bg-black duration-[300ms]",
+                        onScreen ? "md:relative" : "fixed",
                         active
                             ? "md:-translate-y-full delay-200 ease-in"
                             : "translate-y-0 ease-out"

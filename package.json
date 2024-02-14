@@ -13,22 +13,22 @@
     "dependencies": {
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-router-dom": "^6.19.0"
+        "react-router-dom": "^6.22.0"
     },
     "devDependencies": {
-        "@heroicons/react": "^2.0.18",
-        "@types/react": "^18.2.38",
-        "@types/react-dom": "^18.2.16",
-        "@vitejs/plugin-react-swc": "^3.5.0",
-        "autoprefixer": "^10.4.16",
-        "eslint": "^8.54.0",
+        "@heroicons/react": "^2.1.1",
+        "@types/react": "^18.2.55",
+        "@types/react-dom": "^18.2.19",
+        "@vitejs/plugin-react-swc": "^3.6.0",
+        "autoprefixer": "^10.4.17",
+        "eslint": "^8.56.0",
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-react-refresh": "^0.4.4",
-        "postcss": "^8.4.31",
+        "eslint-plugin-react-refresh": "^0.4.5",
+        "postcss": "^8.4.35",
         "prop-types": "^15.8.1",
-        "swiper": "^11.0.4",
-        "tailwindcss": "^3.3.5",
-        "vite": "^5.0.2"
+        "swiper": "^11.0.6",
+        "tailwindcss": "^3.4.1",
+        "vite": "^5.1.1"
     }
 }

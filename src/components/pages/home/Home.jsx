@@ -8,9 +8,9 @@ const Home = () => {
             <h1 className="text-center font-sans font-medium text-3xl md:text-4xl mb-5 text-white tracking-wide animate-fadeInUp">
                 Showreel
             </h1>
-            <div className="w-full aspect-video mx-auto md:rounded-md max-w-[1100px] mb-20 animate-fade">
+            <div className="w-full aspect-video mx-auto max-w-[1100px] mb-20 animate-fade bg-black">
                 <Iframe
-                    src="https://www.youtube.com/embed/BuuDEn1r8GY"
+                    src="https://www.youtube.com/embed/7FF3ieLioDg"
                     isOn={true}
                 />
             </div>

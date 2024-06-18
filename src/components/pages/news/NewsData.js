@@ -357,7 +357,7 @@ export const dataNews = [
         id: 0,
         date: "June 17, 2024",
         title: "We're excited to share the recent interview of our CEO, Auchara Kijkanjanas, with Mr. Gavin Blair, now live on 'THE CREDITS'— by the Motion Picture Association. A huge thank you for the fantastic feature!",
-        src: "/img/news/00.png",
+        src: "/img/news/00.avif",
         content: null,
         to: "https://www.motionpictures.org/2024/06/pioneering-producer-auchara-kijkanjanas-on-animating-thailands-entertainment-industry",
         swap: true,

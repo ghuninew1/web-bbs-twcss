@@ -8,6 +8,7 @@ import {
     Service,
     Jobs,
     News,
+    Card,
 } from "./components/pages";
 
 const App = () => {
@@ -26,7 +27,10 @@ const App = () => {
             element: <Layout />,
             errorElement: <Fallback />,
             children: [...pages],
+            
         },
+
+        { path: "/card", element: <Card /> },
     ];
     const router = createBrowserRouter(routes);
 

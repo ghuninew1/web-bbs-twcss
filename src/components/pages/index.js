@@ -9,3 +9,5 @@ export const Jobs = lazy(() => import("./jobs/Jobs"));
 export const News = lazy(() =>
     import("./news/News").then((module) => ({ default: module.News }))
 );
+
+export const Card = lazy(() => import("./card"));

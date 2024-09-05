@@ -1,10 +1,10 @@
 import ppang from "../../assets/ppang.jpeg";
 import { Title } from "..";
 
-const Studio = () => {
+const Card = () => {
     return (
         <>
-            <Title title="BBS" />
+            <Title title="Card P Pang" />
             <div className="flex items-center justify-center max-w-screen-2xl mx-auto min-h-screen">
 
                     <div className="flex items-center justify-center w-full">
@@ -15,4 +15,4 @@ const Studio = () => {
     );
 };
 
-export default Studio;
+export default Card;

@@ -10,7 +10,7 @@ const Home = () => {
             </h1>
             <div className="w-full aspect-video mx-auto max-w-[1100px] mb-20 animate-fade bg-black">
                 <Iframe
-                    src="https://www.youtube.com/embed/7FF3ieLioDg"
+                    src="https://www.youtube.com/embed/ULyW8grw1S0"
                     isOn={true}
                 />
             </div>

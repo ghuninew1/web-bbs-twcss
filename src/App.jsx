@@ -29,7 +29,6 @@ const App = () => {
             children: [...pages],
             
         },
-
         { path: "/card", element: <Card /> },
     ];
     const router = createBrowserRouter(routes);

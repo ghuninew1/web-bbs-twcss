@@ -10,4 +10,4 @@ export const News = lazy(() =>
     import("./news/News").then((module) => ({ default: module.News }))
 );
 
-export const Card = lazy(() => import("./Card"));
+export const Card = lazy(() => import("./Card.jsx"));

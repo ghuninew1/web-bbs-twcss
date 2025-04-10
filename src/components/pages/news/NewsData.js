@@ -351,10 +351,225 @@ const dataNews08 = [
         swap: false,
     },
 ];
+const dataNews09 = [
+    {
+        id: 1,
+        src: "/img/news2/09/01.jpg",
+        alt: "01",
+        swap: false,
+    },
+    {
+        id: 2,
+        src: "/img/news2/09/02.jpg",
+        alt: "02",
+        swap: true,
+    },
+    {
+        id: 3,
+        src: "/img/news2/09/03.jpg",
+        alt: "03",
+        swap: false,
+    },
+    {
+        id: 4,
+        src: "/img/news2/09/04.jpg",
+        alt: "04",
+        swap: true,
+    },
+    {
+        id: 5,
+        src: "/img/news2/09/05.jpg",
+        alt: "05",
+        swap: false,
+    },
+    {
+        id: 6,
+        src: "/img/news2/09/06.jpg",
+        alt: "06",
+        swap: true,
+    },
+    {
+        id: 7,
+        src: "/img/news2/09/07.jpg",
+        alt: "07",
+        swap: false,
+    },
+    {
+        id: 8,
+        src: "/img/news2/09/08.jpg",
+        alt: "08",
+        swap: true,
+    },
+    {
+        id: 9,
+        src: "/img/news2/09/09.jpg",
+        alt: "09",
+        swap: false,
+    },
+    {
+        id: 10,
+        src: "/img/news2/09/10.jpg",
+        alt: "10",
+        swap: true,
+    },
+    {
+        id: 11,
+        src: "/img/news2/09/11.jpg",
+        alt: "11",
+        swap: false,
+    },
+    {
+        id: 12,
+        src: "/img/news2/09/12.jpg",
+        alt: "12",
+        swap: true,
+    },
+    {
+        id: 13,
+        src: "/img/news2/09/13.jpg",
+        alt: "13",
+        swap: false,
+    },
+    {
+        id: 14,
+        src: "/img/news2/09/14.jpg",
+        alt: "14",
+        swap: true,
+    },
+    {
+        id: 15,
+        src: "/img/news2/09/15.jpg",
+        alt: "15",
+        swap: false,
+    },
+    {
+        id: 16,
+        src: "/img/news2/09/16.jpg",
+        alt: "16",
+        swap: true,
+    },
+    {
+        id: 17,
+        src: "/img/news2/09/17.jpg",
+        alt: "17",
+        swap: false,
+    },
+];
+const dataNews10 = [
+    {
+        id: 1,
+        src: "/img/news2/10/01.jpeg",
+        alt: "01",
+        swap: false,
+    },
+    {
+        id: 2,
+        src: "/img/news2/10/02.jpeg",
+        alt: "02",
+        swap: true,
+    },
+    {
+        id: 3,
+        src: "/img/news2/10/03.jpeg",
+        alt: "03",
+        swap: false,
+    },
+    {
+        id: 4,
+        src: "/img/news2/10/04.jpeg",
+        alt: "04",
+        swap: true,
+    },
+    {
+        id: 5,
+        src: "/img/news2/10/05.jpeg",
+        alt: "05",
+        swap: false,
+    },
+    {
+        id: 6,
+        src: "/img/news2/10/06.jpeg",
+        alt: "06",
+        swap: true,
+    },
+    {
+        id: 7,
+        src: "/img/news2/10/07.jpeg",
+        alt: "07",
+        swap: false,
+    },
+    {
+        id: 8,
+        src: "/img/news2/10/08.jpeg",
+        alt: "08",
+        swap: true,
+    },
+    {
+        id: 9,
+        src: "/img/news2/10/09.jpeg",
+        alt: "09",
+        swap: false,
+    },
+    {
+        id: 10,
+        src: "/img/news2/10/10.jpeg",
+        alt: "10",
+        swap: true,
+    },
+    {
+        id: 11,
+        src: "/img/news2/10/11.jpeg",
+        alt: "11",
+        swap: false,
+    },
+    {
+        id: 12,
+        src: "/img/news2/10/12.jpeg",
+        alt: "12",
+        swap: true,
+    },
+];
+const dataNews11 = [
+    {
+        id: 1,
+        src: "/img/news2/11.jpg",
+        alt: "01",
+        swap: false,
+    },
+];
 
 export const dataNews = [
+
     {
-        id: 0,
+        id: 30,
+        date: "Mar 24, 2025",
+        title: "Big Brain Studio and J-Cube (Korea) Officially Join Forces for 2D Anime Productions!",
+        src: "/img/news2/11.jpg",
+        content: `Big Brain Studio and J-Cube (Korea) have joined forces to collaborate on 2D anime productions. With our combined strengths, this partnership promises outstanding 2D animation. We’re excited to work together and push the boundaries of 2D anime in Korea, Japan, Thailand, and beyond. `,
+        content2: `การผจญภัยครั้งใหม่ของพวกเราได้เริ่มต้นขึ้นแล้ว! Big Brain Studio and J-Cube (Korea) ได้ร่วมมือกันอย่างเป็นทางการ เพื่อสร้างสรรค์ผลงาน 2D Anime ร่วมกันอย่างเต็มที่ เรามุ่งมั่นที่จะพาอนิเมะ 2 มิติของเราไปสู่มิติใหม่ๆ ทั้งในเกาหลี ญี่ปุ่น ไทย และอีกหลากหลายประเทศทั่วโลก!`,
+        to: dataNews11,
+        swap: false,
+    },
+    {
+        id: 29,
+        date: "Sep 16, 2024",
+        title: "New vibes at BIDC 2024",
+        src: "/img/news2/10.jpeg",
+        content: `We had a productive time at BIDC 2024, connecting with industry peers from around the globe. It was a valuable opportunity to build relationships and explore potential projects. We’re excited to see how these new connections will develop and lead to future collaborations!`,
+        to: dataNews10,
+        swap: true,
+    },
+    {
+        id: 28,
+        date: "Sep 16, 2024",
+        title: "Returning to Annecy Festival 2024",
+        src: "/img/news2/09.jpg",
+        content: `Big Brain Studio made a vibrant return to the Annecy Animation Festival 2024, where we had the pleasure of connecting with creative minds and studios from around the world. The exchange of ideas and insights during this dynamic event was truly inspiring. See you next year!`,
+        to: dataNews09,
+        swap: false,
+    },
+    {
+        id: 27,
         date: "June 17, 2024",
         title: "We're excited to share the recent interview of our CEO, Auchara Kijkanjanas, with Mr. Gavin Blair, now live on 'THE CREDITS'— by the Motion Picture Association. A huge thank you for the fantastic feature!",
         src: "/img/news/00.avif",
@@ -363,7 +578,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 1,
+        id: 26,
         date: "September 30, 2023",
         title2: "Kre8tif 2023: ",
         title: "Latest Project Pitch and Big Brain Studio Showcase at KLCC, Kuala Lumpur",
@@ -373,7 +588,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 2,
+        id: 25,
         date: "August 30, 2023",
         title: "Studio Tour Welcomes Our Friend, Hide and Seed",
         src: "/img/news2/07.avif",
@@ -382,7 +597,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 3,
+        id: 24,
         date: "June 21, 2023",
         title2: "Glad to Host: ",
         title: "Armada TMT Studio, the French Embassy, Warner Bros Discovery, and Yomzeo Studio Pay Us a Friendly Visit!",
@@ -392,7 +607,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 4,
+        id: 23,
         date: "June 18, 2023",
         title2: "Back Onsite: ",
         title: "Big Brain Studio at Bangkok International Digital Content Festival 2023",
@@ -402,7 +617,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 5,
+        id: 22,
         date: "July 01, 2023",
         title: "Work Hard, Play Hard - Explore Thailand with Big Brain Studio",
         src: "/img/news2/04.avif",
@@ -411,7 +626,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 6,
+        id: 21,
         date: "June 17, 2023",
         title: "Big Brain Studio at Annecy Animation Festival 2023",
         src: "/img/news2/03.avif",
@@ -420,7 +635,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 7,
+        id: 20,
         date: "April 27, 2023",
         title: "Welcome Conan O'Brien to Big Brain Studio!",
         src: "/img/news2/02.avif",
@@ -429,7 +644,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 8,
+        id: 19,
         date: "March 16, 2023",
         title: "Big Brain Studio at Hong Kong FILMART 2023",
         src: "/img/news2/01.avif",
@@ -438,7 +653,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 9,
+        id: 18,
         date: "August 30, 2020",
         title: "Covid Pandemic ของ Big Brain Pictures คว้ารางวัล Best Animated Short สาขา Animation & Visual Effect",
         src: "/img/news/01.avif",
@@ -448,7 +663,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 10,
+        id: 17,
         date: "August 27, 2020",
         title: "BidcAward สาขา Animation & Visual Effect Best VFX in TV Commercial",
         src: "/img/news/02.avif",
@@ -459,7 +674,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 11,
+        id: 16,
         date: "September 20, 2019",
         title: "วันนัดรวมตัวของผู้ประกอบการ และผู้สนใจนำงานด้านดิจิทัลคอนเทนต์ไปต่อยอดธุรกิจ ภาคเช้ามีกิจกรรมสนทนาถึงความสำเร็จของกิจกรรมพัฒนาเครือข่าย Digital Content",
         src: "/img/news/03.avif",
@@ -468,7 +683,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 12,
+        id: 15,
         date: "February 22, 2018",
         title: "VMware ผู้ให้บริการเทคโนโยลีชั้นนำและบริการระบบเสมือนจริงแบบ Cloud  จัดงานประกาศรางวัลพันธมิตรยอดเยี่ยม ที่สยามสมาคมในพระบรมราชูปถัมป์",
         src: "/img/news/04.avif",
@@ -477,7 +692,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 13,
+        id: 14,
         date: "January 25, 2018",
         title: "AIS Business Solutions ได้จัดงานสัมมนาในหัวข้อ “AIS Cloud Solutions for Animation Industry” ซึ่งเน้นให้ความรู้เกี่ยวกับเทคโนโลยี พร้อมเจาะลึกเรื่องการนำเทคโนโลยี Cloud มาใช้ประโยชน์ในธุรกิจผู้ผลิต Animation ในเมืองไทย",
         src: "/img/news/05.avif",
@@ -487,7 +702,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 14,
+        id: 13,
         date: "December 04, 2017",
         title: "อุ๋ย นนทรีย์ - ตั้ม อัจฉรา ถ่ายทอดความประทับใจในภาพยนตร์แอนิเมชัน ของขวัญจากดิน",
         src: "/img/news/06.avif",
@@ -496,7 +711,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 15,
+        id: 12,
         date: "December 4, 2017",
         title: `ทีมผู้สร้างชวนดู "ของขวัญจากดิน" ภาพยนตร์อนิเมชั่นเพื่อคนไทย`,
         src: "/img/news/07.avif",
@@ -505,7 +720,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 16,
+        id: 11,
         date: "November 27, 2017",
         title: "ของขวัญจากดิน แอนิเมชั่นเทิดพระเกียรติตามรอยแนวคิดศาสตร์พระราชา",
         src: "/img/news/08.avif",
@@ -515,7 +730,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 17,
+        id: 10,
         date: "November 24, 2017",
         title: `แอนิเมชั่นเล่าศาสตร์พระราชา "ของขวัญจากดิน"ฉายทางทีวีทั่วประเทศ`,
         src: "/img/news/09.avif",
@@ -524,7 +739,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 18,
+        id: 9,
         date: "November 23, 2017",
         title: "แถลงข่าวเปิดตัวภาพยนตร์แอนิเมชั่นเทิดพระเกียรติ “ของขวัญจากดิน”",
         src: "/img/news/10.avif",
@@ -533,7 +748,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 19,
+        id: 8,
         date: "November 23, 2017",
         title: `ม.มหิดล โดย โครงการจัดตั้งศูนย์เศรษฐกิจสร้างสรรค์ จัดแถลงข่าวภาพยนตร์แอนิเมชั่น “ของขวัญจากดิน”`,
         src: "/img/news/11.avif",
@@ -542,7 +757,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 20,
+        id: 7,
         date: "November 23, 2017",
         title: `แถลงข่าวเปิดตัวภาพยนตร์แอนิเมชั่นเทิดพระเกียรติ “ของขวัญจากดิน"`,
         src: "/img/news/12.avif",
@@ -551,7 +766,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 21,
+        id: 6,
         date: "April 7, 2017",
         title: `ธนาคารกรุงเทพ รับ 2 รางวัลดีเด่น จากสติ๊กเกอร์ไลน์ Blink Blink ในงาน “Bangkok International Digital Content Festival 2017” เตรียมเปิดตัวชุดใหม่รับสงกรานต์`,
         src: "/img/news/13.avif",
@@ -560,7 +775,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 22,
+        id: 5,
         date: "2016",
         title: `เยี่ยมโครงการส่วนพระองค์ สวนจิตรลดา แหล่งทดลองและจุดกำเนิดของโครงการพระราชดำริในพระบาทสมเด็จพระปรมินทรมหาภูมิพลอดุลยเดชบรมนาถบพิตร`,
         src: "/img/news/14.avif",
@@ -569,7 +784,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 23,
+        id: 4,
         date: "2016",
         title: `ศึกษาดูงาน “ประเพณีบุญบั้งไฟ” บูชาพญาแถนขอฝน จังหวัดชัยภูมิ`,
         src: "/img/news/15.avif",
@@ -578,7 +793,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 24,
+        id: 3,
         date: "2016",
         title: `เยี่ยมโครงการโรงเรียนกาสรกสิวิทย์ จังหวัดสระแก้ว โรงเรียนที่ฝึกกระบือให้เชื่องและไถนาได้อย่างชำนาญ`,
         src: "/img/news/16.avif",
@@ -587,7 +802,7 @@ export const dataNews = [
         swap: true,
     },
     {
-        id: 25,
+        id: 2,
         date: "2016",
         title: `ศึกษาดูงานสถาปัตยกรรมของภาคอีสาน “หมู่บ้านอีสาน จิม ทอมป์สัน ฟาร์ม” จังหวัดนครราชสีมา`,
         src: "/img/news/17.avif",
@@ -596,7 +811,7 @@ export const dataNews = [
         swap: false,
     },
     {
-        id: 26,
+        id: 1,
         date: "2013",
         title: `Promote Yourself: 24 Brand-New Asian Projects to be Unveiled at 2013 Asian Animation Summit`,
         src: "/img/news/18.avif",

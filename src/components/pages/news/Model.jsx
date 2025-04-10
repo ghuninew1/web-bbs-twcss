@@ -64,10 +64,7 @@ function Model({ indexImg = 0, handlClose }) {
                         ))}
 
                         {dataRef[indexImg - 1]?.to.length > 1 && (
-                            <div
-                                className="autoplay-progress"
-                                slot="container-end"
-                            >
+                            <div className="autoplay-progress" slot="container-end">
                                 <svg viewBox="0 0 48 48" ref={progressCircle}>
                                     <circle cx="24" cy="24" r="20"></circle>
                                 </svg>
@@ -86,16 +83,15 @@ function Model({ indexImg = 0, handlClose }) {
                                 </p>
                             )}
                             {dataRef[indexImg - 1]?.title && (
-                                <p className="text-[14px] md:text-[16px] font-[300]">
-                                    {dataRef[indexImg - 1]?.title}
-                                </p>
+                                <p className="text-[14px] md:text-[16px] font-[300]">{dataRef[indexImg - 1]?.title}</p>
                             )}
                         </div>
                         <div className="text-[14px] md:text-[16px] px-3 font-[300] antialiased">
                             {dataRef[indexImg - 1]?.content && (
-                                <p className="first-letter:ml-5">
-                                    {dataRef[indexImg - 1]?.content}
-                                </p>
+                                <div>
+                                    <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content}</p>
+                                    <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content2}</p>
+                                </div>
                             )}
                         </div>
                     </div>

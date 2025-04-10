@@ -48,13 +48,14 @@
 span.swiper-pagination-bullet {
     width: 6px !important;
     height: 6px !important;
-    color: #ffffff93 !important;
+    color: #454444da !important;
     background: #ffffff !important;
-    opacity: 0.3 !important;
+    opacity: 0.6 !important;
     margin-left: 4px !important;
 }
 span.swiper-pagination-bullet-active {
     opacity: 1 !important;
+    color: #bfbaba !important;
     background: #ffffff !important;
 }
 

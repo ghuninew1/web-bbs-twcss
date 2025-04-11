@@ -424,117 +424,22 @@ const dataNews09 = [
         alt: "12",
         swap: true,
     },
-    {
-        id: 13,
-        src: "/img/news2/09/13.jpg",
-        alt: "13",
-        swap: false,
-    },
-    {
-        id: 14,
-        src: "/img/news2/09/14.jpg",
-        alt: "14",
-        swap: true,
-    },
-    {
-        id: 15,
-        src: "/img/news2/09/15.jpg",
-        alt: "15",
-        swap: false,
-    },
-    {
-        id: 16,
-        src: "/img/news2/09/16.jpg",
-        alt: "16",
-        swap: true,
-    },
-    {
-        id: 17,
-        src: "/img/news2/09/17.jpg",
-        alt: "17",
-        swap: false,
-    },
 ];
 const dataNews10 = [
     {
         id: 1,
-        src: "/img/news2/10/01.jpeg",
+        src: "/img/news2/10/bidc2024_pic.png",
         alt: "01",
         swap: false,
-    },
-    {
-        id: 2,
-        src: "/img/news2/10/02.jpeg",
-        alt: "02",
-        swap: true,
-    },
-    {
-        id: 3,
-        src: "/img/news2/10/03.jpeg",
-        alt: "03",
-        swap: false,
-    },
-    {
-        id: 4,
-        src: "/img/news2/10/04.jpeg",
-        alt: "04",
-        swap: true,
-    },
-    {
-        id: 5,
-        src: "/img/news2/10/05.jpeg",
-        alt: "05",
-        swap: false,
-    },
-    {
-        id: 6,
-        src: "/img/news2/10/06.jpeg",
-        alt: "06",
-        swap: true,
-    },
-    {
-        id: 7,
-        src: "/img/news2/10/07.jpeg",
-        alt: "07",
-        swap: false,
-    },
-    {
-        id: 8,
-        src: "/img/news2/10/08.jpeg",
-        alt: "08",
-        swap: true,
-    },
-    {
-        id: 9,
-        src: "/img/news2/10/09.jpeg",
-        alt: "09",
-        swap: false,
-    },
-    {
-        id: 10,
-        src: "/img/news2/10/10.jpeg",
-        alt: "10",
-        swap: true,
-    },
-    {
-        id: 11,
-        src: "/img/news2/10/11.jpeg",
-        alt: "11",
-        swap: false,
-    },
-    {
-        id: 12,
-        src: "/img/news2/10/12.jpeg",
-        alt: "12",
-        swap: true,
     },
 ];
 const dataNews11 = [
     {
         id: 1,
         src: "/img/news2/11.jpg",
-        alt: "01",
+        alt: "dataNews11",
         swap: false,
+        other: "other",
     },
 ];
 

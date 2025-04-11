@@ -82,7 +82,7 @@ function Model({ indexImg = 0, handlClose }) {
                                     {dataRef[indexImg - 1]?.title2}
                                 </p>
                             )}
-                            {dataRef[indexImg - 1]?.title && (
+                            {dataRef[indexImg - 1]?.title && dataRef[indexImg - 1]?.src !== "/img/news2/11.jpg" && (
                                 <p className="text-[14px] md:text-[16px] font-[300]">{dataRef[indexImg - 1]?.title}</p>
                             )}
                         </div>

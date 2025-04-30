@@ -25,7 +25,7 @@ const Contact = () => {
             setShow(true);
             return;
         } else {
-            fetch("https://getform.io/f/e4109843-da24-41ca-b68c-8856bfe7a695", {
+            fetch("https://getform.io/f/bkkylgwb", {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
@@ -110,6 +110,7 @@ const Contact = () => {
                         className="border-lime-700 border-2 rounded-md h-20 p-2 w-full"
                         ref={messageRef}
                     ></textarea>
+                    <input type="hidden" name="_gotcha" style="display:none !important"/>
                     <button
                         type="submit"
                         className="text-xl font-bold mt-2 w-full md:w-[60%] mx-auto h-10 bg-lime-600 border-lime-400 border-2 rounded-md hover:bg-lime-900 hover:text-white transition-all"

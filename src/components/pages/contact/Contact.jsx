@@ -110,7 +110,6 @@ const Contact = () => {
                         className="border-lime-700 border-2 rounded-md h-20 p-2 w-full"
                         ref={messageRef}
                     ></textarea>
-                    <input type="hidden" name="_gotcha" style="display:none !important"/>
                     <button
                         type="submit"
                         className="text-xl font-bold mt-2 w-full md:w-[60%] mx-auto h-10 bg-lime-600 border-lime-400 border-2 rounded-md hover:bg-lime-900 hover:text-white transition-all"

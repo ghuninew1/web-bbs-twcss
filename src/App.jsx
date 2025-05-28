@@ -9,6 +9,9 @@ import {
     Jobs,
     News,
     Card,
+    CardPnote,
+    CardPpang,
+    CardPtum,
 } from "./components/pages";
 
 const App = () => {
@@ -30,6 +33,9 @@ const App = () => {
             
         },
         { path: "/card", element: <Card /> },
+        { path: "/cardPnote", element: <CardPnote /> },
+        { path: "/cardPpang", element: <CardPpang /> },
+        { path: "/cardPtum", element: <CardPtum /> },
     ];
     const router = createBrowserRouter(routes);
 

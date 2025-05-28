@@ -11,3 +11,7 @@ export const News = lazy(() =>
 );
 
 export const Card = lazy(() => import("./card.jsx"));
+export const CardPnote = lazy(() => import("./cardPnote.jsx"));
+export const CardPpang = lazy(() => import("./cardPpang.jsx"));
+export const CardPtum = lazy(() => import("./cardPtum.jsx"));
+

@@ -1,4 +1,4 @@
-import ptum from "../../assets/ppang.png";
+import ptum from "../../assets/ptum.png";
 import { Title } from "..";
 
 const Card = () => {

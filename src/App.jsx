@@ -12,6 +12,9 @@ import {
     CardPnote,
     CardPpang,
     CardPtum,
+    CardPbirdHanako,
+    CardPkaewHanako,
+    CardPpangHanako,
 } from "./components/pages";
 
 const App = () => {
@@ -36,6 +39,9 @@ const App = () => {
         { path: "/cardPnote", element: <CardPnote /> },
         { path: "/cardPpang", element: <CardPpang /> },
         { path: "/cardPtum", element: <CardPtum /> },
+        { path: "/cardPbirdHanako", element: <CardPbirdHanako /> },
+        { path: "/cardPkaewHanako", element: <CardPkaewHanako /> },
+        { path: "/cardPpangHanako", element: <CardPpangHanako /> },
     ];
     const router = createBrowserRouter(routes);
 

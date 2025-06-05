@@ -14,4 +14,7 @@ export const Card = lazy(() => import("./card.jsx"));
 export const CardPnote = lazy(() => import("./cardPnote.jsx"));
 export const CardPpang = lazy(() => import("./cardPpang.jsx"));
 export const CardPtum = lazy(() => import("./cardPtum.jsx"));
+export const CardPbirdHanako = lazy(() => import("./cardPbirdHanako.jsx"));
+export const CardPkaewHanako = lazy(() => import("./cardPkaewHanako.jsx"));
+export const CardPpangHanako = lazy(() => import("./cardPpangHanako.jsx"));
 

@@ -442,8 +442,104 @@ const dataNews11 = [
         other: "other",
     },
 ];
+const dataNews12 = [
+    {
+        id: 1,
+        src: "/img/news2/12/00.jpeg",
+        alt: "data12_00",
+        swap: false,
+    },
+    {
+        id: 2,
+        src: "/img/news2/12/01.jpeg",
+        alt: "data12_01",
+        swap: true,
+    },
+    {
+        id: 3,
+        src: "/img/news2/12/02.jpeg",
+        alt: "data12_02",
+        swap: false,
+    },
+    {
+        id: 4,
+        src: "/img/news2/12/03.jpeg",
+        alt: "data12_03",
+        swap: true,
+    },
+    {
+        id: 5,
+        src: "/img/news2/12/04.jpeg",
+        alt: "data12_04",
+        swap: false,
+    },
+    {
+        id: 6,
+        src: "/img/news2/12/05.jpeg",
+        alt: "data12_05",
+        swap: true,
+    },
+    {
+        id: 7,
+        src: "/img/news2/12/06.jpeg",
+        alt: "data12_06",
+        swap: false,
+    },
+    {
+        id: 8,
+        src: "/img/news2/12/07.jpeg",
+        alt: "data12_07",
+        swap: true,
+    },
+    {
+        id: 9,
+        src: "/img/news2/12/08.jpeg",
+        alt: "data12_08",
+        swap: false,
+    },
+    {
+        id: 10,
+        src: "/img/news2/12/09.jpeg",
+        alt: "data12_09",
+        swap: true,
+    },
+    {
+        id: 11,
+        src: "/img/news2/12/10.jpeg",
+        alt: "data12_10",
+        swap: false,
+    },
+    {
+        id: 12,
+        src: "/img/news2/12/11.jpeg",
+        alt: "data12_11",
+        swap: true,
+    },
+    {
+        id: 13,
+        src: "/img/news2/12/12.jpeg",
+        alt: "data12_12",
+        swap: false,
+    },
+    {
+        id: 14,
+        src: "/img/news2/12/13.jpeg",
+        alt: "data12_13",
+        swap: true,
+    },
+];
 
 export const dataNews = [
+    {
+        id: 31,
+        date: "July 29, 2025",
+        title: "Big Brain Studio Wraps Up a Creative Journey at Annecy 2025!",
+        src: "/img/news2/12/00.jpeg",
+        content: `Big Brain Studio had an inspiring time at the Annecy International Animation Film Festival 2025. We were proud to team up with Eez Studio and Tomogram Studio as part of the SEA Pitch for A Letter to Hanako. It was a privilege to support this heartfelt project and share the stage with such talented regional partners.`,
+        content2: `From exciting pitch sessions to meaningful conversations with global creatives, Annecy was a celebration of collaboration and storytelling. Thank you to everyone who connected with us, see you next year!`,
+        to: dataNews12,
+        swap: true,
+    },
 
     {
         id: 30,

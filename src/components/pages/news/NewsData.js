@@ -534,7 +534,7 @@ export const dataNews = [
         id: 31,
         date: "July 29, 2025",
         title: "Big Brain Studio Wraps Up a Creative Journey at Annecy 2025!",
-        src: "/img/news2/12/00.jpeg",
+        src: "/img/news2/12_00.jpeg",
         content: `Big Brain Studio had an inspiring time at the Annecy International Animation Film Festival 2025. We were proud to team up with Eez Studio and Tomogram Studio as part of the SEA Pitch for A Letter to Hanako. It was a privilege to support this heartfelt project and share the stage with such talented regional partners.`,
         content2: `From exciting pitch sessions to meaningful conversations with global creatives, Annecy was a celebration of collaboration and storytelling. Thank you to everyone who connected with us, see you next year!`,
         to: dataNews12,

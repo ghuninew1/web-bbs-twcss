@@ -531,6 +531,15 @@ const dataNews12 = [
 
 export const dataNews = [
     {
+        id: 32,
+        date: "Sep 10, 2025",
+        title: `We made it! Our project has been officially selected for TCCF 2025 Pitching! Thank you to the TCCF jury. We’re so excited to bring our story to the stage, see you in Taiwan!`,
+        src: "/img/news2/13.png",
+        content: null,
+        to: "https://www.tccf.tw/en/pitching/selected_entries2025",
+        swap: false,
+    },
+    {
         id: 31,
         date: "July 29, 2025",
         title: "Big Brain Studio Wraps Up a Creative Journey at Annecy 2025!",

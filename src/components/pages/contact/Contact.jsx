@@ -123,8 +123,8 @@ const Contact = () => {
                     <h3 className="tracking-wider text-[18px] font-medium mb-2">
                         BIG BRAIN STUDIO CO.,LTD.
                     </h3>
-                    <p>151 Sukhumvit 101/1, Bangchak,</p>
-                    <p>Phrakhanong, Bangkok 10260, Thailand</p>
+                    <p>99/1 Plan House Bangkok Building 3rd Floor,</p>
+                    <p>Sukhumvit 68,Bang Na Nuea, Bang Na, Bangkok 10260, Thailand</p>
                 </div>
                 <div className="flex flex-row justify-center items-center mx-auto my-2 md:my-1">
                     <div className="mb-0 md:mb-2 animate-fade">
@@ -150,7 +150,7 @@ const Contact = () => {
                 </div>
                 <div className="aspect-video w-full animate-fade">
                     <Iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.556153671707!2d100.61402207619273!3d13.684731498840582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a16b35ceceb5%3A0xe527940423e3cdf1!2sBig%20Brain%20Studio%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1686721116416!5m2!1sth!2sth"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.688685816016!2d100.59698857663298!3d13.676684399025095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a16b35ceceb5%3A0xe527940423e3cdf1!2sBig%20Brain%20Studio%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1768972188717!5m2!1sth!2sth"
                         isOn={true}
                     />
                 </div>

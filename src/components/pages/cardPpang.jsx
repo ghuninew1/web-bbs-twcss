@@ -1,5 +1,5 @@
-import ppang from "../../assets/ppang.png";
-import onTop from "../../assets/Tum_note_pang.png";
+import ppang from "../../assets/p_pang_name_card_2026.avif";
+// import onTop from "../../assets/Tum_note_pang.png";
 import { Title } from "..";
 
 const Card = () => {
@@ -10,7 +10,7 @@ const Card = () => {
 
                     <div className="flex items-center justify-center h-full md:flex-row flex-col">
                         <img src={ppang} alt="ppang" loading="lazy" className="rounded-md w-full h-full" />
-                        <img src={onTop} alt="onTop" loading="lazy" className="rounded-md w-full h-full" />
+                        {/* <img src={onTop} alt="onTop" loading="lazy" className="rounded-md w-full h-full" /> */}
                     </div>
             </div>
         </>

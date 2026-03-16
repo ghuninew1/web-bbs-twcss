@@ -1,5 +1,5 @@
-import pnote from "../../assets/pnote.png";
-import onTop from "../../assets/Tum_note_pang.png";
+import pnote from "../../assets/p_note_name_card_2026.avif";
+// import onTop from "../../assets/Tum_note_pang.png";
 import { Title } from "..";
 
 const Card = () => {
@@ -10,7 +10,7 @@ const Card = () => {
 
                     <div className="flex items-center justify-center h-full md:flex-row flex-col">
                         <img src={pnote} alt="pnote" loading="lazy" className="rounded-md w-full h-full" />
-                        <img src={onTop} alt="onTop" loading="lazy" className="rounded-md w-full h-full" />
+                        {/* <img src={onTop} alt="onTop" loading="lazy" className="rounded-md w-full h-full" /> */}
                     </div>
             </div>
         </>

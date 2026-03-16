@@ -150,7 +150,7 @@ const Contact = () => {
                 </div>
                 <div className="aspect-video w-full animate-fade">
                     <Iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.688685816016!2d100.59698857663298!3d13.676684399025095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a16b35ceceb5%3A0xe527940423e3cdf1!2sBig%20Brain%20Studio%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1768972188717!5m2!1sth!2sth"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.6886858169355!2d100.59698321220726!3d13.676684398969778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a16b35ceceb5%3A0xe527940423e3cdf1!2sBig%20Brain%20Studio%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1768994546320!5m2!1sth!2sth"
                         isOn={true}
                     />
                 </div>

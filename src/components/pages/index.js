@@ -15,9 +15,13 @@ export const CardPnote = lazy(() => import("./cardPnote.jsx"));
 export const CardPpang = lazy(() => import("./cardPpang.jsx"));
 export const CardPtum = lazy(() => import("./cardPtum.jsx"));
 export const CardPtumOnly = lazy(() => import("./cardPtumOnly.jsx"));
+export const CardPtoodOnly = lazy(() => import("./cardPtoodOnly.jsx"));
 
 export const CardPbirdHanako = lazy(() => import("./cardPbirdHanako.jsx"));
 export const CardPkaewHanako = lazy(() => import("./cardPkaewHanako.jsx"));
 export const CardPpangHanako = lazy(() => import("./cardPpangHanako.jsx"));
 export const CardPtood = lazy(() => import("./cardPtood.jsx"));
 
+export const CardPtumMax = lazy(() => import("./cardPtumMax.jsx"));
+export const CardPpangMax = lazy(() => import("./cardPpangMax.jsx"));
+export const CardPnoteMax = lazy(() => import("./cardPnoteMax.jsx"));

@@ -17,6 +17,10 @@ import {
     CardPbirdHanako,
     CardPkaewHanako,
     CardPpangHanako,
+    CardPtoodOnly,
+    CardPtumMax,
+    CardPpangMax,
+    CardPnoteMax
 } from "./components/pages";
 
 const App = () => {
@@ -46,6 +50,10 @@ const App = () => {
         { path: "/cardPbirdHanako", element: <CardPbirdHanako /> },
         { path: "/cardPkaewHanako", element: <CardPkaewHanako /> },
         { path: "/cardPpangHanako", element: <CardPpangHanako /> },
+        { path: "/cardPtoodOnly", element: <CardPtoodOnly /> },
+        { path: "/cardPtumMax", element: <CardPtumMax /> },
+        { path: "/cardPpangMax", element: <CardPpangMax /> },
+        { path: "/cardPnoteMax", element: <CardPnoteMax /> },
     ];
     const router = createBrowserRouter(routes);
 

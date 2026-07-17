@@ -7,9 +7,10 @@ import logo from "../assets/logo.avif";
 const navlinks = [
     { to: "/", name: "Home", hidden: false },
     { to: "/studio", name: "Studio", hidden: false },
-    { to: "/jobs", name: "Jobs", hidden: false },
+    { to: "/ourwork", name: "Ourwork", hidden: false },
     { to: "/service", name: "Service", hidden: false },
     { to: "/news", name: "News", hidden: false },
+    { to: "/jobs", name: "Jobs", hidden: false },
     { to: "/annoucement", name: "Annoucement", hidden: false },
     { to: "/contact", name: "Contact", hidden: false },
 ];

@@ -8,4 +8,11 @@ export default defineConfig({
         open: true,
         host: true,
     },
+    preview: {
+        open: true,
+        host: true,
+        port: 6440,
+        allowedHosts: ["localhost", "127.0.0.1","ghuninew.thddns.net","192.168.0.100"],
+        cors: true,
+    },
 });

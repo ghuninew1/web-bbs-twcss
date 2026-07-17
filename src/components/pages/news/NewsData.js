@@ -550,16 +550,16 @@ export const dataNews = [
         swap: true,
     },
 
-    {
-        id: 30,
-        date: "Mar 24, 2025",
-        title: "Big Brain Studio and J-Cube (Korea) Officially Join Forces for 2D Anime Productions!",
-        src: "/img/news2/11.jpg",
-        content: `Big Brain Studio and J-Cube (Korea) have joined forces to collaborate on 2D anime productions. With our combined strengths, this partnership promises outstanding 2D animation. We’re excited to work together and push the boundaries of 2D anime in Korea, Japan, Thailand, and beyond. `,
-        content2: `การผจญภัยครั้งใหม่ของพวกเราได้เริ่มต้นขึ้นแล้ว! Big Brain Studio and J-Cube (Korea) ได้ร่วมมือกันอย่างเป็นทางการ เพื่อสร้างสรรค์ผลงาน 2D Anime ร่วมกันอย่างเต็มที่ เรามุ่งมั่นที่จะพาอนิเมะ 2 มิติของเราไปสู่มิติใหม่ๆ ทั้งในเกาหลี ญี่ปุ่น ไทย และอีกหลากหลายประเทศทั่วโลก!`,
-        to: dataNews11,
-        swap: false,
-    },
+    // {
+    //     id: 30,
+    //     date: "Mar 24, 2025",
+    //     title: "Big Brain Studio and J-Cube (Korea) Officially Join Forces for 2D Anime Productions!",
+    //     src: "/img/news2/11.jpg",
+    //     content: `Big Brain Studio and J-Cube (Korea) have joined forces to collaborate on 2D anime productions. With our combined strengths, this partnership promises outstanding 2D animation. We’re excited to work together and push the boundaries of 2D anime in Korea, Japan, Thailand, and beyond. `,
+    //     content2: `การผจญภัยครั้งใหม่ของพวกเราได้เริ่มต้นขึ้นแล้ว! Big Brain Studio and J-Cube (Korea) ได้ร่วมมือกันอย่างเป็นทางการ เพื่อสร้างสรรค์ผลงาน 2D Anime ร่วมกันอย่างเต็มที่ เรามุ่งมั่นที่จะพาอนิเมะ 2 มิติของเราไปสู่มิติใหม่ๆ ทั้งในเกาหลี ญี่ปุ่น ไทย และอีกหลากหลายประเทศทั่วโลก!`,
+    //     to: dataNews11,
+    //     swap: false,
+    // },
     {
         id: 29,
         date: "Sep 16, 2024",

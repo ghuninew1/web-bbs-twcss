@@ -29,7 +29,7 @@ const Jobs = () => {
                         show === 0 ? "animate-fadeInDown" : "animate-zoomOut"
                     )}
                 >
-                    <img src={jobImg} alt="job" width={300} height={200} />
+                    <img src={jobImg} alt="job" width={300} height={200} loading="lazy" />
                 </div>
                 <div
                     className={cx(

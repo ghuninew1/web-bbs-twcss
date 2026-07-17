@@ -12,6 +12,7 @@ const Home = () => {
                 <Iframe
                     src="https://www.youtube.com/embed/IbEHC1P8h40"
                     isOn={true}
+                    loading="lazy"
                 />
             </div>
             <div className=" bg-white w-full">

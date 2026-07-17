@@ -29,7 +29,7 @@ export const workData = [
             year: "2022",
             slide1: "/img/ourwork/_QC/2022-02_rpf/สไลด์1.JPG",
             slide2: "/img/ourwork/_QC/2022-02_rpf/สไลด์2.JPG",
-            video: "/img/ourwork/_QC/2022-02_rpf/bbs_royal_project_foundation.m4v",
+            video: "/img/ourwork/_QC/2022-02_rpf/bbs_royal_project_foundation.mp4",
         },
         {
             id: 4,
@@ -60,7 +60,7 @@ export const workData = [
             link: "/ourwork/nakadesalon",
             year: "2023",
             slide1: "/img/ourwork/_QC/2023-03_Naka_De_Salon/Naka_De_Salon.png",
-            video: "/img/ourwork/_QC/2023-03_Naka_De_Salon/Naka_De_Salon.mov",
+            video: "/img/ourwork/_QC/2023-03_Naka_De_Salon/Naka_De_Salon.mp4",
         },
         {
             id: 7,
@@ -111,7 +111,7 @@ export const workData = [
             link: "/ourwork/royalchitralada",
             year: "2024",
             slide1: "/img/ourwork/_QC/2024-05_Royal_Chitralada_Project/Slide26.png",
-            video: "/img/ourwork/_QC/2024-05_Royal_Chitralada_Project/rcp.m4v",
+            video: "/img/ourwork/_QC/2024-05_Royal_Chitralada_Project/rcp.mp4",
         },
         {
             id: 12,
@@ -122,7 +122,7 @@ export const workData = [
             year: "2025",
             slide1: "/img/ourwork/_QC/2025-01_yala/สไลด์1.JPG",
             slide2: "/img/ourwork/_QC/2025-01_yala/สไลด์2.JPG",
-            video: "/img/ourwork/_QC/2025-01_yala/bbs_yala.mov",
+            video: "/img/ourwork/_QC/2025-01_yala/bbs_yala.mp4",
         },
         {
             id: 13,
@@ -133,7 +133,7 @@ export const workData = [
             year: "2025",
             slide1: "/img/ourwork/_QC/2025-02_ptt_or/Slide11.png",
             slide2: "/img/ourwork/_QC/2025-02_ptt_or/Slide28.png",
-            video: "/img/ourwork/_QC/2025-02_ptt_or/ptt_or.mov",
+            video: "/img/ourwork/_QC/2025-02_ptt_or/ptt_or.mp4",
         },
         {
             id: 14,
@@ -143,7 +143,7 @@ export const workData = [
             link: "/ourwork/bankofthailand",
             year: "2025",
             slide1: "/img/ourwork/_QC/2025-03_Bank_of_Thailand/botbank.png",
-            video: "/img/ourwork/_QC/2025-03_Bank_of_Thailand/botbank.mov",
+            video: "/img/ourwork/_QC/2025-03_Bank_of_Thailand/botbank.mp4",
         },
         {
             id: 15,

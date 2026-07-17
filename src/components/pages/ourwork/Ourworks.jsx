@@ -21,6 +21,7 @@ const OurworkData = ({num}) => {
                             className="h-auto max-w-full max-h-[400px] rounded-2xl mt-4 md:mr-20 mr-0"
                             src={workData[num].img}
                             alt={workData[num].title}
+                            loading="lazy"
                         />
                     </Link>
                     <div className="flex flex-col items-center justify-center mt-4 gap-4">
@@ -28,6 +29,7 @@ const OurworkData = ({num}) => {
                             className="h-auto max-w-full max-h-[500px] rounded-2xl"
                             src={workData[num].video}
                             controls
+                            controlsList="nodownload"
                         />
                         <ImageZoom src={workData[num].slide1} alt={workData[num].title} />
                         {workData[num].slide2 && (

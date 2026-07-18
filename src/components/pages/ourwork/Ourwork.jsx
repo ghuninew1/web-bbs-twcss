@@ -22,7 +22,7 @@ const Ourwork = () => {
                     <div key={work.id}>
                         <Link to={work.link} onClick={scrollToEven}>
                             <img
-                                className="h-auto max-w-full max-h-[300px] rounded-2xl flex items-center justify-center hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer hover:shadow-2xl hover:shadow-green-400 shadow-md shadow-green-600 ring-4 ring-transparent hover:ring-[#00862f] hover:ring-opacity-50 animate-fadeInUp"
+                                className="h-auto max-w-full max-h-[300px] rounded-2xl flex items-center justify-center hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer hover:shadow-2xl hover:shadow-green-400 shadow-md shadow-gray-600 ring-4 ring-transparent hover:ring-[#00862f] hover:ring-opacity-50 animate-fadeInUp"
                                 src={work.img}
                                 alt={work.title}
                                 loading="lazy"

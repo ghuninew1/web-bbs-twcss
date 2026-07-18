@@ -1,22 +1,30 @@
-import { cx } from "../../utils";
+import { cx, scrollTo } from "../../utils";
 import { Title, Fallback } from "../..";
 import { Link } from "react-router-dom";
 import { workData } from "./WorkData";
 import { ImageZoom } from "./ImageZoom";
 
-const OurworkData = ({num}) => {
-
+const OurworkData = ({ num }) => {
     if (!workData[num]) {
         return <Fallback />;
     }
+    const scrollToEven = () => {
+        if (window.innerWidth > 768) {
+            scrollTo(573);
+        } else {
+            scrollTo(0);
+        }
+    };
 
     return (
         <div className=" min-h-screen px-4 mb-10 max-w-[1280px] mx-auto">
             <Title title={workData[num].header} />
-            <h2 className="md:text-2xl text-xl font-bold text-gray-500 text-start mt-5 md:mt-0 font-mono">{workData[num].header}</h2>
+            <h2 className="md:text-2xl text-xl font-bold text-gray-500 text-start mt-5 md:mt-0 font-mono">
+                {workData[num].header}
+            </h2>
             <div className="flex items-center  md:items-start justify-center mt-10">
                 <div className="flex md:flex-row flex-col items-center  md:items-start justify-start gap-4 animate-fadeInRight">
-                    <Link to={"/ourwork"} className="cursor-alias">
+                    <Link to={"/ourwork"} className="cursor-alias" onClick={scrollToEven}>
                         <img
                             className="h-auto max-w-full max-h-[400px] rounded-2xl mt-4 md:mr-20 mr-0"
                             src={workData[num].img}
@@ -32,9 +40,7 @@ const OurworkData = ({num}) => {
                             controlsList="nodownload"
                         />
                         <ImageZoom src={workData[num].slide1} alt={workData[num].title} />
-                        {workData[num].slide2 && (
-                            <ImageZoom src={workData[num].slide2} alt={workData[num].title} />
-                        )}
+                        {workData[num].slide2 && <ImageZoom src={workData[num].slide2} alt={workData[num].title} />}
                     </div>
                 </div>
             </div>

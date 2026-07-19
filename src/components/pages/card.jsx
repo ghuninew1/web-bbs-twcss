@@ -17,14 +17,14 @@ import { Title } from "..";
 const CardName = ({ src, alt}) => {
 
     return (
-        <>
+        <div className="relative min-h-screen bg-black overflow-hidden">
             <Title title={alt !== undefined ? `Card ${alt}` : "Card BigBrain"} />
-            <div className="flex items-center justify-center max-w-screen-2xl mx-auto min-h-screen">
+            <div className="flex items-center justify-center max-w-screen-2xl mx-auto min-h-screen overflow-hidden">
                 <div className="flex items-center justify-center w-full">
                     <img src={src} alt={alt} loading="lazy" className="rounded-md w-full h-full" />
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

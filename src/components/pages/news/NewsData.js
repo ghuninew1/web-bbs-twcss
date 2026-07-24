@@ -529,7 +529,63 @@ const dataNews12 = [
     },
 ];
 
+const dataNews14 = [
+    {
+        id: 1,
+        src: "/img/news2/14/1_20260724.avif",
+        alt: "data14_1",
+        swap: false,
+    },
+    {
+        id: 2,
+        src: "/img/news2/14/2_20260724.avif",
+        alt: "data14_2",
+        swap: true,
+    },
+    {
+        id: 3,
+        src: "/img/news2/14/3_20260724.avif",
+        alt: "data14_3",
+        swap: false,
+    },
+    {
+        id: 4,
+        src: "/img/news2/14/4_20260724.avif",
+        alt: "data14_4",
+        swap: true,
+    },
+    {
+        id: 5,
+        src: "/img/news2/14/5_20260724.avif",
+        alt: "data14_5",
+        swap: false,
+    },
+    {
+        id: 6,
+        src: "/img/news2/14/6_20260724.avif",
+        alt: "data14_6",
+        swap: true,
+    },
+    {
+        id: 7,
+        src: "/img/news2/14/7_20260724.avif",
+        alt: "data14_7",
+        swap: false,
+    },
+];
+
 export const dataNews = [
+    {
+        id: 33,
+        date: "July 23, 2026",
+        title: "A major milestone for Big Brain Studio!",
+        src: "/img/news2/14.avif",
+        content: `ก้าวสำคัญครั้งใหม่ของ Big Brain Studio! พวกเราขอขอบคุณทาง GDH และ อิทธิปาทา ที่ให้โอกาส ความไว้วางใจ และมาร่วมเป็นกำลังสำคัญในการผลักดันโปรเจกต์แอนิเมชันเรื่องแรกของพวกเรา! 🙏✨`,
+        content2: `เป็นก้าวที่ใหญ่และท้าทายมาก แต่สัญญาเลยว่าทีมงานทุกคนจะปล่อยของเต็มที่ ไม่ทำให้ผิดหวังแน่นอน รอติดตามความสนุกกันได้ เร็วๆนี้นะครับ ✌️😊`,
+        content3: `Huge thanks to GDH and Ittipata for believing in us and coming onboard as key partners for our very first animated series. It’s a massive step and a thrilling challenge, but we promise to bring our absolute best to the screen. We won't let you down—stay tuned for the chaotic fun coming your way soon! 🙏✨😊✌️`,
+        to: dataNews14,
+        swap: false,
+    },
     {
         id: 32,
         date: "Sep 10, 2025",
@@ -537,7 +593,7 @@ export const dataNews = [
         src: "/img/news2/13.avif",
         content: null,
         to: "https://www.tccf.tw/en/pitching/selected_entries2025",
-        swap: false,
+        swap: true,
     },
     {
         id: 31,
@@ -547,7 +603,7 @@ export const dataNews = [
         content: `Big Brain Studio had an inspiring time at the Annecy International Animation Film Festival 2025. We were proud to team up with Eez Studio and Tomogram Studio as part of the SEA Pitch for A Letter to Hanako. It was a privilege to support this heartfelt project and share the stage with such talented regional partners.`,
         content2: `From exciting pitch sessions to meaningful conversations with global creatives, Annecy was a celebration of collaboration and storytelling. Thank you to everyone who connected with us, see you next year!`,
         to: dataNews12,
-        swap: true,
+        swap: false,
     },
 
     // {

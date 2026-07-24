@@ -52,12 +52,12 @@ function Model({ indexImg = 0, handlClose }) {
                     >
                         {dataRef[indexImg - 1]?.to.map((item, index) => (
                             <SwiperSlide key={index}>
-                                <div className="md:w-full">
+                                <div className="md:w-full flex items-center justify-center mx-auto">
                                     <img
                                         src={item.src}
                                         alt={item.alt}
                                         loading="lazy"
-                                        className="md:max-h-[70vh] md:min-h-[650px] min-h-full max-h-[60vh] w-full object-center h-full object-cover"
+                                        className="md:max-h-[70vh] max-h-[60vh] md:min-h-[650px] min-h-full w-full object-center h-full object-cover"
                                     />
                                 </div>
                             </SwiperSlide>
@@ -90,7 +90,14 @@ function Model({ indexImg = 0, handlClose }) {
                             {dataRef[indexImg - 1]?.content && (
                                 <div>
                                     <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content}</p>
-                                    <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content2}</p>
+                                    {dataRef[indexImg - 1]?.content2 && (
+                                        <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content2}</p>
+                                    )}
+                                    {/* <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content2}</p> */}
+                                    {dataRef[indexImg - 1]?.content3 && (
+                                        <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content3}</p>
+                                    )}
+                                    {/* <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content3}</p> */}
                                 </div>
                             )}
                         </div>

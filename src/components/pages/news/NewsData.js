@@ -651,7 +651,7 @@ export const dataNews = [
     },
     {
         id: 33,
-        date: "June 27, 2026",
+        date: "July 01, 2026",
         title: "Big Brain Studio Wraps Up Annecy 2026",
         src: "/img/news2/15.jpeg",
         content: `Big Brain Studio wrapped up another inspiring week at Annecy Festival 2026!`,

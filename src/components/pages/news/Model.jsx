@@ -93,11 +93,12 @@ function Model({ indexImg = 0, handlClose }) {
                                     {dataRef[indexImg - 1]?.content2 && (
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content2}</p>
                                     )}
-                                    {/* <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content2}</p> */}
                                     {dataRef[indexImg - 1]?.content3 && (
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content3}</p>
                                     )}
-                                    {/* <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content3}</p> */}
+                                    {dataRef[indexImg - 1]?.content4 && (
+                                        <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content4}</p>
+                                    )}
                                 </div>
                             )}
                         </div>

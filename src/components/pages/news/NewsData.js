@@ -574,9 +574,72 @@ const dataNews14 = [
     },
 ];
 
+const dataNews15 = [
+    {
+        id: 1,
+        src: "/img/news2/15/01.jpeg",
+        alt: "data15_1",
+        swap: false,
+    },
+    {
+        id: 2,
+        src: "/img/news2/15/02.jpeg",
+        alt: "data15_2",
+        swap: true,
+    },
+    {
+        id: 3,
+        src: "/img/news2/15/03.jpeg",
+        alt: "data15_3",
+        swap: false,
+    },
+    {
+        id: 4,
+        src: "/img/news2/15/04.jpeg",
+        alt: "data15_4",
+        swap: true,
+    },
+    {
+        id: 5,
+        src: "/img/news2/15/05.jpeg",
+        alt: "data15_5",
+        swap: false,
+    },
+    {
+        id: 6,
+        src: "/img/news2/15/06.jpeg",
+        alt: "data15_6",
+        swap: true,
+    },
+    {
+        id: 7,
+        src: "/img/news2/15/07.jpeg",
+        alt: "data15_7",
+        swap: false,
+    },
+    {
+        id: 8,
+        src: "/img/news2/15/08.jpeg",
+        alt: "data15_8",
+        swap: true,
+    },
+    {
+        id: 9,
+        src: "/img/news2/15/09.jpeg",
+        alt: "data15_9",
+        swap: false,
+    },
+    {
+        id: 10,
+        src: "/img/news2/15/10.jpeg",
+        alt: "data15_10",
+        swap: true,
+    },   
+];
+
 export const dataNews = [
     {
-        id: 33,
+        id: 34,
         date: "July 23, 2026",
         title: "A major milestone for Big Brain Studio!",
         src: "/img/news2/14.avif",
@@ -584,6 +647,18 @@ export const dataNews = [
         content2: `เป็นก้าวที่ใหญ่และท้าทายมาก แต่สัญญาเลยว่าทีมงานทุกคนจะปล่อยของเต็มที่ ไม่ทำให้ผิดหวังแน่นอน รอติดตามความสนุกกันได้ เร็วๆนี้นะครับ ✌️😊`,
         content3: `Huge thanks to GDH and Ittipata for believing in us and coming onboard as key partners for our very first animated series. It’s a massive step and a thrilling challenge, but we promise to bring our absolute best to the screen. We won't let you down—stay tuned for the chaotic fun coming your way soon! 🙏✨😊✌️`,
         to: dataNews14,
+        swap: true,
+    },
+    {
+        id: 33,
+        date: "June 27, 2026",
+        title: "Big Brain Studio Wraps Up Annecy 2026",
+        src: "/img/news2/15.jpeg",
+        content: `Big Brain Studio wrapped up another inspiring week at Annecy Festival 2026!`,
+        content2: `A highlight this year was an exciting seminar on the development of the animation industry, with a special spotlight on Southeast Asian animation. We were thrilled to see Violinist win a prize at the festival, celebrating the growing talent and creativity from the SEA region.`,
+        content3: `Beyond the events, Annecy was all about great connections, meeting new friends, reconnecting with familiar faces, and catching up with old ones. And yes, the heat wave definitely made things memorable! ☀️`,
+        content4: `Thank you to everyone who made Annecy 2026 such a great experience. See you next time!`,
+        to: dataNews15,
         swap: false,
     },
     {

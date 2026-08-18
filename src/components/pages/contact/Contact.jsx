@@ -25,7 +25,7 @@ const Contact = () => {
             setShow(true);
             return;
         } else {
-            fetch("https://getform.io/f/bkkylgwb", {
+            fetch("https://forminit.com/f/bkkylgwb", {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {

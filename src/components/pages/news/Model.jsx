@@ -26,7 +26,7 @@ function Model({ indexImg = 0, handlClose }) {
     return (
         (indexImg !== 0 && (
             <div className="fixed top-0 inset-x-0 z-[50] min-h-screen w-screen h-full bg-black overflow-y-scroll">
-                <div className="relative w-full md:max-w-[1100px] min-h-[90vh] mx-auto flex flex-col items-center justify-center my-3 md:my-5 ">
+                <div className="relative w-full md:max-w-[1280px] min-h-[90vh] mx-auto flex flex-col items-center justify-center my-3 md:my-5 ">
                     <button className="opacity-60 hover:opacity-100 absolute top-3 right-2 z-[9991] shadow-lg inline-flex rounded-full">
                         <XCircleIcon
                             aria-hidden
@@ -88,7 +88,7 @@ function Model({ indexImg = 0, handlClose }) {
                         </div>
                         <div className="text-[14px] md:text-[16px] px-3 font-[300] antialiased">
                             {dataRef[indexImg - 1]?.content && (
-                                <div>
+                                <div className="text-center flex flex-col items-center justify-center">
                                     <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content}</p>
                                     {dataRef[indexImg - 1]?.content2 && (
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content2}</p>
@@ -98,6 +98,21 @@ function Model({ indexImg = 0, handlClose }) {
                                     )}
                                     {dataRef[indexImg - 1]?.content4 && (
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content4}</p>
+                                    )}
+                                    {dataRef[indexImg - 1]?.content5 && (
+                                        <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content5}</p>
+                                    )}
+                                    {dataRef[indexImg - 1]?.content6 && (
+                                        <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content6}</p>
+                                    )}
+                                    {dataRef[indexImg - 1]?.content7 && (
+                                        <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content7}</p>
+                                    )}
+                                    {dataRef[indexImg - 1]?.content8 && (
+                                        <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content8}</p>
+                                    )}
+                                    {dataRef[indexImg - 1]?.content9 && (
+                                        <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content9}</p>
                                     )}
                                 </div>
                             )}

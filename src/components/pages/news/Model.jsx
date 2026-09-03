@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-// import { cx } from "../../utils";
+import { cx } from "../../utils";
 
 function Model({ indexImg = 0, handlClose }) {
     const dataRef = useRef(dataNews).current;
@@ -100,7 +100,7 @@ function Model({ indexImg = 0, handlClose }) {
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content4}</p>
                                     )}
                                     {dataRef[indexImg - 1]?.content5 && (
-                                        <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content5}</p>
+                                        <p className={cx("first-letter:ml-5" ,dataRef[indexImg - 1].id == 34 && "text-transparent")}>{dataRef[indexImg - 1]?.content5}</p>
                                     )}
                                     {dataRef[indexImg - 1]?.content6 && (
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content6}</p>
@@ -113,6 +113,12 @@ function Model({ indexImg = 0, handlClose }) {
                                     )}
                                     {dataRef[indexImg - 1]?.content9 && (
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content9}</p>
+                                    )}
+                                    {dataRef[indexImg - 1]?.content10 && (
+                                        <p className={cx("first-letter:ml-5" ,dataRef[indexImg - 1].id == 34 && "text-transparent")}>{dataRef[indexImg - 1]?.content10}</p>
+                                    )}
+                                    {dataRef[indexImg - 1]?.content11 && (
+                                        <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content11}</p>
                                     )}
                                 </div>
                             )}

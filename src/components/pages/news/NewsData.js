@@ -657,10 +657,60 @@ const dataNews16 = [
         swap: false,
     },
 ];
+const dataNews17 = [
+    {
+        id: 1,
+        src: "/img/news2/17/for_web_site1.jpeg",
+        alt: "data17_1",
+        swap: false,
+    },
+    {
+        id: 2,
+        src: "/img/news2/17/for_web_site2.jpeg",
+        alt: "data17_2",
+        swap: true,
+    },
+    {
+        id: 3,
+        src: "/img/news2/17/for_web_site3.jpeg",
+        alt: "data17_3",
+        swap: false,
+    },
+    {
+        id: 4,
+        src: "/img/news2/17/for_web_site4.jpeg",
+        alt: "data17_4",
+        swap: true,
+    },
+    {
+        id: 5,
+        src: "/img/news2/17/for_web_site5.jpeg",
+        alt: "data17_5",
+        swap: false,
+    },
+    {
+        id: 6,
+        src: "/img/news2/17/for_web_site6.jpeg",
+        alt: "data17_6",
+        swap: true,
+    },
+    {
+        id: 7,
+        src: "/img/news2/17/for_web_site7.jpeg",
+        alt: "data17_7",
+        swap: false,
+    },
+    {
+        id: 8,
+        src: "/img/news2/17/for_web_site8.jpeg",
+        alt: "data17_8",
+        swap: true,
+    },
+];
 
 export const dataNews = [
     {
-        id: 35,
+        id: 36,
         date: "July 23, 2026",
         title: "A major milestone for Big Brain Studio!",
         src: "/img/news2/14.avif",
@@ -669,10 +719,10 @@ export const dataNews = [
         content3: `Huge thanks to GDH and Ittipata for believing in us and coming onboard as key partners for our very first animated series. It’s a massive step and a thrilling challenge, but we promise to bring our absolute best to the screen.`,
         content4: `We won't let you down—stay tuned for the chaotic fun coming your way soon! 🙏✨😊✌️`,
         to: dataNews14,
-        swap: false,
+        swap: true,
     },
     {
-        id: 34,
+        id: 35,
         date: "July 22, 2026",
         title: "Thailand Content Market 2026",
         src: "/img/news2/16.jpeg",
@@ -688,6 +738,15 @@ export const dataNews = [
         content10: `.`,   
         content11: `#BigBrainStudio #ThailandContentMarket2026 #TCM2026 #BusinessMatching #Animation`,
         to: dataNews16,
+        swap: false,
+    },
+    {
+        id: 34,
+        date: "July 02, 2026",
+        title: "What We Learned from ANNECY 2026",
+        src: "/img/news2/17.jpeg",
+        content: ``,
+        to: dataNews17,
         swap: true,
     },
     {

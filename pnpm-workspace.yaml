@@ -3,3 +3,5 @@ allowBuilds:
 ignoredBuiltDependencies:
   - '@swc/core'
   - esbuild
+minimumReleaseAgeExclude:
+  - eslint-plugin-react-refresh@0.5.7

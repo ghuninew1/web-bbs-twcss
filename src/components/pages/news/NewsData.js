@@ -640,19 +640,19 @@ const dataNews15 = [
 const dataNews16 = [
     {
         id: 1,
-        src: "/img/news2/16/v_01_01.jpeg",
+        src: "/img/news2/16/v_01_01.avif",
         alt: "data16_1",
         swap: false,
     },
     {
         id: 2,
-        src: "/img/news2/16/v_01_02.jpeg",
+        src: "/img/news2/16/v_01_02.avif",
         alt: "data16_2",
         swap: true,
     },
     {
         id: 3,
-        src: "/img/news2/16/v_01_03.jpeg",
+        src: "/img/news2/16/v_01_03.avif",
         alt: "data16_3",
         swap: false,
     },
@@ -660,55 +660,75 @@ const dataNews16 = [
 const dataNews17 = [
     {
         id: 1,
-        src: "/img/news2/17/for_web_site1.jpeg",
+        src: "/img/news2/17/for_web_site1.avif",
         alt: "data17_1",
         swap: false,
     },
     {
         id: 2,
-        src: "/img/news2/17/for_web_site2.jpeg",
+        src: "/img/news2/17/for_web_site2.avif",
         alt: "data17_2",
         swap: true,
     },
     {
         id: 3,
-        src: "/img/news2/17/for_web_site3.jpeg",
+        src: "/img/news2/17/for_web_site3.avif",
         alt: "data17_3",
         swap: false,
     },
     {
         id: 4,
-        src: "/img/news2/17/for_web_site4.jpeg",
+        src: "/img/news2/17/for_web_site4.avif",
         alt: "data17_4",
         swap: true,
     },
     {
         id: 5,
-        src: "/img/news2/17/for_web_site5.jpeg",
+        src: "/img/news2/17/for_web_site5.avif",
         alt: "data17_5",
         swap: false,
     },
     {
         id: 6,
-        src: "/img/news2/17/for_web_site6.jpeg",
+        src: "/img/news2/17/for_web_site6.avif",
         alt: "data17_6",
         swap: true,
     },
     {
         id: 7,
-        src: "/img/news2/17/for_web_site7.jpeg",
+        src: "/img/news2/17/for_web_site7.avif",
         alt: "data17_7",
         swap: false,
     },
     {
         id: 8,
-        src: "/img/news2/17/for_web_site8.jpeg",
+        src: "/img/news2/17/for_web_site8.avif",
         alt: "data17_8",
         swap: true,
     },
 ];
+const dataNews18 = [
+    {
+        id: 1,
+        src: "/img/news2/18/softpower_poster.avif",
+        alt: "data18_1",
+        swap: false,
+    },
+]
 
 export const dataNews = [
+    {
+        id: 37,
+        date: "Sep 28, 2026",
+        title: "แอนิเมชัน “แม็กซ์ กับ จ่อย บริการ” คว้าทุนกระทรวงวัฒนธรรม ลุยทำ Trailer โชว์เสน่ห์ตลาดร่มหุบ",
+        src: "/img/news2/18.avif",
+        content: `เมื่อเดือนกรกฎาคม 2569 ที่ผ่านมา โครงการแอนิเมชัน “แม็กซ์ กับ จ่อย บริการ” (Max n’ Joi Service) ผลงานของบริษัท บิ๊กเบรน สตูดิโอ จำกัด ได้รับเงินสนับสนุนจากกรมส่งเสริมวัฒนธรรม กระทรวงวัฒนธรรม เพื่อนำมาผลิตภาพยนตร์ตัวอย่าง (Trailer)`,
+        content2: `บริษัทฯ ขอขอบพระคุณกรมส่งเสริมวัฒนธรรม กระทรวงวัฒนธรรม สำหรับความไว้วางใจและการสนับสนุนในครั้งนี้ บริษัทพร้อมเดินหน้าสร้างสรรค์ผลงานคุณภาพเพื่อถ่ายทอดเสน่ห์ความเป็นไทย และแสดงศักยภาพฝีมือของคนไทยในอุตสาหกรรมสร้างสรรค์สู่สายตาผู้ชมทั้งในประเทศและระดับสากล`,
+        content3: `เรื่องราวสนุกๆ ใกล้ตัวที่สะท้อนวิถีชีวิตแบบไทยๆ จะถูกหยิบยกมาเล่าบนฉากหลังสำคัญ “ตลาดร่มหุบ แม่กลอง” นำทัพความบันเทิงโดย แม็กซ์ เจ้าหนูนักประดิษฐ์จอมกวน, ลุงจ่อย สุดยอดช่างซ่อมวัยเกษียณ และ สมาชิกชาวตลาด สุดอลเวง พร้อมจะมาเสิร์ฟความน่ารักและความฮาอย่างจัดเต็ม`,
+        content4: `พบกันเร็ว ๆ นี้! แม็กซ์ กับ จ่อย บริการ (Max n’ Joi Service)`,
+        to: dataNews18,
+        swap: false,
+    },
     {
         id: 36,
         date: "July 23, 2026",
@@ -725,7 +745,7 @@ export const dataNews = [
         id: 35,
         date: "July 22, 2026",
         title: "Thailand Content Market 2026",
-        src: "/img/news2/16.jpeg",
+        src: "/img/news2/16.avif",
         content: `That’s a wrap on Thailand Content Market 2026! 🎉`,   
         content2: `We’re truly grateful for the amazing support, conversations, and connections from everyone, both at our booth and during the Business Matching sessions throughout all 3 days.`,   
         content3: `Thank you to everyone who stopped by to chat, connect with us, exchange ideas, and join in on our activities.`,
@@ -744,7 +764,7 @@ export const dataNews = [
         id: 34,
         date: "July 02, 2026",
         title: "What We Learned from ANNECY 2026",
-        src: "/img/news2/17.jpeg",
+        src: "/img/news2/17.avif",
         content: ``,
         to: dataNews17,
         swap: true,

@@ -17,6 +17,7 @@
   <img src="https://img.shields.io/badge/React-19.3-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React 19" />
   <img src="https://img.shields.io/badge/Vite-8.3-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Vitest-5.0-6E9F18?style=flat-square&logo=vitest&logoColor=white" alt="Vitest" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License MIT" />
   <img src="https://img.shields.io/github/repo-size/ghuninew1/web-bbs-twcss?style=flat-square" alt="Repo Size" />
   <img src="https://img.shields.io/github/directory-file-count/ghuninew1/web-bbs-twcss?style=flat-square" alt="File Count" />
@@ -27,9 +28,9 @@
 
 ## 📖 เกี่ยวกับโปรเจกต์ (About The Project)
 
-**web-bbs-twcss** เป็นเว็บแอปพลิเคชันอย่างเป็นทางการของ **Big Brain Studio** (เดิมชื่อ *Big Brain Pictures* ก่อตั้งขึ้นเมื่อปี 2013)
+**web-bbs-twcss** เป็นเว็บแอปพลิเคชันอย่างเป็นทางการของ **Big Brain Studio** (เดิมชื่อ *Big Brain Pictures* ก่อตั้งขึ้นเมื่อปี 2013 )
 
-เว็บไซต์นี้พัฒนาขึ้นใหม่โดยใช้ **React 19**, **Vite**, **Tailwind CSS** และ **React Router v7** เพื่อนำเสนอผลงานระดับมาสเตอร์พีซ, แนะนำสตูดิโอและบริการ, อัปเดตข่าวสารกิจกรรม, ประกาศรับสมัครงาน รวมถึงระบบนามบัตรดิจิทัล (Digital Name Cards) พร้อมประสิทธิภาพความเร็วสูงและ Responsive Design ที่รองรับทุกขนาดหน้าจอ
+เว็บไซต์นี้พัฒนาขึ้นใหม่โดยใช้ **React 19**, **Vite**, **Tailwind CSS**, **React Router v7** และเสริมความมั่นใจด้านเสถียรภาพด้วยการทดสอบอัตโนมัติผ่าน **Vitest** และ **React Testing Library** เพื่อนำเสนอผลงานระดับมาสเตอร์พีซ, แนะนำสตูดิโอและบริการ, อัปเดตข่าวสารกิจกรรม, ประกาศรับสมัครงาน รวมถึงระบบนามบัตรดิจิทัล (Digital Name Cards) พร้อมประสิทธิภาพความเร็วสูงและ Responsive Design ที่รองรับทุกขนาดหน้าจอ
 
 🔗 **เว็บไซต์หลัก**: [https://www.bigbrain-studio.com](https://www.bigbrain-studio.com)
 
@@ -48,6 +49,7 @@
 - 📢 **Announcements**: ข้อมูลและประกาศข่าวสารสำคัญจากทางสตูดิโอ
 - 📞 **Contact Us**: ข้อมูลที่อยู่สำนักงาน แผนที่ ช่องทางติดต่อด่วน และลิงก์โซเชียลมีเดียครบวงจร (Facebook, YouTube, Instagram, WhatsApp, Vimeo, LinkedIn)
 - 📇 **Digital Business Cards (E-Cards)**: หน้านามบัตรดิจิทัลสำหรับทีมงานแต่ละบุคคล (เช่น `/card`, `/cardPtum`, `/cardPpang`, `/cardPnote`, `/cardPtood`, ฯลฯ) รองรับการเปิดผ่าน QR Code บนสมาร์ตโฟน
+- 🧪 **Automated Testing Suite**: มีชุดการทดสอบ Unit & Component Testing ครอบคลุมทั้ง Components, Custom Hooks และ Utilities ด้วย Vitest และ Testing Library
 - 🚀 **Performance & Modern UI**:
   - โหลดภาพและวิดีโอแบบ Lazy Loading พร้อมฟอร์แมตภาพสมัยใหม่อย่าง `.avif`
   - รองรับ Scroll-to-Top และ Intersection Observer เพื่อตรวจจับการมองเห็นและเริ่มเล่นแอนิเมชันอย่างลื่นไหล
@@ -60,12 +62,14 @@
 | :--- | :--- | :--- |
 | **Frontend Framework** | [React 19](https://react.dev/) | ไลบรารีหลักในการสร้างส่วนติดต่อผู้ใช้ (UI) |
 | **Routing** | [React Router v7](https://reactrouter.com/) | จัดการเส้นทาง URL และการสลับหน้า (Data API & Nested Routes) |
-| **Build Tool & Bundler** | [Vite 5](https://vitejs.dev/) | โมดูลบันเดิลเลอร์ความเร็วสูงสำหรับการพัฒนาและสร้าง Production Build |
+| **Build Tool & Bundler** | [Vite](https://vitejs.dev/) | โมดูลบันเดิลเลอร์ความเร็วสูงสำหรับการพัฒนาและสร้าง Production Build |
 | **Styling** | [Tailwind CSS 3](https://tailwindcss.com/) | Utility-First CSS Framework พร้อมปรับแต่ง Custom Animations & Keyframes |
 | **Post-Processing** | [PostCSS](https://postcss.org/) & [Autoprefixer](https://github.com/postcss/autoprefixer) | จัดการคอมไพล์ CSS และใส่ Vendor Prefixes อัตโนมัติ |
-| **Slider / Carousel** | [Swiper 11](https://swiperjs.com/) | คอมโพเนนต์สไลด์ผลงานและโลโก้พาร์ตเนอร์ |
+| **Testing Framework** | [Vitest](https://vitest.dev/) | Next-generation Testing Framework ความเร็วสูงทำงานร่วมกับ Vite |
+| **Testing Utilities** | [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) & [jest-dom](https://github.com/testing-library/jest-dom) | เครื่องมือจำลองและทดสอบพฤติกรรม UI Components บนสภาพแวดล้อม JSDOM |
+| **Slider / Carousel** | [Swiper](https://swiperjs.com/) | คอมโพเนนต์สไลด์ผลงานและโลโก้พาร์ตเนอร์ |
 | **Icons** | [@heroicons/react](https://heroicons.com/) | ชุดไอคอน SVG แบบคมชัดจาก Tailwind Labs |
-| **Code Quality** | [ESLint 9](https://eslint.org/) | ตรวจสอบคุณภาพโค้ดตามมาตรฐาน ECMAScript/React |
+| **Code Quality** | [ESLint](https://eslint.org/) | ตรวจสอบคุณภาพโค้ดตามมาตรฐาน ECMAScript/React |
 | **Package Manager** | [pnpm](https://pnpm.io/) | Fast & disk space efficient package manager |
 
 ---
@@ -74,44 +78,82 @@
 
 ```text
 web-bbs-twcss/
-├── public/                     # Static Assets สำหรับการเข้าถึงผ่าน Web Root
-│   ├── font/                   # ไฟล์ฟอนต์ที่ใช้ในโปรเจกต์
-│   ├── img/                    # ภาพประกอบ โลโก้ และไอคอน (PWA / Favicon)
-│   └── robots.txt              # นโยบายสำหรับ Web Crawlers / Search Engines
+├── public/                         # Static Assets สำหรับการเข้าถึงผ่าน Web Root
+│   ├── font/                       # ไฟล์ฟอนต์ที่ใช้ในโปรเจกต์
+│   ├── img/                        # ภาพประกอบ โลโก้ และไอคอน (PWA / Favicon)
+│   └── robots.txt                  # นโยบายสำหรับ Web Crawlers / Search Engines
 ├── src/
-│   ├── assets/                 # ภาพและ Asset ที่ถูกนำเข้าผ่าน JavaScript/JSX
-│   ├── hook/                   # Custom React Hooks (เช่น useIntersectionObserver)
-│   ├── components/             # คอมโพเนนต์ UI ส่วนกลาง
-│   │   ├── Header.jsx          # ส่วนหัวของเว็บไซต์
-│   │   ├── Navbar.jsx          # แถบเมนูนำทางหลักพร้อมรองรับ Mobile Responsive
-│   │   ├── Footer.jsx          # ส่วนท้ายเว็บพร้อมข้อมูลและโซเชียลมีเดีย
-│   │   ├── Layout.jsx          # แม่แบบโครงสร้างหน้าเว็บหลัก
-│   │   ├── Fallback.jsx        # หน้า Error/404 Page Not Found
-│   │   ├── Iframe.jsx          # คอมโพเนนต์ Iframe ปลอดภัยสำหรับ Video Embed
-│   │   ├── Title.jsx           # จัดการ Page Title ตามแต่ละหน้า
-│   │   ├── ToTop.jsx           # ปุ่มลัด Scroll กลับขึ้นด้านบนสุด
-│   │   ├── pages/              # คอมโพเนนต์หน้าเว็บแต่ละหน้า
-│   │   │   ├── home/           # หน้าแรก + พาร์ตเนอร์ (Home & HomePartner)
-│   │   │   ├── ourwork/        # หน้าแสดงผลงาน + ImageZoom + ข้อมูลผลงาน
-│   │   │   ├── service/        # หน้าบริการของสตูดิโอ (ServiceData)
-│   │   │   ├── news/           # ข่าวสาร กิจกรรม และ Model แสดงรายละเอียด
-│   │   │   ├── jobs/           # ประกาศรับสมัครงานและ JobData
-│   │   │   ├── contact/        # หน้าติดต่อเราและข้อมูล Social Media
-│   │   │   ├── Annoucement.jsx # หน้าประกาศ
-│   │   │   ├── Studio.jsx      # หน้าเกี่ยวกับสตูดิโอ
-│   │   │   └── card.jsx        # หน้านามบัตรดิจิทัล (Digital Name Cards)
-│   │   └── utils/              # Helper Utilities (Observer, Portal, ScrollListener)
-│   ├── App.jsx                 # นิยาม Route และการกำหนดค่า BrowserRouter
-│   ├── index.css               # สไตล์ CSS กลางและ Tailwind Directives
-│   └── main.jsx                # จุดเริ่มต้นหลักของแอปพลิเคชัน (React Root)
-├── index.html                  # HTML Template พร้อม OpenGraph และ JSON-LD Schema
-├── package.json                # ข้อมูล Dependencies และสคริปต์คำสั่ง
-├── pnpm-lock.yaml              # Lockfile ของ pnpm dependencies
-├── pnpm-workspace.yaml         # การตั้งค่า Workspace ของ pnpm
-├── postcss.config.js           # การตั้งค่า PostCSS
-├── tailwind.config.js          # ปรับแต่งธีม, Keyframes และ Animation ของ Tailwind CSS
-└── vite.config.js              # การตั้งค่าโปรเจกต์ Vite
+│   ├── assets/                     # ภาพและ Asset ที่ถูกนำเข้าผ่าน JavaScript/JSX
+│   ├── hook/                       # Custom React Hooks
+│   │   ├── useIntersectionObserver.js
+│   │   └── __tests__/              # Unit Tests สำหรับ Custom Hooks
+│   ├── test/                       # การตั้งค่าสภาพแวดล้อมการทดสอบ (Test Setup)
+│   │   └── setup.js                # Mock JSDOM, window.scrollTo, IntersectionObserver
+│   ├── components/                 # คอมโพเนนต์ UI ส่วนกลาง
+│   │   ├── Header.jsx              # ส่วนหัวของเว็บไซต์
+│   │   ├── Navbar.jsx              # แถบเมนูนำทางหลักพร้อมรองรับ Mobile Responsive
+│   │   ├── Footer.jsx              # ส่วนท้ายเว็บพร้อมข้อมูลและโซเชียลมีเดีย
+│   │   ├── Layout.jsx              # แม่แบบโครงสร้างหน้าเว็บหลัก
+│   │   ├── Fallback.jsx            # หน้า Error/404 Page Not Found
+│   │   ├── Iframe.jsx              # คอมโพเนนต์ Iframe ปลอดภัยสำหรับ Video Embed
+│   │   ├── Title.jsx               # จัดการ Page Title ตามแต่ละหน้า
+│   │   ├── ToTop.jsx               # ปุ่มลัด Scroll กลับขึ้นด้านบนสุด
+│   │   ├── __tests__/              # Component Tests (Header, Footer, Navbar, ToTop ฯลฯ)
+│   │   ├── pages/                  # คอมโพเนนต์หน้าเว็บแต่ละหน้า
+│   │   │   ├── home/               # หน้าแรก + พาร์ตเนอร์ (Home & HomePartner)
+│   │   │   ├── ourwork/            # หน้าแสดงผลงาน + ImageZoom + ข้อมูลผลงาน
+│   │   │   ├── service/            # หน้าบริการของสตูดิโอ (ServiceData)
+│   │   │   ├── news/               # ข่าวสาร กิจกรรม และ Model แสดงรายละเอียด
+│   │   │   ├── jobs/               # ประกาศรับสมัครงานและ JobData
+│   │   │   ├── contact/            # หน้าติดต่อเราและข้อมูล Social Media
+│   │   │   ├── Annoucement.jsx     # หน้าประกาศ
+│   │   │   ├── Studio.jsx          # หน้าเกี่ยวกับสตูดิโอ
+│   │   │   └── card.jsx            # หน้านามบัตรดิจิทัล (Digital Name Cards)
+│   │   └── utils/                  # Helper Utilities (Observer, Portal, ScrollListener)
+│   │       └── __tests__/          # Unit Tests สำหรับ Helper functions
+│   ├── App.jsx                     # นิยาม Route และการกำหนดค่า BrowserRouter
+│   ├── index.css                   # สไตล์ CSS กลางและ Tailwind Directives
+│   └── main.jsx                    # จุดเริ่มต้นหลักของแอปพลิเคชัน (React Root)
+├── index.html                      # HTML Template พร้อม OpenGraph และ JSON-LD Schema
+├── package.json                    # ข้อมูล Dependencies และสคริปต์คำสั่ง
+├── pnpm-lock.yaml                  # Lockfile ของ pnpm dependencies
+├── pnpm-workspace.yaml             # การตั้งค่า Workspace ของ pnpm
+├── postcss.config.js               # การตั้งค่า PostCSS
+├── tailwind.config.js              # ปรับแต่งธีม, Keyframes และ Animation ของ Tailwind CSS
+├── vite.config.js                  # การตั้งค่าโปรเจกต์ Vite
+└── vitest.config.js                # การกำหนดค่า Vitest (JSDOM Environment, Setup File)
 ```
+
+---
+
+## 🧪 การทดสอบระบบ (Testing)
+
+โปรเจกต์นี้มีชุดทดสอบอัตโนมัติ (Automated Tests) เพื่อรับประกันความถูกต้องของการทำงาน ทั้งในส่วนของ UI Components, Custom Hooks และ Utilities โดยใช้ **Vitest**, **React Testing Library** และจำลองเบราว์เซอร์ด้วย **JSDOM**
+
+### 1. คำสั่งการทดสอบ
+
+- **รันชุดการทดสอบทั้งหมด (Single Run):**
+  ```bash
+  pnpm test
+  # หรือใช้ npm:
+  # npm run test
+  ```
+
+- **รันการทดสอบแบบเฝ้าดูการเปลี่ยนแปลง (Watch Mode):**
+  ```bash
+  pnpm test:watch
+  # หรือใช้ npm:
+  # npm run test:watch
+  ```
+
+### 2. ขอบเขตการทดสอบ (Test Suites)
+
+| หมวดหมู่ | ตำแหน่งไฟล์ทดสอบ | รายละเอียดการทดสอบ |
+| :--- | :--- | :--- |
+| **UI Components** | `src/components/__tests__/` | ทดสอบการเรนเดอร์, การแสดงผลข้อความ/ลิงก์, การตอบสนองต่อ Event ของ Header, Footer, Navbar, Title, ToTop และ Fallback |
+| **Custom Hooks** | `src/hook/__tests__/` | ทดสอบ Lifecycle และการเรียก Callback ของ `useIntersectionObserver` |
+| **Utilities** | `src/components/utils/__tests__/` | ทดสอบความถูกต้องของ Helper Functions เช่น `cx` (Classnames merge) และฟังก์ชันคำนวณ |
+| **Test Setup & Mocks** | `src/test/setup.js` | กำหนดค่า Mock สำหรับ Browser APIs เช่น `window.scrollTo` และ `IntersectionObserver` |
 
 ---
 
@@ -137,7 +179,12 @@ web-bbs-twcss/
    # npm install
    ```
 
-3. **รัน Development Server**
+3. **รัน Unit & Component Tests**
+   ```bash
+   pnpm test
+   ```
+
+4. **รัน Development Server**
    ```bash
    pnpm dev
    # หรือใช้ npm:
@@ -145,17 +192,17 @@ web-bbs-twcss/
    ```
    จากนั้นเปิดเบราว์เซอร์ไปที่ `http://localhost:5173/`
 
-4. **ตรวจสอบโค้ดด้วย Linter**
+5. **ตรวจสอบโค้ดด้วย Linter**
    ```bash
    pnpm lint
    ```
 
-5. **สร้างไฟล์สำหรับ Production (Build)**
+6. **สร้างไฟล์สำหรับ Production (Build)**
    ```bash
    pnpm build
    ```
 
-6. **ทดสอบรัน Production Preview**
+7. **ทดสอบรัน Production Preview**
    ```bash
    pnpm preview
    ```
@@ -172,6 +219,8 @@ web-bbs-twcss/
 | `pnpm build` | คอมไพล์และแพ็กเกจไฟล์สำหรับ Production ลงในโฟลเดอร์ `dist` |
 | `pnpm preview` | เปิด Local Web Server เพื่อพรีวิวไฟล์ Build ที่ถูกสร้างขึ้น |
 | `pnpm lint` | รัน ESLint ตรวจสอบความถูกต้องและคุณภาพของโค้ด `.js` และ `.jsx` |
+| `pnpm test` | รันชุดการทดสอบทั้งหมดด้วย Vitest (Single Run) |
+| `pnpm test:watch` | รันการทดสอบด้วย Vitest แบบ Interactive Watch Mode |
 
 ---
 

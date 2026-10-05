@@ -433,15 +433,15 @@ const dataNews10 = [
         swap: false,
     },
 ];
-const dataNews11 = [
-    {
-        id: 1,
-        src: "/img/news2/11.avif",
-        alt: "dataNews11",
-        swap: false,
-        other: "other",
-    },
-];
+// const dataNews11 = [
+//     {
+//         id: 1,
+//         src: "/img/news2/11.avif",
+//         alt: "dataNews11",
+//         swap: false,
+//         other: "other",
+//     },
+// ];
 const dataNews12 = [
     {
         id: 1,

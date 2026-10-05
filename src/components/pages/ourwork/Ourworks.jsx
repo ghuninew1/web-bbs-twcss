@@ -1,4 +1,4 @@
-import { cx, scrollTo } from "../../utils";
+import { scrollTo } from "../../utils";
 import { Title, Fallback } from "../..";
 import { Link } from "react-router-dom";
 import { workData } from "./WorkData";

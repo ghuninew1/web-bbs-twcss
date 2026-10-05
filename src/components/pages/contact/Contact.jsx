@@ -3,6 +3,19 @@ import { useRef, useState } from "react";
 import contactData from "./contactData.json";
 import Portal from "../../utils/Portal";
 
+const ShowMessage = ({ handleClose, messageRef }) => {
+    return (
+        <div className="bg-white rounded-md flex flex-col justify-center items-center mx-auto gap-2 py-10 px-5">
+            <div className="text-2xl font-bold text-center text-gray-800">{messageRef.current.value}</div>
+            <button
+                className="bg-lime-700 text-gray-100 rounded-md p-2 hover:bg-lime-900 transition-all"
+                onClick={handleClose}
+            >
+                Close
+            </button>
+        </div>
+    );
+};
 const Contact = () => {
     const nameRef = useRef(null);
     const emailRef = useRef(null);
@@ -20,8 +33,7 @@ const Contact = () => {
         };
 
         if (!data.name || !data.email || !data.subject || !data.message) {
-            messageRef.current.value =
-                "Please fill all the name and email and subject and message";
+            messageRef.current.value = "Please fill all the name and email and subject and message";
             setShow(true);
             return;
         } else {
@@ -45,39 +57,18 @@ const Contact = () => {
         messageRef.current.value = "";
     };
 
-    const ShowMessage = () => {
-        return (
-            <div className="bg-white rounded-md flex flex-col justify-center items-center mx-auto gap-2 py-10 px-5">
-                <div className="text-2xl font-bold text-center">
-                    {messageRef.current.value}
-                </div>
-                <button
-                    className="bg-lime-700 text-white rounded-md p-2 hover:bg-lime-900 transition-all"
-                    onClick={handleClose}
-                >
-                    Close
-                </button>
-            </div>
-        );
-    };
-
     return (
         <div className="relative w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-2 mx-auto px-2 md:px-5 items-center mb-10">
             <Title title="Contact" />
 
             <Portal isOpen={show} closeModal={handleClose}>
-                <ShowMessage />
+                <ShowMessage messageRef={messageRef} handleClose={handleClose} />
             </Portal>
 
             <div className="pt-10 md:pt-5 shadow-lg rounded-md p-3 border-[#dcbcbc36] md:border-2 h-full flex flex-col items-center justify-center animate-fadeInLeft">
-                <div className="text-3xl md:text-4xl font-medium text-center text-white mb-5">
-                    Contact
-                </div>
+                <div className="text-3xl md:text-4xl font-medium text-center text-white mb-5">Contact</div>
 
-                <form
-                    className=" w-full px-3 flex flex-col gap-2 mt-3 animate-fade"
-                    onSubmit={handleSubmit}
-                >
+                <form className=" w-full px-3 flex flex-col gap-2 mt-3 animate-fade text-white" onSubmit={handleSubmit}>
                     <div className="flex flex-col md:flex-row gap-2 justify-center items-center">
                         <input
                             type="text"
@@ -120,21 +111,14 @@ const Contact = () => {
             </div>
             <div className="flex flex-col justify-center items-center gap-2 ml-0 md:ml-1 rounded-md p-3 border-[#dcbcbc36] md:border-2 animate-fadeInRight">
                 <div className="text-base text-center md:text-right text-white w-full tracking-wide animate-fade antialiased">
-                    <h3 className="tracking-wider text-[18px] font-medium mb-2">
-                        BIG BRAIN STUDIO CO.,LTD.
-                    </h3>
+                    <h3 className="tracking-wider text-[18px] font-medium mb-2">BIG BRAIN STUDIO CO.,LTD.</h3>
                     <p>99/1 Plan House Bangkok Building 3rd Floor,</p>
                     <p>Sukhumvit 68,Bang Na Nuea, Bang Na, Bangkok 10260, Thailand</p>
                 </div>
                 <div className="flex flex-row justify-center items-center mx-auto my-2 md:my-1">
                     <div className="mb-0 md:mb-2 animate-fade">
                         {contactData.map((link, index) => (
-                            <a
-                                href={link.to}
-                                key={index}
-                                target="_blank"
-                                rel="noreferrer"
-                            >
+                            <a href={link.to} key={index} target="_blank" rel="noreferrer">
                                 <img
                                     key={index}
                                     src={link.src}

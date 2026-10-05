@@ -1,6 +1,5 @@
-// import { useState, lazy } from "react";
 import { cx, scrollTo } from "../../utils";
-import { Title, Fallback } from "../../";
+import { Title } from "../../";
 import { Link } from "react-router-dom";
 import { workData } from "./WorkData";
 

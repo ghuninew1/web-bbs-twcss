@@ -19,7 +19,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => {
-        setOpen(!open);
+        setOpen((prev) => !prev);
     };
 
     const scrollToEven = () => {
@@ -52,7 +52,7 @@ export default function Navbar() {
                             <NavLink
                                 key={item.name}
                                 to={item.to}
-                                end={item.to === "/" ? true : false}
+                                end={item.to === "/"}
                                 onClick={scrollToEven}
                                 className={({ isActive, isPending }) =>
                                     isPending
@@ -105,7 +105,7 @@ export default function Navbar() {
                         key={item.name}
                         onClick={scrollToEven}
                         to={item.to}
-                        end={item.to === "/" ? true : false}
+                        end={item.to === "/"}
                         className={({ isActive, isPending }) =>
                             isPending
                                 ? "transition animate-pulse"

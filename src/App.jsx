@@ -35,7 +35,7 @@ import {
     OurworkRoyalChitralada,
     OurworkYala,
     OurworkPTTOR,
-    OurworkBankOfThailand,
+    // OurworkBankOfThailand,
     OurworkDepartmentOfLand,
     OurworkKungkoo,
 } from "./components/pages";
@@ -63,7 +63,7 @@ const App = () => {
         { path: "/ourwork/royalchitralada", element: <OurworkRoyalChitralada /> },
         { path: "/ourwork/yala", element: <OurworkYala /> },
         { path: "/ourwork/ptt-or", element: <OurworkPTTOR /> },
-        { path: "/ourwork/bankofthailand", element: <OurworkBankOfThailand /> },
+        // { path: "/ourwork/bankofthailand", element: <OurworkBankOfThailand /> },
         { path: "/ourwork/departmentofland", element: <OurworkDepartmentOfLand /> },
         { path: "/ourwork/kungkoo", element: <OurworkKungkoo /> },
     ];

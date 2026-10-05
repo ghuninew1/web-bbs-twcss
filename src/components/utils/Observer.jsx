@@ -18,7 +18,7 @@ function Observer(ref, rootMargin, threshold) {
                     setVisible(entry.isIntersecting);
                 },
                 {
-                    threshold: threshold || 0,
+                    threshold: threshold ?? 0,
                     rootMargin: rootMargin || "0px",
                 }
             );

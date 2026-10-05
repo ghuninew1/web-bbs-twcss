@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function ScrollListener() {
     const [data, setData] = useState({
@@ -13,22 +13,15 @@ export default function ScrollListener() {
         }));
     }, []);
 
-    const dataScroll = useMemo(() => {
-        return {
-            y: data.y,
-            lastY: data.lastY,
-        };
-    }, [data]);
-
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.addEventListener("scroll", handleScroll);
+        if (typeof window === "undefined") return;
 
-            return () => {
-                window.removeEventListener("scroll", handleScroll);
-            };
-        }
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, [handleScroll]);
 
-    return dataScroll;
+    return data;
 }

@@ -39,7 +39,6 @@ export default function Footer() {
                                 rel="noreferrer"
                             >
                                 <img
-                                    key={index}
                                     src={link.src}
                                     alt={link.name}
                                     width={30}
@@ -59,7 +58,6 @@ export default function Footer() {
                                 rel="noreferrer"
                             >
                                 <img
-                                    key={index}
                                     src={link.src}
                                     alt={link.name}
                                     width={30}

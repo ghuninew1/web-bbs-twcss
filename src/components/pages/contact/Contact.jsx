@@ -1,5 +1,5 @@
 import { Title, Iframe } from "../../";
-import { useRef, useState, memo } from "react";
+import { useRef, useState } from "react";
 import contactData from "./contactData.json";
 import Portal from "../../utils/Portal";
 
@@ -161,6 +161,4 @@ const Contact = () => {
 
 Contact.displayName = "Contact";
 
-const MemoContact = memo(Contact);
-
-export default MemoContact;
+export default Contact;

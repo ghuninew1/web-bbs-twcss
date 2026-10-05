@@ -13,7 +13,7 @@
   <a href="https://github.com/ghuninew1">
     <img src="https://img.shields.io/badge/Author-@ghuninew-181717?style=flat-square&logo=github" alt="Author" />
   </a>
-  <img src="https://img.shields.io/badge/Version-4.2.1-blue?style=flat-square" alt="Version" />
+  <img src="https://img.shields.io/badge/Version-4.3.1-blue?style=flat-square" alt="Version" />
   <img src="https://img.shields.io/badge/React-19.3-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React 19" />
   <img src="https://img.shields.io/badge/Vite-8.3-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />

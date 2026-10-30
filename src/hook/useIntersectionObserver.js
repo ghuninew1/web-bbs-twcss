@@ -13,6 +13,11 @@ export function useIntersectionObserver(options = {}) {
 
             if (!node) return;
 
+            if (typeof IntersectionObserver === "undefined") {
+                setEntry({ isIntersecting: true });
+                return;
+            }
+
             const observer = new IntersectionObserver(
                 ([entry]) => {
                     setEntry(entry);

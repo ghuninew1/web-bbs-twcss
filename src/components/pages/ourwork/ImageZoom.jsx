@@ -17,6 +17,17 @@ export const ImageZoom = ({ src, alt }) => {
                 src={src}
                 alt={alt}
                 onClick={handleImageClick}
+                role="button"
+                tabIndex={0}
+                aria-expanded={isZoomed}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        handleImageClick();
+                    } else if (event.key === "Escape" && isZoomed) {
+                        handleCloseZoom();
+                    }
+                }}
                 loading="lazy"
             />
             {isZoomed && (

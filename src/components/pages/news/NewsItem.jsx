@@ -79,6 +79,14 @@ const NewsItem = ({ item, index, onReadMore }) => {
                         onClick={() =>
                             onReadMore(item.to, index + 1)
                         }
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(event) => {
+                            if (event.key === "Enter" || event.key === " ") {
+                                event.preventDefault();
+                                onReadMore(item.to, index + 1);
+                            }
+                        }}
                     />
                 </div>
             </div>

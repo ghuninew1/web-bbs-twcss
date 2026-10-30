@@ -7,7 +7,7 @@ import { useIntersectionObserver } from "../hook/useIntersectionObserver";
 
 const Layout = () => {
     const [active, setActive] = useState(false);
-    const scroll = Scroll();
+    const scroll = Scroll({ desktopOnly: true });
 
     const [ref, entry] = useIntersectionObserver({
         threshold: 0,

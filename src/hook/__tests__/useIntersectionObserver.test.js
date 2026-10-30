@@ -82,4 +82,19 @@ describe("useIntersectionObserver", () => {
 
         expect(mockDisconnect).toHaveBeenCalledTimes(1);
     });
+
+    it("treats the node as visible when IntersectionObserver is unavailable", () => {
+        const originalObserver = window.IntersectionObserver;
+        delete window.IntersectionObserver;
+
+        try {
+            const { result } = renderHook(() => useIntersectionObserver());
+            act(() => {
+                result.current[0](document.createElement("div"));
+            });
+            expect(result.current[1]?.isIntersecting).toBe(true);
+        } finally {
+            window.IntersectionObserver = originalObserver;
+        }
+    });
 });

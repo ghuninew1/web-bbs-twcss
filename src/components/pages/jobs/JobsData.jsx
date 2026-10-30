@@ -22,8 +22,8 @@ const JobsData = ({ index, setShow }) => {
 
     return (
         index !== 0 && (
-            <div className="fixed w-full min-h-screen top-0 inset-0 z-50 px-3 bg-black text-white">
-                <div className="absolute top-0 left-0 right-0 h-1/2 min-h-screen animate-fade">
+            <div className="fixed inset-0 z-50 bg-black text-white">
+                <div className="absolute inset-0 animate-fade">
                     <Swiper
                         direction={"vertical"}
                         slidesPerView={1}
@@ -34,9 +34,12 @@ const JobsData = ({ index, setShow }) => {
                         modules={[Mousewheel, Pagination]}
                         initialSlide={index ? index - 1 : 0}
                         onSlideChange={(data) => setShow(data.activeIndex + 1)}
+                        className="jobs-swiper"
                     >
                         <button
-                            className="absolute top-2 right-2 z-[99] hover:scale-125 transition-all ease-in-out duration-300 text-red-500/20 hover:text-red-500/100"
+                            type="button"
+                            aria-label="ปิดรายละเอียดงาน"
+                            className="absolute top-2 right-2 z-[99] hover:scale-125 transition-all ease-in-out duration-300 text-red-500/80 hover:text-red-500"
                             onClick={() => setShow(0)}
                         >
                             <XCircleIcon className="h-10 w-10 " />
@@ -44,9 +47,8 @@ const JobsData = ({ index, setShow }) => {
                         {jobsList.map((job, idx) => (
                             <SwiperSlide key={idx}>
                                 <div
-                                    onClick={() => setShow(0)}
                                     className={cx(
-                                        "px-5 py-5 max-w-[1100px] mx-auto transition-all ease-in-out duration-500 delay-200 min-h-[90vh] flex flex-col justify-center items-center"
+                                        "px-5 pr-12 py-14 max-w-[1100px] mx-auto transition-all ease-in-out duration-500 delay-200 min-h-full flex flex-col justify-center items-center"
                                     )}
                                 >
                                     <img

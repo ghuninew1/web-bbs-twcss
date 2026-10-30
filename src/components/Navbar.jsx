@@ -33,8 +33,8 @@ export default function Navbar() {
 
     return (
         <nav className="w-full" role="navigation">
-            <div className="flex justify-between md:justify-center items-center py-[5px] px-1">
-                <div className="hidden md:block w-full">
+            <div className="flex justify-between lg:justify-center items-center py-[5px] px-1">
+                <div className="hidden lg:block w-full">
                     <div className="flex items-center justify-center max-w-[1100px] mx-auto gap-1">
                         <Link
                             to={"/"}
@@ -69,7 +69,7 @@ export default function Navbar() {
                 </div>
                 <Link
                     to={"/"}
-                    className="md:hidden hover:scale-125 ease-out duration-200 transition-all ml-1 min-w-[40px] min-h-[40px] animate-zoom"
+                    className="lg:hidden hover:scale-125 ease-out duration-200 transition-all ml-1 min-w-[40px] min-h-[40px] animate-zoom"
                 >
                     <img
                         src={logo}
@@ -83,7 +83,7 @@ export default function Navbar() {
                 <button
                     aria-label="Open Menu"
                     onClick={handleOpen}
-                    className="md:hidden inline-flex items-center justify-center rounded-lg hover:bg-[#00770065] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white animate-fade"
+                    className="lg:hidden inline-flex items-center justify-center rounded-lg hover:bg-[#00770065] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white animate-fade"
                 >
                     <span className="h-8 w-8 m-1">
                         {open ? (
@@ -96,7 +96,7 @@ export default function Navbar() {
             </div>
             <div
                 className={cx(
-                    "absolute top-[50px] inset-x-0 space-y-1 pb-2 bg-black flex flex-col md:hidden z-[35] text-center tracking-wide antialiased transition-all ease-out duration-300 origin-top border-b border-[#2f2f2f] py-1",
+                    "absolute top-full inset-x-0 max-h-[calc(100dvh-50px)] overflow-y-auto space-y-1 pb-2 bg-black flex flex-col lg:hidden z-[35] text-center tracking-wide antialiased transition-all ease-out duration-300 origin-top border-b border-[#2f2f2f] py-1",
                     open ? "scale-y-100" : "scale-y-0"
                 )}
             >

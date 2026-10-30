@@ -24,7 +24,7 @@ const Studio = () => {
                     )}
                 >
                     {/* {!titles && ( */}
-                    <h1 className="text-orange-500 text-[40px] md:text-[50px] font-[600] font-font1 tracking-wide flex justify-center items-center min-h-[20vh] w-full">
+                    <h1 className="text-orange-500 text-[32px] md:text-[50px] font-[600] font-font1 tracking-wide flex flex-wrap justify-center items-center min-h-[20vh] w-full text-center">
                         <span className="text-[23px] md:text-[28px] mx-3 md:mx-4">
                             WE{" "}
                         </span>{" "}
@@ -86,7 +86,7 @@ const Studio = () => {
                                 </div>
                             </div>
                             {titles && (
-                                <div className="flex-0 mb-10 max-w-[400px] mt-5 md:mt-0 mx-2 animate-fadeInRight">
+                                <div className="mb-10 w-full max-w-[304px] shrink-0 mt-5 md:mt-0 mx-2 animate-fadeInRight">
                                     <img
                                         src={ptum}
                                         alt="ptum"

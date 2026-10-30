@@ -7,7 +7,7 @@ const Service = () => {
     return (
         <div className="flex flex-col mx-auto items-center justify-center min-h-[50vh] w-full animate-zoom">
             <Title title="Service" />
-            <div className="service-main mt-[-100px] md:mt-[0px] mb-0 md:mb-10">
+            <div className="service-main my-6 md:my-10">
                 <div className="service-content">
                     {ServiceData &&
                         ServiceData.map((item, idx) => (

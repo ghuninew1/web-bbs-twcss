@@ -1,9 +1,9 @@
-.swiper {
+.jobs-swiper.swiper {
     width: 100%;
     height: 100%;
 }
 
-.swiper-slide {
+.jobs-swiper .swiper-slide {
     padding: 0px;
 }
 

@@ -66,14 +66,14 @@ const Contact = () => {
     };
 
     return (
-        <div className="relative items-center grid grid-cols-1 md:grid-cols-2 mx-auto mb-10 px-2 md:px-5 w-full max-w-[1100px]">
+        <div className="relative items-center gap-2 grid grid-cols-1 md:grid-cols-2 mx-auto mb-10 px-2 md:px-5 w-full max-w-[1100px]">
             <Title title="Contact" />
 
             <Portal isOpen={show} closeModal={handleClose}>
                 <ShowMessage messageRef={messageRef} handleClose={handleClose} />
             </Portal>
 
-            <div className="flex flex-col justify-center items-center bg-[#101310] shadow-black/30 shadow-xl px-4 sm:px-7 py-8 md:py-10 border border-white/15 rounded-3xl h-full animate-fadeInLeft">
+            <div className="flex flex-col justify-center items-center bg-[#101310ad] shadow-black/30 shadow-xl px-4 sm:px-7 py-8 md:py-10 border border-white/15 rounded-3xl h-full animate-fadeInLeft">
                 <div className="mb-5 font-medium text-white text-3xl md:text-4xl text-center">Contact</div>
 
                 <form className="flex flex-col gap-3 mt-3 w-full text-white animate-fade" onSubmit={handleSubmit}>
@@ -117,7 +117,7 @@ const Contact = () => {
                     </button>
                 </form>
             </div>
-            <div className="flex flex-col justify-center items-center gap-3 ml-0 md:ml-1 p-3 border-[#dcbcbc36] md:border-2 rounded-3xl animate-fadeInRight">
+            <div className="flex flex-col justify-center items-center bg-[#101310ad] shadow-black/30 shadow-xl px-4 sm:px-7 py-8 md:py-10 border border-white/15 rounded-3xl h-full animate-fadeInRight">
                 <div className="w-full text-white text-base text-center md:text-right antialiased tracking-wide animate-fade">
                     <h3 className="mb-2 font-medium text-[18px] tracking-wider">BIG BRAIN STUDIO CO.,LTD.</h3>
                     <p>99/1 Plan House Bangkok Building 3rd Floor,</p>

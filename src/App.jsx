@@ -61,6 +61,12 @@ const CachedPages = () => {
     useLayoutEffect(() => {
         if (current === "/ourwork" && previousPath.current.startsWith("/ourwork/")) {
             restoreOurworkScroll();
+        } else if (previousPath.current === "/ourwork" && current.startsWith("/ourwork/")) {
+            const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            window.scrollTo({
+                top: window.innerWidth < 768 ? 0 : 573,
+                behavior: reducedMotion ? "instant" : "smooth",
+            });
         }
         previousPath.current = current;
     }, [current]);

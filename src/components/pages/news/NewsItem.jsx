@@ -2,7 +2,7 @@ import { memo, useRef } from "react";
 import { cx } from "../../utils";
 import useObserver from "../../utils/useObserver";
 
-const NewsItem = ({ item, index, onReadMore }) => {
+const NewsItem = ({ item, index, onReadMore, onHighlight }) => {
     const ref = useRef(null);
     const imageRef = useRef(null);
     const isVisible = useObserver(ref);
@@ -10,12 +10,14 @@ const NewsItem = ({ item, index, onReadMore }) => {
     return (
         <div
             ref={ref}
+            onMouseEnter={onHighlight}
+            onFocus={onHighlight}
             className={cx(
                 isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-20 opacity-0",
                 "transition-all duration-[500ms] ease-in-out",
-                "flex border-2 border-[#ffffff1b]",
+                "relative flex border-2 border-[#ffffff1b]",
                 "mb-[150px] md:mb-[200px]",
                 "overflow-hidden md:max-h-[500px]",
                 "p-1 shadow-lg rounded-lg",
@@ -77,7 +79,7 @@ const NewsItem = ({ item, index, onReadMore }) => {
                         src={item.src}
                         alt={item.id}
                         loading="lazy"
-                        className="w-full h-full hover:brightness-75 cursor-pointer transition duration-50"
+                        className="w-full h-full cursor-pointer transition-transform duration-300 ease-out hover:scale-105 focus-visible:scale-105 motion-reduce:transition-none"
                         onClick={() =>
                             onReadMore(item.to, index + 1, imageRef.current)
                         }

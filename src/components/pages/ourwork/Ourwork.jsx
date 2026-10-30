@@ -25,8 +25,9 @@ const Ourwork = ({ active = true }) => {
         const grid = item.closest("[data-work-grid]");
         const bounds = grid.getBoundingClientRect();
         const card = item.getBoundingClientRect();
-        setHighlight({ x: card.left - bounds.left, y: card.top - bounds.top, width: card.width, height: card.height });
+        setHighlight({ x: card.left - bounds.left, y: card.top - bounds.top, width: card.width, height: card.height, visible: true });
     };
+    const hideHighlight = () => setHighlight((current) => current && { ...current, visible: false });
 
     return (
         <div className="flex flex-col justify-center items-center mx-auto mb-10 px-4 max-w-[1920px] min-h-[60vh]">
@@ -34,9 +35,9 @@ const Ourwork = ({ active = true }) => {
             <div
                 data-work-grid
                 className="relative gap-12 grid grid-cols-2 md:grid-cols-5 mt-10"
-                onMouseLeave={() => setHighlight(null)}
+                onMouseLeave={hideHighlight}
                 onBlur={(event) => {
-                    if (!event.currentTarget.contains(event.relatedTarget)) setHighlight(null);
+                    if (!event.currentTarget.contains(event.relatedTarget)) hideHighlight();
                 }}
             >
                 <span
@@ -46,7 +47,7 @@ const Ourwork = ({ active = true }) => {
                         width: highlight ? highlight.width + 16 : 0,
                         height: highlight ? highlight.height + 16 : 0,
                         transform: `translate(${(highlight?.x ?? 0) - 8}px, ${(highlight?.y ?? 0) - 8}px)`,
-                        opacity: highlight ? 1 : 0,
+                        opacity: highlight?.visible ? 1 : 0,
                     }}
                 />
                 {workData.map((work) => (

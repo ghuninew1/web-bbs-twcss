@@ -11,9 +11,18 @@ const NewsItem = lazy(() => import("./NewsItem"));
 const News = ({ active = true }) => {
     const [image, setImage] = useState(0);
     const [showIframe, setShowIframe] = useState(null);
+    const [highlight, setHighlight] = useState(null);
     const sourceImage = useRef(null);
     const savedScroll = useRef(null);
     const restoreScroll = useRef(false);
+
+    const moveHighlight = (event) => {
+        const item = event.currentTarget;
+        const bounds = item.parentElement.getBoundingClientRect();
+        const card = item.getBoundingClientRect();
+        setHighlight({ x: card.left - bounds.left, y: card.top - bounds.top, width: card.width, height: card.height, visible: true });
+    };
+    const hideHighlight = () => setHighlight((current) => current && { ...current, visible: false });
 
     useLayoutEffect(() => {
         if (active && image === 0 && restoreScroll.current) {
@@ -81,14 +90,25 @@ const News = ({ active = true }) => {
             </div>
 
             {/* News */}
-            {dataNews.map((item, index) => (
-                <NewsItem
-                    key={item.id}
-                    item={item}
-                    index={index}
-                    onReadMore={handleImage}
-                />
-            ))}
+            <div className="relative flex w-full flex-col items-center" onMouseLeave={hideHighlight} onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) hideHighlight();
+            }}>
+                <span aria-hidden="true" className="pointer-events-none absolute left-0 top-0 rounded-lg bg-white/5 transition-[transform,width,height,opacity] duration-300 ease-out motion-reduce:transition-none" style={{
+                    width: highlight?.width ?? 0,
+                    height: highlight?.height ?? 0,
+                    transform: `translate(${highlight?.x ?? 0}px, ${highlight?.y ?? 0}px)`,
+                    opacity: highlight?.visible ? 1 : 0,
+                }} />
+                {dataNews.map((item, index) => (
+                    <NewsItem
+                        key={item.id}
+                        item={item}
+                        index={index}
+                        onReadMore={handleImage}
+                        onHighlight={moveHighlight}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

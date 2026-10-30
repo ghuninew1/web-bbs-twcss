@@ -1,7 +1,7 @@
 import { Layout, Fallback } from "./components";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Activity, useLayoutEffect, useRef, useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useViewTransitionState } from "react-router-dom";
 import { restoreOurworkScroll } from "./components/pages/ourwork/scrollPosition";
 import {
     Home,
@@ -53,23 +53,30 @@ const CachedPages = () => {
     const { pathname } = useLocation();
     const current = pathname.replace(/\/+$/, "") || "/";
     const previousPath = useRef(current);
+    const pendingScroll = useRef(null);
+    const isTransitioning = useViewTransitionState(current);
     const [visited, setVisited] = useState(() => new Set([current]));
     if (!visited.has(current) && cachedPages.some(([path]) => path === current)) {
         setVisited(new Set([...visited, current]));
     }
 
     useLayoutEffect(() => {
-        if (current === "/ourwork" && previousPath.current.startsWith("/ourwork/")) {
-            restoreOurworkScroll();
-        } else if (previousPath.current === "/ourwork" && current.startsWith("/ourwork/")) {
+        if (previousPath.current !== current) {
+            pendingScroll.current = previousPath.current === "/ourwork" && current.startsWith("/ourwork/") ? current : null;
+            if (current === "/ourwork" && previousPath.current.startsWith("/ourwork/")) {
+                restoreOurworkScroll();
+            }
+            previousPath.current = current;
+        }
+        if (pendingScroll.current === current && !isTransitioning) {
+            pendingScroll.current = null;
             const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
             window.scrollTo({
                 top: window.innerWidth < 768 ? 0 : 573,
                 behavior: reducedMotion ? "instant" : "smooth",
             });
         }
-        previousPath.current = current;
-    }, [current]);
+    }, [current, isTransitioning]);
 
     return (
         <>

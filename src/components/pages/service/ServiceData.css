@@ -16,6 +16,20 @@
     transform-origin: top left;
 }
 
+.service-highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    border-radius: 999px;
+    background: rgb(0 119 0 / 32%);
+    transition: transform 300ms ease-out, width 300ms ease-out, height 300ms ease-out, opacity 300ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-highlight { transition: none; }
+}
+
 @media (max-width: 1000px) { .service-main { --service-scale: 0.9; } }
 @media (max-width: 900px) { .service-main { --service-scale: 0.8; } }
 @media (max-width: 800px) { .service-main { --service-scale: 0.7; } }

@@ -1,21 +1,18 @@
-import { Title, Iframe } from "../../";
+import { Title } from "../../";
+import { YouTubeEmbed } from "../../Iframe";
 import HomePartner from "./HomePartner";
 
 const Home = () => {
     return (
-        <div className="flex flex-col mx-auto items-center justify-center min-h-[50vh] animate-fade">
+        <div className="flex flex-col justify-center items-center mx-auto min-h-[50vh] animate-fade">
             <Title title="Home" />
-            <h1 className="text-center font-sans font-medium text-3xl md:text-4xl mb-5 text-white tracking-wide animate-fadeInUp">
+            <h1 className="mb-5 font-sans font-medium text-white text-3xl md:text-4xl text-center tracking-wide animate-fadeInUp">
                 Showreel
             </h1>
-            <div className="w-full aspect-video mx-auto max-w-[1100px] mb-20 animate-fade bg-black">
-                <Iframe
-                    src="https://www.youtube.com/embed/ZPUNuRikgUs"
-                    isOn={true}
-                    loading="lazy"
-                />
+            <div className="bg-black mx-auto mb-20 w-full max-w-[1100px] aspect-video animate-fade">
+                <YouTubeEmbed src="https://www.youtube.com/embed/ZPUNuRikgUs" title={"ShowReel"}/>
             </div>
-            <div className=" bg-white w-full">
+            <div className="bg-white w-full">
                 <HomePartner />
             </div>
         </div>

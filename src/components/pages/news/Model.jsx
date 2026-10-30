@@ -25,14 +25,14 @@ function Model({ indexImg = 0, handlClose }) {
 
     return (
         (indexImg !== 0 && (
-            <div className="news-modal fixed inset-0 z-[50] overflow-y-auto bg-black text-white">
-                <div className="news-modal-inner mx-auto flex min-h-full w-full max-w-[1280px] flex-col items-center">
-                    <div className="flex w-full justify-end px-3 py-2 md:px-5">
-                    <button type="button" aria-label="ปิดข่าว" onClick={handlClose} className="inline-flex rounded-full opacity-80 transition hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white">
+            <div className="z-[50] fixed inset-0 bg-black overflow-y-auto text-white news-modal">
+                <div className="flex flex-col items-center mx-auto w-full max-w-[1280px] min-h-full news-modal-inner">
+                    <div className="flex justify-end px-3 md:px-5 py-2 w-full">
+                    <button type="button" aria-label="ปิดข่าว" onClick={handlClose} className="inline-flex opacity-80 hover:opacity-100 rounded-full focus-visible:outline focus-visible:outline-white transition">
                         <XCircleIcon
                             aria-hidden
                             color="white"
-                            className="h-11 w-11 transition duration-200 ease-in-out hover:scale-110"
+                            className="w-11 h-11 hover:scale-110 transition duration-200 ease-in-out"
                         />
                     </button>
                     </div>
@@ -49,16 +49,16 @@ function Model({ indexImg = 0, handlClose }) {
                         navigation={true}
                         modules={[Autoplay, Pagination, Navigation]}
                         onAutoplayTimeLeft={onAutoplayTimeLeft}
-                        className="news-modal-swiper animate-fadeInLeft"
+                        className="animate-fadeInLeft news-modal-swiper"
                     >
                         {dataRef[indexImg - 1]?.to.map((item, index) => (
                             <SwiperSlide key={index}>
-                                <div className="flex w-full items-center justify-center">
+                                <div className="flex justify-center items-center w-full">
                                     <img
                                         src={item.src}
                                         alt={item.alt}
                                         loading="lazy"
-                                        className="news-modal-image w-full object-contain object-center"
+                                        className="w-full object-center object-contain news-modal-image"
                                     />
                                 </div>
                             </SwiperSlide>
@@ -74,21 +74,21 @@ function Model({ indexImg = 0, handlClose }) {
                         )}
                     </Swiper>
                     <div
-                        className="z-[60] mx-auto my-3 w-full max-w-6xl pb-6 tracking-wide animate-fadeInRight"
+                        className="z-[60] mx-auto my-3 pb-6 w-full max-w-6xl tracking-wide animate-fadeInRight"
                     >
                         <div className="p-2 text-center antialiased">
                             {dataRef[indexImg - 1]?.title2 && (
-                                <p className="text-[14px] leading-snug md:text-[17px] font-[600] ">
+                                <p className="font-[600] text-[14px] md:text-[17px] leading-snug">
                                     {dataRef[indexImg - 1]?.title2}
                                 </p>
                             )}
                             {dataRef[indexImg - 1]?.title && dataRef[indexImg - 1]?.src !== "/img/news2/11.jpg" && (
-                                <p className="text-[13px] leading-relaxed md:text-[16px] font-[300]">{dataRef[indexImg - 1]?.title}</p>
+                                <p className="font-[300] text-[13px] md:text-[16px] leading-relaxed">{dataRef[indexImg - 1]?.title}</p>
                             )}
                         </div>
-                        <div className="px-4 text-[13px] leading-relaxed font-[300] antialiased md:px-6 md:text-[16px]">
+                        <div className="px-4 md:px-6 font-[300] text-[13px] md:text-[16px] antialiased leading-relaxed">
                             {dataRef[indexImg - 1]?.content && (
-                                <div className="text-center flex flex-col items-center justify-center">
+                                <div className="flex flex-col justify-center items-center text-center">
                                     <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content}</p>
                                     {dataRef[indexImg - 1]?.content2 && (
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content2}</p>

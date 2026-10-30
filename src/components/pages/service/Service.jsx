@@ -9,14 +9,15 @@ const Service = () => {
 
     const moveHighlight = (event) => {
         const item = event.currentTarget;
-        setHighlight({ left: item.offsetLeft, top: item.offsetTop, width: item.offsetWidth, height: item.offsetHeight });
+        setHighlight({ left: item.offsetLeft, top: item.offsetTop, width: item.offsetWidth, height: item.offsetHeight, visible: true });
     };
+    const hideHighlight = () => setHighlight((current) => current && { ...current, visible: false });
 
     return (
         <div className="flex flex-col mx-auto items-center justify-center min-h-[50vh] w-full animate-zoom">
             <Title title="Service" />
             <div className="service-main my-6 md:my-10">
-                <div className="service-content" onMouseLeave={() => setHighlight(null)}>
+                <div className="service-content" onMouseLeave={hideHighlight}>
                     <span
                         aria-hidden="true"
                         className="service-highlight"
@@ -24,7 +25,7 @@ const Service = () => {
                             width: highlight?.width ?? 0,
                             height: highlight?.height ?? 0,
                             transform: `translate(${highlight?.left ?? 0}px, ${highlight?.top ?? 0}px)`,
-                            opacity: highlight ? 1 : 0,
+                            opacity: highlight?.visible ? 1 : 0,
                         }}
                     />
                     {ServiceData &&
@@ -33,6 +34,7 @@ const Service = () => {
                                 key={idx}
                                 className={`service-item-${item.id} service-img animate-fadeInLeftDelay`}
                                 onMouseEnter={moveHighlight}
+                                onMouseLeave={hideHighlight}
                             >
                                 <img
                                     src={item.src}

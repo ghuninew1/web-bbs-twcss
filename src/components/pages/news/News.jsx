@@ -51,7 +51,7 @@ const News = ({ active = true }) => {
     };
 
     return (
-        <div className="pt-[30px] md:pt-[0px] px-2 max-w-[1100px] min-h-screen w-full flex flex-col mx-auto items-center justify-center">
+        <div className="flex flex-col justify-center items-center mx-auto px-2 pt-[30px] md:pt-[0px] w-full max-w-[1100px] min-h-screen">
             
             <Title title="News" />
 
@@ -90,10 +90,10 @@ const News = ({ active = true }) => {
             </div>
 
             {/* News */}
-            <div className="relative flex w-full flex-col items-center" onMouseLeave={hideHighlight} onBlur={(event) => {
+            <div className="relative flex flex-col items-center w-full" onMouseLeave={hideHighlight} onBlur={(event) => {
                 if (!event.currentTarget.contains(event.relatedTarget)) hideHighlight();
             }}>
-                <span aria-hidden="true" className="pointer-events-none absolute left-0 top-0 rounded-lg bg-white/5 transition-[transform,width,height,opacity] duration-300 ease-out motion-reduce:transition-none" style={{
+                <span aria-hidden="true" className="top-0 left-0 absolute bg-[#123b24]/40 rounded-lg transition-[transform,width,height,opacity] motion-reduce:transition-none duration-300 ease-out pointer-events-none" style={{
                     width: highlight?.width ?? 0,
                     height: highlight?.height ?? 0,
                     transform: `translate(${highlight?.x ?? 0}px, ${highlight?.y ?? 0}px)`,

@@ -15,6 +15,7 @@
     padding: 0px;
 }
 .news-modal-image {
+    width: 100%;
     height: min(60dvh, 650px);
 }
 .news-modal .autoplay-progress {
@@ -61,14 +62,14 @@
     width: 10px !important;
     height: 10px !important;
     color: #454444da !important;
-    background: #ffffff !important;
+    background: #00b725 !important;
     opacity: 0.6 !important;
     margin-left: 4px !important;
 }
 .news-modal span.swiper-pagination-bullet-active {
     opacity: 1 !important;
     color: #bfbaba !important;
-    background: #ffffff !important;
+    background: #00b725 !important;
 }
 
 @media screen and (max-width: 767px) {

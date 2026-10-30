@@ -77,16 +77,21 @@ function Model({ indexImg = 0, handlClose, sourceImage }) {
             <div ref={modalRef} className="z-[50] fixed inset-0 bg-black overflow-y-auto text-white news-modal">
                 <div className="flex flex-col items-center mx-auto w-full max-w-[1280px] min-h-full news-modal-inner">
                     <div className="flex justify-end px-3 md:px-5 py-2 w-full">
-                    <button type="button" aria-label="ปิดข่าว" onClick={closeWithAnimation} className="inline-flex opacity-80 hover:opacity-100 rounded-full focus-visible:outline focus-visible:outline-white transition">
-                        <XCircleIcon
-                            aria-hidden
-                            color="white"
-                            className="w-11 h-11 hover:scale-110 transition duration-200 ease-in-out"
-                        />
-                    </button>
+                        <button
+                            type="button"
+                            aria-label="ปิดข่าว"
+                            onClick={closeWithAnimation}
+                            className="inline-flex opacity-80 hover:opacity-100 rounded-full focus-visible:outline focus-visible:outline-white transition"
+                        >
+                            <XCircleIcon
+                                aria-hidden
+                                className="w-11 h-11 text-orange-300 hover:text-orange-500 hover:rotate-180 hover:scale-125 transition duration-200 ease-in-out"
+                            />
+                        </button>
                     </div>
                     <Swiper
-                        spaceBetween={30}
+                        spaceBetween={0}
+                        slidesPerView={1}
                         centeredSlides={true}
                         loop={dataRef[indexImg - 1]?.to.length > 1}
                         autoplay={{
@@ -109,7 +114,7 @@ function Model({ indexImg = 0, handlClose, sourceImage }) {
                                         alt={item.alt}
                                         loading="lazy"
                                         onLoad={(event) => handleImageLoad(event, index)}
-                                        className="w-full object-center object-contain news-modal-image"
+                                        className="object-center object-contain news-modal-image"
                                     />
                                 </div>
                             </SwiperSlide>
@@ -135,7 +140,9 @@ function Model({ indexImg = 0, handlClose, sourceImage }) {
                                 </p>
                             )}
                             {dataRef[indexImg - 1]?.title && dataRef[indexImg - 1]?.src !== "/img/news2/11.jpg" && (
-                                <p className="font-[300] text-[13px] md:text-[16px] leading-relaxed">{dataRef[indexImg - 1]?.title}</p>
+                                <p className="font-[300] text-[13px] md:text-[16px] leading-relaxed">
+                                    {dataRef[indexImg - 1]?.title}
+                                </p>
                             )}
                         </div>
                         <div className="px-4 md:px-6 font-[300] text-[13px] md:text-[16px] antialiased leading-relaxed">
@@ -152,7 +159,14 @@ function Model({ indexImg = 0, handlClose, sourceImage }) {
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content4}</p>
                                     )}
                                     {dataRef[indexImg - 1]?.content5 && (
-                                        <p className={cx("first-letter:ml-5" ,dataRef[indexImg - 1].id == 35 && "text-transparent")}>{dataRef[indexImg - 1]?.content5}</p>
+                                        <p
+                                            className={cx(
+                                                "first-letter:ml-5",
+                                                dataRef[indexImg - 1].id == 35 && "text-transparent",
+                                            )}
+                                        >
+                                            {dataRef[indexImg - 1]?.content5}
+                                        </p>
                                     )}
                                     {dataRef[indexImg - 1]?.content6 && (
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content6}</p>
@@ -167,7 +181,14 @@ function Model({ indexImg = 0, handlClose, sourceImage }) {
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content9}</p>
                                     )}
                                     {dataRef[indexImg - 1]?.content10 && (
-                                        <p className={cx("first-letter:ml-5" ,dataRef[indexImg - 1].id == 35 && "text-transparent")}>{dataRef[indexImg - 1]?.content10}</p>
+                                        <p
+                                            className={cx(
+                                                "first-letter:ml-5",
+                                                dataRef[indexImg - 1].id == 35 && "text-transparent",
+                                            )}
+                                        >
+                                            {dataRef[indexImg - 1]?.content10}
+                                        </p>
                                     )}
                                     {dataRef[indexImg - 1]?.content11 && (
                                         <p className="first-letter:ml-5">{dataRef[indexImg - 1]?.content11}</p>

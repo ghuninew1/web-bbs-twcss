@@ -74,7 +74,7 @@ const Contact = () => {
             </Portal>
 
             <div className="flex flex-col justify-center items-center bg-[#101310ad] shadow-black/30 shadow-xl px-4 sm:px-7 py-8 md:py-10 border border-white/15 rounded-3xl h-full animate-fadeInLeft">
-                <div className="mb-5 font-medium text-white text-3xl md:text-4xl text-center">Contact</div>
+                <div className="mb-5 font-font1 font-medium text-white text-4xl md:text-5xl text-center">Contact</div>
 
                 <form className="flex flex-col gap-3 mt-3 w-full text-white animate-fade" onSubmit={handleSubmit}>
                     <div className="flex md:flex-row flex-col justify-center items-center gap-2">
@@ -111,17 +111,19 @@ const Contact = () => {
                     ></textarea>
                     <button
                         type="submit"
-                        className="bg-lime-600 hover:bg-lime-800 mx-auto mt-4 border border-lime-400 rounded-xl focus-visible:outline-2 focus-visible:outline-lime-400 focus-visible:outline-offset-2 w-full md:w-[60%] h-11 font-bold text-white text-xl transition-colors"
+                        className="bg-lime-600 hover:bg-lime-800 mx-auto mt-4 border border-lime-400 rounded-xl focus-visible:outline-2 focus-visible:outline-lime-400 focus-visible:outline-offset-2 w-full md:w-[60%] h-11 font-bold text-[#101310] text-xl transition-colors"
                     >
                         Send
                     </button>
                 </form>
             </div>
             <div className="flex flex-col justify-center items-center bg-[#101310ad] shadow-black/30 shadow-xl px-4 sm:px-7 py-8 md:py-10 border border-white/15 rounded-3xl h-full animate-fadeInRight">
-                <div className="w-full text-white text-base text-center md:text-right antialiased tracking-wide animate-fade">
-                    <h3 className="mb-2 font-medium text-[18px] tracking-wider">BIG BRAIN STUDIO CO.,LTD.</h3>
-                    <p>99/1 Plan House Bangkok Building 3rd Floor,</p>
-                    <p>Sukhumvit 68,Bang Na Nuea, Bang Na, Bangkok 10260, Thailand</p>
+                <div className="w-full text-white text-center md:text-right antialiased tracking-wide animate-fade">
+                    <h3 className="mb-2 font-font1 font-medium text-2xl md:text-3xl tracking-wider">
+                        BIG BRAIN STUDIO CO.,LTD.
+                    </h3>
+                    <p className="mb-1 text-sm md:text-base">99/1 Plan House Bangkok Building 3rd Floor,</p>
+                    <p className="mb-1 text-sm md:text-base">Sukhumvit 68,Bang Na Nuea, Bang Na, Bangkok 10260, Thailand</p>
                 </div>
                 <div className="flex flex-row justify-center items-center mx-auto my-2 md:my-1">
                     <div className="mb-0 md:mb-2 animate-fade">

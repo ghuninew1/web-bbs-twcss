@@ -65,7 +65,7 @@ const Layout = () => {
                 <div className="h-0 md:h-[120px] lg:h-[145px]">
                 <header
                     className={cx(
-                        "z-[40] top-0 left-0 right-0 transition-all bg-black duration-[300ms]",
+                        "site-header z-[40] top-0 left-0 right-0 transition-all bg-black duration-[300ms]",
                         onScreen ? "fixed md:relative" : "fixed",
                         active
                             ? "-translate-y-full delay-200 ease-in"

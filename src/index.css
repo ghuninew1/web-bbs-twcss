@@ -221,6 +221,26 @@
   user-select: none;
 }
 
+@media (max-width: 767px) {
+  .site-header {
+    view-transition-name: site-header;
+  }
+
+  ::view-transition-group(site-header) {
+    z-index: 100;
+  }
+
+  ::view-transition-group(site-header),
+  ::view-transition-new(site-header) {
+    animation: none;
+  }
+
+  ::view-transition-old(site-header) {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 progress::-webkit-progress-value {
   background: red;
 }

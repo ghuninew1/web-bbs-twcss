@@ -53,6 +53,7 @@ const Layout = () => {
             </div>
 
             <Suspense fallback={<Fallback />}>
+                <div className="h-0 md:h-[120px] lg:h-[145px]">
                 <header
                     className={cx(
                         "z-[40] top-0 left-0 right-0 transition-all bg-black duration-[300ms]",
@@ -65,6 +66,7 @@ const Layout = () => {
                     <Header />
                     <Navbar />
                 </header>
+                </div>
 
                 <div className="relative min-h-[calc(100vh-235px)] md:min-h-[calc(100vh-250px)] pt-[50px] md:pt-[80px] overflow-hidden">
                     <Outlet />

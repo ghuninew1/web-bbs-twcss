@@ -1,4 +1,4 @@
-import { lazy, memo, Suspense, useRef, useState } from "react";
+import { lazy, memo, Suspense, useLayoutEffect, useRef, useState } from "react";
 import { dataNews } from "./NewsData";
 import { cx } from "../../utils";
 import { Title, ToTop, Fallback } from "../../";
@@ -12,17 +12,31 @@ const News = ({ active = true }) => {
     const [image, setImage] = useState(0);
     const [showIframe, setShowIframe] = useState(null);
     const sourceImage = useRef(null);
+    const savedScroll = useRef(null);
+    const restoreScroll = useRef(false);
+
+    useLayoutEffect(() => {
+        if (active && image === 0 && restoreScroll.current) {
+            if (window.innerWidth < 768 && savedScroll.current !== null) {
+                window.scrollTo({ top: savedScroll.current, behavior: "instant" });
+            }
+            savedScroll.current = null;
+            restoreScroll.current = false;
+        }
+    }, [active, image]);
 
     const handleImage = (item, index, source) => {
         if (item?.toString().startsWith("http")) {
             setShowIframe(item);
         } else {
+            if (window.innerWidth < 768) savedScroll.current = window.scrollY;
             sourceImage.current = source;
             setImage(index);
         }
     };
 
     const handleClose = () => {
+        if (image !== 0) restoreScroll.current = true;
         setImage(0);
         setShowIframe(null);
     };

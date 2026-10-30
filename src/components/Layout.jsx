@@ -9,7 +9,7 @@ const Layout = () => {
     const [active, setActive] = useState(false);
     const { pathname } = useLocation();
     const bottomAlignedFooter = ["/", "/contact", "/jobs", "/annoucement", "/service"].includes(pathname.replace(/\/+$/, "") || "/");
-    const scroll = Scroll({ desktopOnly: true });
+    const scroll = Scroll();
 
     const [ref, entry] = useIntersectionObserver({
         threshold: 0,
@@ -19,6 +19,14 @@ const Layout = () => {
     const onScreen = entry?.isIntersecting;
 
     useEffect(() => {
+        if (window.innerWidth < 768) {
+            if (scroll.y <= 50 || scroll.y < scroll.lastY) {
+                setActive(false);
+            } else if (scroll.y > scroll.lastY) {
+                setActive(true);
+            }
+            return;
+        }
         if (scroll.y - scroll.lastY > 0) {
             if (!onScreen && scroll.y > 573) {
                 setActive(true);
@@ -54,14 +62,13 @@ const Layout = () => {
                 </video>
             </div>
 
-            <Suspense fallback={<Fallback />}>
                 <div className="h-0 md:h-[120px] lg:h-[145px]">
                 <header
                     className={cx(
                         "z-[40] top-0 left-0 right-0 transition-all bg-black duration-[300ms]",
-                        onScreen ? "md:relative" : "fixed",
+                        onScreen ? "fixed md:relative" : "fixed",
                         active
-                            ? "md:-translate-y-full delay-200 ease-in"
+                            ? "-translate-y-full delay-200 ease-in"
                             : "translate-y-0 ease-out"
                     )}
                 >
@@ -74,10 +81,11 @@ const Layout = () => {
                     "relative pt-[50px] md:pt-[80px] overflow-hidden",
                     bottomAlignedFooter ? "flex-1" : "min-h-[calc(100vh-235px)] md:min-h-[calc(100vh-250px)]"
                 )}>
-                    <Outlet />
+                    <Suspense fallback={<Fallback />}>
+                        <Outlet />
+                    </Suspense>
                 </div>
                 <Footer />
-            </Suspense>
         </div>
     );
 };

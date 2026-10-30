@@ -1,7 +1,8 @@
 import { Layout, Fallback } from "./components";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Activity, useState } from "react";
+import { Activity, useLayoutEffect, useRef, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { restoreOurworkScroll } from "./components/pages/ourwork/scrollPosition";
 import {
     Home,
     Contact,
@@ -51,10 +52,18 @@ const cachedPages = [
 const CachedPages = () => {
     const { pathname } = useLocation();
     const current = pathname.replace(/\/+$/, "") || "/";
+    const previousPath = useRef(current);
     const [visited, setVisited] = useState(() => new Set([current]));
     if (!visited.has(current) && cachedPages.some(([path]) => path === current)) {
         setVisited(new Set([...visited, current]));
     }
+
+    useLayoutEffect(() => {
+        if (current === "/ourwork" && previousPath.current.startsWith("/ourwork/")) {
+            restoreOurworkScroll();
+        }
+        previousPath.current = current;
+    }, [current]);
 
     return (
         <>

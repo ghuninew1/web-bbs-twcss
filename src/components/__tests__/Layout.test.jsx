@@ -1,7 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Layout from "../Layout";
+
+const loadingPage = new Promise(() => {});
+const PendingPage = () => { throw loadingPage; };
 
 // Mock child components
 vi.mock("../Header", () => ({
@@ -19,14 +22,6 @@ vi.mock("../Footer", () => ({
 // Mock Fallback
 vi.mock("../Fallback", () => ({
     default: () => <div>Loading...</div>,
-}));
-
-// Mock ScrollListener
-vi.mock("../utils/ScrollListener", () => ({
-    default: () => ({
-        y: 0,
-        lastY: 0,
-    }),
 }));
 
 // Mock IntersectionObserver hook
@@ -91,5 +86,35 @@ describe("Layout Component", () => {
         expect(screen.getByText("Navbar")).toBeInTheDocument();
         expect(screen.getByText("Footer")).toBeInTheDocument();
         expect(screen.getByText("Test Page")).toBeInTheDocument();
+    });
+
+    it("keeps the header and footer visible while a page is loading", () => {
+        render(
+            <MemoryRouter initialEntries={["/ourwork/example"]}>
+                <Routes>
+                    <Route element={<Layout />}>
+                        <Route path="/ourwork/example" element={<PendingPage />} />
+                    </Route>
+                </Routes>
+            </MemoryRouter>,
+        );
+
+        expect(screen.getByText("Header")).toBeInTheDocument();
+        expect(screen.getByText("Navbar")).toBeInTheDocument();
+        expect(screen.getByText("Loading...")).toBeInTheDocument();
+        expect(screen.getByText("Footer")).toBeInTheDocument();
+    });
+
+    it("hides the mobile header on downward scroll and reveals it on upward scroll", () => {
+        vi.stubGlobal("innerWidth", 390);
+        renderLayout();
+        const header = screen.getByText("Navbar").closest("header");
+        vi.stubGlobal("scrollY", 200);
+        fireEvent.scroll(window);
+        expect(header).toHaveClass("-translate-y-full");
+        vi.stubGlobal("scrollY", 150);
+        fireEvent.scroll(window);
+        expect(header).toHaveClass("translate-y-0");
+        vi.unstubAllGlobals();
     });
 });

@@ -1,4 +1,3 @@
-import { scrollTo } from "../../utils";
 import { Title } from "../../";
 import { Link } from "react-router-dom";
 import { workData } from "./WorkData";
@@ -20,14 +19,6 @@ const Ourwork = () => {
         const bounds = grid.getBoundingClientRect();
         const card = item.getBoundingClientRect();
         setHighlight({ x: card.left - bounds.left, y: card.top - bounds.top, width: card.width, height: card.height });
-    };
-
-    const scrollToEven = () => {
-        if (window.innerWidth > 768) {
-            scrollTo(573);
-        } else {
-            scrollTo(0);
-        }
     };
 
     return (
@@ -53,7 +44,7 @@ const Ourwork = () => {
                 />
                 {workData.map((work) => (
                     <div key={work.id} className={animateEntrance ? "relative animate-fadeInUp motion-reduce:animate-none" : "relative"}>
-                        <Link to={work.link} viewTransition onClick={scrollToEven} onMouseEnter={moveHighlight} onFocus={moveHighlight} className="inline-block rounded-2xl">
+                        <Link to={work.link} viewTransition onMouseEnter={moveHighlight} onFocus={moveHighlight} className="inline-block rounded-2xl">
                             <img
                                 style={{ viewTransitionName: `work-poster-${work.id}` }}
                                 className="flex justify-center items-center hover:ring-opacity-50 shadow-gray-600 shadow-md hover:shadow-2xl hover:shadow-green-400 rounded-2xl ring-4 ring-transparent hover:ring-[#00862f] max-w-full h-auto max-h-[300px] hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer"

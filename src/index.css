@@ -1,36 +1,234 @@
-@import "tailwindcss";
-@config "../tailwind.config.js";
+@import 'tailwindcss' source(none);
+@source "../index.html";
+@source "./**/*.{js,ts,jsx,tsx}";
+
+@theme {
+  --font-font1: font1;
+  --animate-arrow: arrow 1s ease-in-out infinite;
+  --animate-fade: fade 1s ease-in-out;
+  --animate-fadeDelay: fade 1s ease-in-out 0.3s;
+  --animate-fadeOut: fadeOut 1s ease-out;
+  --animate-fadeOutDelay: fadeOut 1s ease-out 0.3s;
+  --animate-zoom: zoom 0.6s ease-in-out;
+  --animate-zoomDelay: zoom 0.6s ease-in-out 0.3s;
+  --animate-zoomIn: zoomIn 0.6s ease-in-out;
+  --animate-zoomInDelay: zoomIn 0.6s ease-in-out 0.3s;
+  --animate-zoomOut: zoomOut 0.8s ease-out;
+  --animate-zoomOutDelay: zoomOut 0.8s ease-out 0.3s;
+  --animate-fadeInDown: fadeInDown 0.8s ease-in-out;
+  --animate-fadeInDownDelay: fadeInDown 0.8s ease-in-out 0.3s;
+  --animate-fadeInUp: fadeInUp 0.8s ease-in-out;
+  --animate-fadeInUpDelay: fadeInUp 0.8s ease-in-out 0.3s;
+  --animate-fadeInLeft: fadeInLeft 0.8s ease-in-out;
+  --animate-fadeInLeftDelay: fadeInLeft 0.8s ease-in-out 0.3s;
+  --animate-fadeInRight: fadeInRight 0.8s ease-in-out;
+  --animate-fadeInRightDelay: fadeInRight 0.8s ease-in-out 0.3s;
+  /* Animation: bounce Left */
+  --animate-bounceLeft: bounceLeft 1s ease-in-out infinite;
+  --animate-bounceLeftDelay: bounceLeft 1s ease-in-out 0.3s infinite;
+
+  /* Animation: bounce Right */
+  --animate-bounceRight: bounceRight 1s ease-in-out infinite;
+  --animate-bounceRightDelay: bounceRight 1s ease-in-out 0.3s infinite;
+
+  /* Animation: bounce Up */
+  --animate-bounceUp-15: bounceUp 1.5s ease-in-out infinite;
+  --animate-bounceUp: bounceUp 1s ease-in-out infinite;
+  --animate-bounceUpDelay: bounceUp 1s ease-in-out 0.3s infinite;
+
+  /* Animation: Turn */
+  --animate-turn: turn 1s ease-in-out infinite;
+  --animate-turnDelay: turn 1s ease-in-out 0.3s infinite;
+
+  @keyframes arrow {
+    0%,
+    100% {
+      transform: translateX(-25%);
+    }
+    50% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade {
+    0%,
+    20% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100;
+    }
+  }
+
+  @keyframes fadeOut {
+    0%,
+    30% {
+      opacity: 100;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeInDown {
+    0%,
+    20% {
+      opacity: 0;
+      transform: translateY(-50%);
+    }
+    100% {
+      opacity: 100;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0%,
+    20% {
+      opacity: 0;
+      transform: translateY(50%);
+    }
+    100% {
+      opacity: 100;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    0%,
+    20% {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+    100% {
+      opacity: 100;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    0%,
+    20% {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+    100% {
+      opacity: 100;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes zoom {
+    0%,
+    30% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 100;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes zoomIn {
+    0%,
+    30% {
+      opacity: 0;
+      transform: scale(0) translateY(100%);
+    }
+    100% {
+      opacity: 100;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes zoomOut {
+    0%,
+    30% {
+      opacity: 100;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  @keyframes bounceLeft {
+    0% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(-7px);
+    }
+  }
+
+  @keyframes bounceRight {
+    0% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(7px);
+    }
+  }
+
+  @keyframes bounceUp {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes turn {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(5deg);
+    }
+  }
+}
 
 @layer base {
-    button:not(:disabled),
-    [role="button"]:not([aria-disabled="true"]) {
-        cursor: pointer;
-    }
+  html,
+  body {
+    background-color: #000;
+  }
 
-    button:disabled,
-    [role="button"][aria-disabled="true"] {
-        cursor: not-allowed;
-    }
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [role='button'][aria-disabled='true'] {
+    cursor: not-allowed;
+  }
 }
 
 @font-face {
-    font-family: "font1";
-    src: url("/font/file_nb.woff") format("woff");
+  font-family: 'font1';
+  src: url('/font/file_nb.woff') format('woff');
 }
 
 * {
-    scroll-behavior: smooth;
-    user-select: none;
+  scroll-behavior: smooth;
+  user-select: none;
 }
 
 progress::-webkit-progress-value {
-    background: red;
+  background: red;
 }
 
 progress::-moz-progress-bar {
-    background: red;
+  background: red;
 }
 
 progress {
-    color: red;
+  color: red;
 }

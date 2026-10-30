@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { cx, scrollTo } from "./utils";
@@ -17,6 +17,15 @@ const navlinks = [
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const navItemsRef = useRef(null);
+    const [highlight, setHighlight] = useState(null);
+
+    const moveHighlight = (event) => {
+        const container = navItemsRef.current;
+        if (!container) return;
+        const item = event.currentTarget;
+        setHighlight({ left: item.offsetLeft, width: item.offsetWidth });
+    };
 
     const handleOpen = () => {
         setOpen((prev) => !prev);
@@ -35,7 +44,24 @@ export default function Navbar() {
         <nav className="w-full" role="navigation">
             <div className="flex justify-between lg:justify-center items-center py-[5px] px-1">
                 <div className="hidden lg:block w-full">
-                    <div className="flex items-center justify-center max-w-[1100px] mx-auto gap-1">
+                    <div
+                        ref={navItemsRef}
+                        onMouseLeave={() => setHighlight(null)}
+                        onBlur={(event) => {
+                            if (!event.currentTarget.contains(event.relatedTarget)) setHighlight(null);
+                        }}
+                        className="relative flex items-center justify-center max-w-[1100px] mx-auto gap-1"
+                    >
+                        <span
+                            aria-hidden="true"
+                            className="pointer-events-none absolute left-0 rounded-lg bg-[#007700] transition-[transform,width,opacity] duration-300 ease-out motion-reduce:transition-none"
+                            style={{
+                                height: "47px",
+                                width: highlight?.width ?? 0,
+                                transform: `translateX(${highlight?.left ?? 0}px)`,
+                                opacity: highlight ? 1 : 0,
+                            }}
+                        />
                         <Link
                             to={"/"}
                             className="hidden md:inline-block hover:scale-125 ease-out duration-200 transition md:min-w-[65px] md:min-h-[65px] h-[65px] w-[65px] mx-2 animate-zoom"
@@ -54,12 +80,12 @@ export default function Navbar() {
                                 to={item.to}
                                 end={item.to === "/"}
                                 onClick={scrollToEven}
-                                className={({ isActive, isPending }) =>
-                                    isPending
-                                        ? "transition animate-pulse"
-                                        : isActive
-                                        ? "inline-flex text-slate-900 bg-[#d7742d] hover:bg-[#007700] hover:text-white rounded-lg px-6 py-[10px] text-[18px] font-[600] hover:translate-y-1 ease-out duration-300 text-center tracking-wide antialiased mx-auto animate-fade"
-                                        : "inline-flex text-white hover:bg-[#007700] hover:text-slate-950 rounded-lg px-6 py-[10px] text-[18px] font-[600] hover:translate-y-1 ease-out duration-300 text-center tracking-wide antialiased mx-auto animate-fade"
+                                onMouseEnter={moveHighlight}
+                                onFocus={moveHighlight}
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? "relative inline-flex text-slate-900 bg-[#d7742d] rounded-lg px-6 py-[10px] text-[18px] font-[600] transition-[color] duration-300 text-center tracking-wide antialiased mx-auto"
+                                        : "relative inline-flex text-white hover:text-slate-950 focus:text-slate-950 rounded-lg px-6 py-[10px] text-[18px] font-[600] transition-colors duration-300 text-center tracking-wide antialiased mx-auto"
                                 }
                             >
                                 {item.name}
@@ -106,10 +132,8 @@ export default function Navbar() {
                         onClick={scrollToEven}
                         to={item.to}
                         end={item.to === "/"}
-                        className={({ isActive, isPending }) =>
-                            isPending
-                                ? "transition animate-pulse"
-                                : isActive
+                        className={({ isActive }) =>
+                            isActive
                                 ? "text-slate-900 bg-[#d7742d] hover:bg-[#007700] hover:text-white rounded-lg px-3 py-3 text-base font-bold hover:translate-y-1 ease-out duration-200"
                                 : " text-gray-300 hover:bg-[#007700] hover:text-black rounded-lg px-3 py-3 text-base font-[600]  hover:translate-y-1 ease-out duration-200"
                         }

@@ -68,7 +68,7 @@ const CachedPages = () => {
             }
             previousPath.current = current;
         }
-        if (pendingScroll.current === current && !isTransitioning) {
+        if (pendingScroll.current === current && (window.innerWidth < 768 || !isTransitioning)) {
             pendingScroll.current = null;
             const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
             window.scrollTo({

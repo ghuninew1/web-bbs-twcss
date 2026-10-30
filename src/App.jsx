@@ -1,5 +1,7 @@
 import { Layout, Fallback } from "./components";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Activity, useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import {
     Home,
     Contact,
@@ -40,16 +42,42 @@ import {
     OurworkKungkoo,
 } from "./components/pages";
 
+const cachedPages = [
+    ["/", Home], ["/studio", Studio], ["/jobs", Jobs],
+    ["/service", Service], ["/news", News], ["/annoucement", Annoucement],
+    ["/contact", Contact], ["/ourwork", Ourwork],
+];
+
+const CachedPages = () => {
+    const { pathname } = useLocation();
+    const current = pathname.replace(/\/+$/, "") || "/";
+    const [visited, setVisited] = useState(() => new Set([current]));
+    if (!visited.has(current) && cachedPages.some(([path]) => path === current)) {
+        setVisited(new Set([...visited, current]));
+    }
+
+    return (
+        <>
+            {cachedPages.map(([path, Page]) => visited.has(path) && (
+                <Activity key={path} mode={current === path ? "visible" : "hidden"}>
+                    <Page active={current === path} />
+                </Activity>
+            ))}
+            <Outlet />
+        </>
+    );
+};
+
 const App = () => {
     const pages = [
-        { path: "/", element: <Home /> },
-        { path: "/studio", element: <Studio /> },
-        { path: "/jobs", element: <Jobs /> },
-        { path: "/service", element: <Service /> },
-        { path: "/news", element: <News /> },
-        { path: "/annoucement", element: <Annoucement /> },
-        { path: "/contact", element: <Contact /> },
-        { path: "/ourwork", element: <Ourwork /> },
+        { path: "/" },
+        { path: "/studio" },
+        { path: "/jobs" },
+        { path: "/service" },
+        { path: "/news" },
+        { path: "/annoucement" },
+        { path: "/contact" },
+        { path: "/ourwork", children: [
         { path: "/ourwork/blinkblink", element: <OurworkBlinkblink /> },
         { path: "/ourwork/giftoftheland", element: <OurworkGiftofTheLand /> },
         { path: "/ourwork/rpf", element: <OurworkRpf /> },
@@ -66,13 +94,14 @@ const App = () => {
         // { path: "/ourwork/bankofthailand", element: <OurworkBankOfThailand /> },
         { path: "/ourwork/departmentofland", element: <OurworkDepartmentOfLand /> },
         { path: "/ourwork/kungkoo", element: <OurworkKungkoo /> },
+        ] },
     ];
     const routes = [
         {
             path: "/",
             element: <Layout />,
             errorElement: <Fallback />,
-            children: [...pages],
+            children: [{ element: <CachedPages />, children: pages }],
             
         },
         { path: "/card", element: <Card /> },

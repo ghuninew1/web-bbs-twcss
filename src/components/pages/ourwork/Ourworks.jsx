@@ -3,6 +3,7 @@ import { Title, Fallback } from "../..";
 import { Link } from "react-router-dom";
 import { workData } from "./WorkData";
 import { ImageZoom } from "./ImageZoom";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 const OurworkData = ({ num }) => {
     if (!workData[num]) {
@@ -24,15 +25,26 @@ const OurworkData = ({ num }) => {
             </h2>
             <div className="flex justify-center items-center md:items-start mt-10">
                 <div className="flex md:flex-row flex-col justify-start items-center md:items-start gap-4">
-                    <Link to={"/ourwork"} viewTransition className="cursor-alias" onClick={scrollToEven}>
-                        <img
-                            style={{ viewTransitionName: `work-poster-${workData[num].id}` }}
-                            className="mt-4 mr-0 md:mr-20 rounded-2xl max-w-full h-auto max-h-[400px]"
-                            src={workData[num].img}
-                            alt={workData[num].title}
-                            loading="lazy"
-                        />
-                    </Link>
+                    <div className="flex flex-col items-center gap-4 mt-4 md:mr-20">
+                        <Link to="/ourwork" viewTransition className="cursor-alias" onClick={scrollToEven}>
+                            <img
+                                style={{ viewTransitionName: `work-poster-${workData[num].id}` }}
+                                className="rounded-2xl max-w-full h-auto max-h-[400px]"
+                                src={workData[num].img}
+                                alt={workData[num].title}
+                                loading="lazy"
+                            />
+                        </Link>
+                        <Link
+                            to="/ourwork"
+                            viewTransition
+                            onClick={scrollToEven}
+                            className="inline-flex items-center gap-2 px-4 py-2 hover:border hover:border-green-500 rounded-lg focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 text-white hover:text-green-400 transition-colors"
+                        >
+                            <ArrowLeftIcon aria-hidden="true" className="w-5 h-5 animate-bounceLeft" />
+                            Back
+                        </Link>
+                    </div>
                     <div className="flex flex-col justify-center items-center gap-4 mt-4 animate-fadeInRight">
                         <video
                             className="rounded-2xl max-w-full h-auto max-h-[500px]"

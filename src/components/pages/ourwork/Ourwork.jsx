@@ -5,12 +5,18 @@ import { useEffect, useState } from "react";
 
 let hasVisitedOurwork = false;
 
-const Ourwork = () => {
+const Ourwork = ({ active = true }) => {
     const [highlight, setHighlight] = useState(null);
-    const [animateEntrance] = useState(() => !hasVisitedOurwork);
+    const [animateEntrance, setAnimateEntrance] = useState(() => !hasVisitedOurwork);
+
+    if (!active && animateEntrance) {
+        setAnimateEntrance(false);
+    }
 
     useEffect(() => {
         hasVisitedOurwork = true;
+        const timer = window.setTimeout(() => setAnimateEntrance(false), 800);
+        return () => window.clearTimeout(timer);
     }, []);
 
     const moveHighlight = (event) => {
@@ -43,7 +49,10 @@ const Ourwork = () => {
                     }}
                 />
                 {workData.map((work) => (
-                    <div key={work.id} className={animateEntrance ? "relative animate-fadeInUp motion-reduce:animate-none" : "relative"}>
+                    <div
+                        key={work.id}
+                        className={active && animateEntrance ? "relative animate-fadeInUp motion-reduce:animate-none" : "relative"}
+                    >
                         <Link to={work.link} viewTransition onMouseEnter={moveHighlight} onFocus={moveHighlight} className="inline-block rounded-2xl">
                             <img
                                 style={{ viewTransitionName: `work-poster-${work.id}` }}

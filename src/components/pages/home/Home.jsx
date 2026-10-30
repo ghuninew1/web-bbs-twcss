@@ -2,7 +2,7 @@ import { Title } from "../../";
 import { YouTubeEmbed } from "../../Iframe";
 import HomePartner from "./HomePartner";
 
-const Home = () => {
+const Home = ({ active = true }) => {
     return (
         <div className="flex flex-col justify-center items-center mx-auto min-h-[50vh] animate-fade">
             <Title title="Home" />
@@ -10,7 +10,7 @@ const Home = () => {
                 Showreel
             </h1>
             <div className="bg-black mx-auto mb-20 w-full max-w-[1100px] aspect-video animate-fade">
-                <YouTubeEmbed src="https://www.youtube.com/embed/ZPUNuRikgUs" title={"ShowReel"}/>
+                {active && <YouTubeEmbed src="https://www.youtube.com/embed/ZPUNuRikgUs" title={"ShowReel"}/>}
             </div>
             <div className="bg-white w-full">
                 <HomePartner />

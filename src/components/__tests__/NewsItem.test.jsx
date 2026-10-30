@@ -13,8 +13,11 @@ describe("NewsItem", () => {
         image.focus();
         await user.keyboard("{Enter} ");
         await user.click(image);
+        await user.click(screen.getByRole("button", { name: "read more" }));
 
-        expect(onReadMore).toHaveBeenCalledTimes(3);
-        expect(onReadMore).toHaveBeenCalledWith("news", 2);
+        expect(onReadMore).toHaveBeenCalledTimes(4);
+        for (const call of onReadMore.mock.calls) {
+            expect(call).toEqual(["news", 2, image]);
+        }
     });
 });

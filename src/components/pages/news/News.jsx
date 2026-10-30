@@ -8,7 +8,7 @@ const Model = lazy(() => import("./Model"));
 
 const NewsItem = lazy(() => import("./NewsItem"));
 
-const News = () => {
+const News = ({ active = true }) => {
     const [image, setImage] = useState(0);
     const [showIframe, setShowIframe] = useState(null);
     const sourceImage = useRef(null);
@@ -56,7 +56,7 @@ const News = () => {
                         : "scale-0 opacity-0"
                 )}
             >
-                {showIframe && (
+                {active && showIframe && (
                     <Suspense fallback={<Fallback />}>
                         <NewsIframe
                             src={showIframe}

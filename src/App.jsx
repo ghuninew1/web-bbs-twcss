@@ -73,7 +73,7 @@ const CachedPages = () => {
             const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
             window.scrollTo({
                 top: window.innerWidth < 768 ? 0 : 573,
-                behavior: reducedMotion ? "instant" : "smooth",
+                behavior: window.innerWidth < 768 || reducedMotion ? "instant" : "smooth",
             });
         }
     }, [current, isTransitioning]);

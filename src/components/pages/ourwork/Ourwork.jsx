@@ -32,7 +32,7 @@ const Ourwork = ({ active = true }) => {
             <Title title="Our Work" />
             <div
                 data-work-grid
-                className="relative gap-12 grid grid-cols-2 lg:grid-cols-5 mt-10"
+                className="relative gap-12 grid grid-cols-2 md:grid-cols-5 mt-10"
                 onMouseLeave={() => setHighlight(null)}
                 onBlur={(event) => {
                     if (!event.currentTarget.contains(event.relatedTarget)) setHighlight(null);

@@ -43,7 +43,7 @@ import {
 } from "./components/pages";
 
 const cachedPages = [
-    ["/", Home], ["/studio", Studio], ["/jobs", Jobs],
+    ["/", Home], ["/jobs", Jobs],
     ["/service", Service], ["/news", News], ["/annoucement", Annoucement],
     ["/contact", Contact], ["/ourwork", Ourwork],
 ];
@@ -71,7 +71,7 @@ const CachedPages = () => {
 const App = () => {
     const pages = [
         { path: "/" },
-        { path: "/studio" },
+        { path: "/studio", element: <Studio /> },
         { path: "/jobs" },
         { path: "/service" },
         { path: "/news" },

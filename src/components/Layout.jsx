@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Navbar, Fallback, Footer, Header } from "./";
 import { Suspense, useEffect, useState, memo } from "react";
 import Scroll from "./utils/ScrollListener";
@@ -7,6 +7,8 @@ import { useIntersectionObserver } from "../hook/useIntersectionObserver";
 
 const Layout = () => {
     const [active, setActive] = useState(false);
+    const { pathname } = useLocation();
+    const bottomAlignedFooter = ["/", "/contact", "/jobs", "/annoucement", "/service"].includes(pathname.replace(/\/+$/, "") || "/");
     const scroll = Scroll({ desktopOnly: true });
 
     const [ref, entry] = useIntersectionObserver({
@@ -30,7 +32,7 @@ const Layout = () => {
     }, [active, onScreen, scroll.lastY, scroll.y]);
 
     return (
-        <div className="relative min-h-screen bg-black overflow-hidden">
+        <div className={cx("relative bg-black overflow-hidden", bottomAlignedFooter ? "flex min-h-dvh md:min-h-[calc(100dvh+573px)] flex-col" : "min-h-screen")}>
             <div
                 className="hidden md:block h-[573px] w-[700px] mx-auto overflow-hidden"
                 ref={ref}
@@ -68,7 +70,10 @@ const Layout = () => {
                 </header>
                 </div>
 
-                <div className="relative min-h-[calc(100vh-235px)] md:min-h-[calc(100vh-250px)] pt-[50px] md:pt-[80px] overflow-hidden">
+                <div className={cx(
+                    "relative pt-[50px] md:pt-[80px] overflow-hidden",
+                    bottomAlignedFooter ? "flex-1" : "min-h-[calc(100vh-235px)] md:min-h-[calc(100vh-250px)]"
+                )}>
                     <Outlet />
                 </div>
                 <Footer />

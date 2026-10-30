@@ -43,19 +43,19 @@ export default function Navbar() {
 
     return (
         <nav className="w-full" role="navigation">
-            <div className="flex justify-between lg:justify-center items-center py-[5px] px-1">
-                <div className="hidden lg:block w-full">
+            <div className="flex justify-between md:justify-center items-center px-1 py-[5px]">
+                <div className="hidden md:block w-full">
                     <div
                         ref={navItemsRef}
                         onMouseLeave={hideHighlight}
                         onBlur={(event) => {
                             if (!event.currentTarget.contains(event.relatedTarget)) hideHighlight();
                         }}
-                        className="relative flex items-center justify-center max-w-[1100px] mx-auto gap-1"
+                        className="relative flex justify-center items-center gap-1 mx-auto max-w-[1100px]"
                     >
                         <span
                             aria-hidden="true"
-                            className="pointer-events-none absolute left-0 rounded-lg bg-[#007700] transition-[transform,width,opacity] duration-300 ease-out motion-reduce:transition-none"
+                            className="left-0 absolute bg-[#007700] rounded-lg transition-[transform,width,opacity] motion-reduce:transition-none duration-300 ease-out pointer-events-none"
                             style={{
                                 height: "47px",
                                 width: highlight?.width ?? 0,
@@ -65,12 +65,12 @@ export default function Navbar() {
                         />
                         <Link
                             to={"/"}
-                            className="hidden md:inline-block hover:scale-125 ease-out duration-200 transition md:min-w-[65px] md:min-h-[65px] h-[65px] w-[65px] mx-2 animate-zoom"
+                            className="hidden md:inline-block mx-2 w-[65px] md:min-w-[65px] h-[65px] md:min-h-[65px] hover:scale-125 transition animate-zoom duration-200 ease-out"
                         >
                             <img
                                 src={logo}
                                 alt="Your Company"
-                                className="h-full w-full"
+                                className="w-full h-full"
                                 width={65}
                                 height={65}
                             />
@@ -96,12 +96,12 @@ export default function Navbar() {
                 </div>
                 <Link
                     to={"/"}
-                    className="lg:hidden hover:scale-125 ease-out duration-200 transition-all ml-1 min-w-[40px] min-h-[40px] animate-zoom"
+                    className="md:hidden ml-1 min-w-[40px] min-h-[40px] hover:scale-125 transition-all animate-zoom duration-200 ease-out"
                 >
                     <img
                         src={logo}
                         alt="Your Company"
-                        className="h-[40px] w-[40px]"
+                        className="w-[40px] h-[40px]"
                         width={40}
                         height={40}
                     />
@@ -110,9 +110,9 @@ export default function Navbar() {
                 <button
                     aria-label="Open Menu"
                     onClick={handleOpen}
-                    className="lg:hidden inline-flex items-center justify-center rounded-lg hover:bg-[#00770065] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white animate-fade"
+                    className="md:hidden inline-flex justify-center items-center hover:bg-[#00770065] rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-inset animate-fade"
                 >
-                    <span className="h-8 w-8 m-1">
+                    <span className="m-1 w-8 h-8">
                         {open ? (
                             <XMarkIcon color="red" />
                         ) : (
@@ -123,7 +123,7 @@ export default function Navbar() {
             </div>
             <div
                 className={cx(
-                    "absolute top-full inset-x-0 max-h-[calc(100dvh-50px)] overflow-y-auto space-y-1 pb-2 bg-black flex flex-col lg:hidden z-[35] text-center tracking-wide antialiased transition-all ease-out duration-300 origin-top border-b border-[#2f2f2f] py-1",
+                    "absolute top-full inset-x-0 max-h-[calc(100dvh-50px)] overflow-y-auto space-y-1 pb-2 bg-black flex flex-col md:hidden z-[35] text-center tracking-wide antialiased transition-all ease-out duration-300 origin-top border-b border-[#2f2f2f] py-1",
                     open ? "scale-y-100" : "scale-y-0"
                 )}
             >

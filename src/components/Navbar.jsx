@@ -24,8 +24,9 @@ export default function Navbar() {
         const container = navItemsRef.current;
         if (!container) return;
         const item = event.currentTarget;
-        setHighlight({ left: item.offsetLeft, width: item.offsetWidth });
+        setHighlight({ left: item.offsetLeft, width: item.offsetWidth, visible: true });
     };
+    const hideHighlight = () => setHighlight((current) => current && { ...current, visible: false });
 
     const handleOpen = () => {
         setOpen((prev) => !prev);
@@ -46,9 +47,9 @@ export default function Navbar() {
                 <div className="hidden lg:block w-full">
                     <div
                         ref={navItemsRef}
-                        onMouseLeave={() => setHighlight(null)}
+                        onMouseLeave={hideHighlight}
                         onBlur={(event) => {
-                            if (!event.currentTarget.contains(event.relatedTarget)) setHighlight(null);
+                            if (!event.currentTarget.contains(event.relatedTarget)) hideHighlight();
                         }}
                         className="relative flex items-center justify-center max-w-[1100px] mx-auto gap-1"
                     >
@@ -59,7 +60,7 @@ export default function Navbar() {
                                 height: "47px",
                                 width: highlight?.width ?? 0,
                                 transform: `translateX(${highlight?.left ?? 0}px)`,
-                                opacity: highlight ? 1 : 0,
+                                opacity: highlight?.visible ? 1 : 0,
                             }}
                         />
                         <Link

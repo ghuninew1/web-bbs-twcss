@@ -39,6 +39,7 @@ function Model({ indexImg = 0, handlClose }) {
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}
+                        loop={dataRef[indexImg - 1]?.to.length > 1}
                         autoplay={{
                             delay: 5000,
                             disableOnInteraction: false,

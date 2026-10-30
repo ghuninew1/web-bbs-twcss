@@ -20,9 +20,9 @@ const Jobs = () => {
     };
 
     return (
-        <div className=" min-h-[60vh] px-2 mb-10">
+        <div className="mx-auto mt-10 md:mt-0 mb-10 px-2 max-w-[1280px] min-h-[60vh]">
             <Title title="Jobs" />
-            <div className="mx-auto flex w-full flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center mx-auto w-full">
                 <div
                     className={cx(
                         "h-[120px] md:w-[300px] w-[200px] md:min-h-[200px] mb-10 transition",
@@ -53,7 +53,7 @@ const Jobs = () => {
                             {haveRing === index + 1 && (
                                 <ArrowSmallRightIcon
                                     width={30}
-                                    className="mr-1 text-orange-700 -left-10 absolute animate-arrow"
+                                    className="-left-10 absolute mr-1 text-orange-700 animate-arrow"
                                 />
                             )}
                             {link.name && link.name}

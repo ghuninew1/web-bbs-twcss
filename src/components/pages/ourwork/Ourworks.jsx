@@ -17,24 +17,24 @@ const OurworkData = ({ num }) => {
     };
 
     return (
-        <div className=" min-h-screen px-4 mb-10 max-w-[1280px] mx-auto">
+        <div className="mx-auto mb-10 px-4 max-w-[1280px] min-h-screen">
             <Title title={workData[num].header} />
-            <h2 className="md:text-2xl text-xl font-bold text-gray-500 text-start mt-5 md:mt-0 font-mono">
+            <h2 className="mt-5 md:mt-0 font-mono font-bold text-gray-500 text-xl md:text-2xl text-start">
                 {workData[num].header}
             </h2>
-            <div className="flex items-center  md:items-start justify-center mt-10">
-                <div className="flex md:flex-row flex-col items-center  md:items-start justify-start gap-4 animate-fadeInRight">
+            <div className="flex justify-center items-center md:items-start mt-10">
+                <div className="flex md:flex-row flex-col justify-start items-center md:items-start gap-4 animate-fadeInRight">
                     <Link to={"/ourwork"} className="cursor-alias" onClick={scrollToEven}>
                         <img
-                            className="h-auto max-w-full max-h-[400px] rounded-2xl mt-4 md:mr-20 mr-0"
+                            className="mt-4 mr-0 md:mr-20 rounded-2xl max-w-full h-auto max-h-[400px]"
                             src={workData[num].img}
                             alt={workData[num].title}
                             loading="lazy"
                         />
                     </Link>
-                    <div className="flex flex-col items-center justify-center mt-4 gap-4">
+                    <div className="flex flex-col justify-center items-center gap-4 mt-4">
                         <video
-                            className="h-auto max-w-full max-h-[500px] rounded-2xl"
+                            className="rounded-2xl max-w-full h-auto max-h-[500px]"
                             src={workData[num].video}
                             controls
                             controlsList="nodownload"
@@ -100,14 +100,14 @@ export const OurworkPTTOR = () => {
     return <OurworkData num={12} />;
 };
 
-export const OurworkBankOfThailand = () => {
+// export const OurworkBankOfThailand = () => {
+//     return <OurworkData num={13} />;
+// };
+
+export const OurworkDepartmentOfLand = () => {
     return <OurworkData num={13} />;
 };
 
-export const OurworkDepartmentOfLand = () => {
-    return <OurworkData num={14} />;
-};
-
 export const OurworkKungkoo = () => {
-    return <OurworkData num={15} />;
+    return <OurworkData num={14} />;
 };

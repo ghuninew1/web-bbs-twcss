@@ -2,14 +2,14 @@ import { Title } from "../";
 
 const Annoucement = () => {
     return (
-        <div className=" max-w-[900px] flex flex-col mx-auto items-center justify-center px-2">
+        <div className="flex flex-col justify-center items-center mx-auto mt-10 md:mt-0 px-2 max-w-[900px]">
             <Title title="Annoucement" />
             <div className="mx-3 px-2 animate-fade">
-                <div className="text-white md:text-base text-sm font-sans font-normal tracking-wide antialiased">
-                    <h3 className="text-center text-xl md:text-2xl font-bold">
+                <div className="font-sans font-normal text-white text-sm md:text-base antialiased tracking-wide">
+                    <h3 className="font-bold text-xl md:text-2xl text-center">
                         ประกาศแจ้งบุคคลพ้นสภาพการเป็นพนักงาน
                     </h3>
-                    <h3 className="text-center text-xl md:text-2xl font-medium">
+                    <h3 className="font-medium text-xl md:text-2xl text-center">
                         บริษัท บิ๊กเบรน สตูดิโอ จำกัด
                     </h3>
                     <p className="mt-5 first-letter:pl-5">
@@ -29,7 +29,7 @@ const Annoucement = () => {
                         หลังจากพ้นสภาพพนักงานไป ทางบริษัทฯ ไม่มี
                         ส่วนรับผิดชอบกับความเสียหายที่เกิดขึ้นทั้งสิ้น
                     </p>
-                    <p className="pt-5 mb-10 first-letter:pl-5">
+                    <p className="mb-10 pt-5 first-letter:pl-5">
                         จึงเรียนมาเพื่อให้บริษัทที่เกี่ยวข้อง ทั้งลูกค้าใหม่ และ
                         ลูกค้าเดิมให้ทราบโดยทั่วกัน เพื่อไม่ให้เกิด ความสับสน
                         และ

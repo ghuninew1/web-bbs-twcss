@@ -76,6 +76,10 @@
         max-height: none;
     }
 
+    .news-modal .swiper-slide > div {
+        height: 100%;
+    }
+
     .news-modal .swiper-button-prev,
     .news-modal .swiper-button-next {
         display: none !important;

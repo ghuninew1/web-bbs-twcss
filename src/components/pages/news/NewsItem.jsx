@@ -4,6 +4,7 @@ import useObserver from "../../utils/useObserver";
 
 const NewsItem = ({ item, index, onReadMore }) => {
     const ref = useRef(null);
+    const imageRef = useRef(null);
     const isVisible = useObserver(ref);
 
     return (
@@ -61,7 +62,7 @@ const NewsItem = ({ item, index, onReadMore }) => {
                     <button
                         className="mt-5 font-medium text-[#3b79d0] hover:text-[#f86c3480]"
                         onClick={() =>
-                            onReadMore(item.to, index + 1)
+                            onReadMore(item.to, index + 1, imageRef.current)
                         }
                     >
                         read more
@@ -72,19 +73,20 @@ const NewsItem = ({ item, index, onReadMore }) => {
             <div className="basis-3/4 p-3 rounded-md relative">
                 <div className="mx-auto max-h-[450px] flex items-center shadow-lg brightness-95 transition-all overflow-hidden">
                     <img
+                        ref={imageRef}
                         src={item.src}
                         alt={item.id}
                         loading="lazy"
                         className="w-full h-full hover:brightness-75 cursor-pointer transition duration-50"
                         onClick={() =>
-                            onReadMore(item.to, index + 1)
+                            onReadMore(item.to, index + 1, imageRef.current)
                         }
                         role="button"
                         tabIndex={0}
                         onKeyDown={(event) => {
                             if (event.key === "Enter" || event.key === " ") {
                                 event.preventDefault();
-                                onReadMore(item.to, index + 1);
+                                onReadMore(item.to, index + 1, imageRef.current);
                             }
                         }}
                     />

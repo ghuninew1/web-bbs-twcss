@@ -1,4 +1,4 @@
-import { lazy, memo, Suspense, useState } from "react";
+import { lazy, memo, Suspense, useRef, useState } from "react";
 import { dataNews } from "./NewsData";
 import { cx } from "../../utils";
 import { Title, ToTop, Fallback } from "../../";
@@ -11,11 +11,13 @@ const NewsItem = lazy(() => import("./NewsItem"));
 const News = () => {
     const [image, setImage] = useState(0);
     const [showIframe, setShowIframe] = useState(null);
+    const sourceImage = useRef(null);
 
-    const handleImage = (item, index) => {
+    const handleImage = (item, index, source) => {
         if (item?.toString().startsWith("http")) {
             setShowIframe(item);
         } else {
+            sourceImage.current = source;
             setImage(index);
         }
     };
@@ -34,17 +36,13 @@ const News = () => {
 
             {/* Image Modal */}
             <div
-                className={cx(
-                    "fixed top-0 left-0 right-0 h-full z-50 w-screen bg-black bg-opacity-50 transition-all duration-500 ease-in-out transform",
-                    image !== 0
-                        ? "scale-100 opacity-100"
-                        : "scale-0 opacity-0"
-                )}
+                className={cx("fixed top-0 left-0 right-0 h-full z-50 w-screen", image === 0 && "hidden")}
             >
                 <Suspense fallback={<Fallback />}>
                     <Model
                         indexImg={image}
                         handlClose={handleClose}
+                        sourceImage={sourceImage}
                     />
                 </Suspense>
             </div>

@@ -5,6 +5,12 @@
 .news-modal .news-modal-swiper {
     width: 100%;
 }
+.news-modal .news-modal-swiper.news-modal-zooming {
+    overflow: visible;
+}
+.news-modal-zooming .swiper-slide:not(.swiper-slide-active) {
+    visibility: hidden;
+}
 .news-modal .swiper-slide {
     padding: 0px;
 }

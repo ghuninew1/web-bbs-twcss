@@ -23,16 +23,17 @@ const OurworkData = ({ num }) => {
                 {workData[num].header}
             </h2>
             <div className="flex justify-center items-center md:items-start mt-10">
-                <div className="flex md:flex-row flex-col justify-start items-center md:items-start gap-4 animate-fadeInRight">
-                    <Link to={"/ourwork"} className="cursor-alias" onClick={scrollToEven}>
+                <div className="flex md:flex-row flex-col justify-start items-center md:items-start gap-4">
+                    <Link to={"/ourwork"} viewTransition className="cursor-alias" onClick={scrollToEven}>
                         <img
+                            style={{ viewTransitionName: `work-poster-${workData[num].id}` }}
                             className="mt-4 mr-0 md:mr-20 rounded-2xl max-w-full h-auto max-h-[400px]"
                             src={workData[num].img}
                             alt={workData[num].title}
                             loading="lazy"
                         />
                     </Link>
-                    <div className="flex flex-col justify-center items-center gap-4 mt-4">
+                    <div className="flex flex-col justify-center items-center gap-4 mt-4 animate-fadeInRight">
                         <video
                             className="rounded-2xl max-w-full h-auto max-h-[500px]"
                             src={workData[num].video}

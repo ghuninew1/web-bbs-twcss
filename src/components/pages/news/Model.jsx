@@ -12,11 +12,60 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { cx } from "../../utils";
 
-function Model({ indexImg = 0, handlClose }) {
+function Model({ indexImg = 0, handlClose, sourceImage }) {
     const dataRef = useRef(dataNews).current;
 
     const progressCircle = useRef(null);
     const progressContent = useRef(null);
+    const modalRef = useRef(null);
+    const contentRef = useRef(null);
+    const closingRef = useRef(false);
+    const animatedRef = useRef(false);
+    const animateImage = (image, frames, easing) => {
+        const swiper = image.closest(".news-modal-swiper");
+        swiper?.classList.add("news-modal-zooming");
+        const animation = image.animate(frames, { duration: 300, easing, fill: "forwards" });
+        animation.finished.finally(() => swiper?.classList.remove("news-modal-zooming")).catch(() => {});
+        return animation;
+    };
+    const zoomTransform = (image) => {
+        const origin = sourceImage.current?.getBoundingClientRect();
+        const target = image.getBoundingClientRect();
+        if (!origin || !target.width || !target.height) return null;
+        return `translate(${origin.left + origin.width / 2 - target.left - target.width / 2}px, ${origin.top + origin.height / 2 - target.top - target.height / 2}px) scale(${origin.width / target.width}, ${origin.height / target.height})`;
+    };
+    const handleImageLoad = (event, index) => {
+        if (index !== 0 || animatedRef.current) return;
+        const image = event.currentTarget;
+        const transform = zoomTransform(image);
+        if (transform && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            animateImage(image, [{ transform }, { transform: "none" }], "ease-out");
+        }
+        animatedRef.current = true;
+    };
+    const closeWithAnimation = () => {
+        if (closingRef.current) return;
+        const image = modalRef.current?.querySelector(".swiper-slide-active img");
+        image?.getAnimations().forEach((animation) => animation.cancel());
+        const transform = image && zoomTransform(image);
+        if (!transform || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            animatedRef.current = false;
+            handlClose();
+            return;
+        }
+        closingRef.current = true;
+        contentRef.current?.getAnimations().forEach((animation) => animation.cancel());
+        contentRef.current?.animate(
+            [{ opacity: 1, transform: "translateY(0)" }, { opacity: 0, transform: "translateY(24px)" }],
+            { duration: 300, easing: "ease-in", fill: "forwards" },
+        );
+        const animation = animateImage(image, [{ transform: "none" }, { transform }], "ease-in");
+        animation.onfinish = () => {
+            closingRef.current = false;
+            animatedRef.current = false;
+            handlClose();
+        };
+    };
     const onAutoplayTimeLeft = (s, time, progress) => {
         if (dataRef[indexImg - 1]?.to.length <= 1) return;
         progressCircle.current?.style.setProperty("--progress", 1 - progress);
@@ -25,10 +74,10 @@ function Model({ indexImg = 0, handlClose }) {
 
     return (
         (indexImg !== 0 && (
-            <div className="z-[50] fixed inset-0 bg-black overflow-y-auto text-white news-modal">
+            <div ref={modalRef} className="z-[50] fixed inset-0 bg-black overflow-y-auto text-white news-modal">
                 <div className="flex flex-col items-center mx-auto w-full max-w-[1280px] min-h-full news-modal-inner">
                     <div className="flex justify-end px-3 md:px-5 py-2 w-full">
-                    <button type="button" aria-label="ปิดข่าว" onClick={handlClose} className="inline-flex opacity-80 hover:opacity-100 rounded-full focus-visible:outline focus-visible:outline-white transition">
+                    <button type="button" aria-label="ปิดข่าว" onClick={closeWithAnimation} className="inline-flex opacity-80 hover:opacity-100 rounded-full focus-visible:outline focus-visible:outline-white transition">
                         <XCircleIcon
                             aria-hidden
                             color="white"
@@ -50,7 +99,7 @@ function Model({ indexImg = 0, handlClose }) {
                         navigation={true}
                         modules={[Autoplay, Pagination, Navigation]}
                         onAutoplayTimeLeft={onAutoplayTimeLeft}
-                        className="animate-fadeInLeft news-modal-swiper"
+                        className="news-modal-swiper"
                     >
                         {dataRef[indexImg - 1]?.to.map((item, index) => (
                             <SwiperSlide key={index}>
@@ -59,6 +108,7 @@ function Model({ indexImg = 0, handlClose }) {
                                         src={item.src}
                                         alt={item.alt}
                                         loading="lazy"
+                                        onLoad={(event) => handleImageLoad(event, index)}
                                         className="w-full object-center object-contain news-modal-image"
                                     />
                                 </div>
@@ -66,7 +116,7 @@ function Model({ indexImg = 0, handlClose }) {
                         ))}
 
                         {dataRef[indexImg - 1]?.to.length > 1 && (
-                            <div className="autoplay-progress" slot="container-end">
+                            <div className="animate-fadeInRight autoplay-progress" slot="container-end">
                                 <svg viewBox="0 0 48 48" ref={progressCircle}>
                                     <circle cx="24" cy="24" r="20"></circle>
                                 </svg>
@@ -75,7 +125,8 @@ function Model({ indexImg = 0, handlClose }) {
                         )}
                     </Swiper>
                     <div
-                        className="z-[60] mx-auto my-3 pb-6 w-full max-w-6xl tracking-wide animate-fadeInRight"
+                        ref={contentRef}
+                        className="z-[60] mx-auto my-3 pb-6 w-full max-w-6xl tracking-wide animate-fadeInUp"
                     >
                         <div className="p-2 text-center antialiased">
                             {dataRef[indexImg - 1]?.title2 && (
@@ -135,6 +186,7 @@ function Model({ indexImg = 0, handlClose }) {
 Model.propTypes = {
     indexImg: PropTypes.number,
     handlClose: PropTypes.func,
+    sourceImage: PropTypes.object,
 };
 const ModelMemo = memo(Model);
 export default ModelMemo;

@@ -3,11 +3,11 @@ import { cx } from "../../utils";
 
 const Partner = () => {
     return (
-        <div className="w-full py-5 ">
-            <h1 className="text-center text-black font-sans font-normal text-[20px] md:text-[25px]">
+        <div className="py-5 w-full">
+            <h1 className="font-sans font-normal text-[20px] text-black md:text-[25px] text-center animate-fadeInDown">
                 Thank You Our Clients & Partners
             </h1>
-            <div className="flex relative flex-col justify-center items-center mx-auto px-2 animate-fade">
+            <div className="relative flex flex-col justify-center items-center mx-auto px-2 animate-fadeInUp">
                 <div className="flex flex-row items-center gap-2">
                     {HomePartner.filter((id) => id.id <= 7).map((data, idx) => (
                         <span
@@ -58,7 +58,7 @@ const Partner = () => {
                 </div>
                 <div className="flex flex-row items-center">
                     <div className="flex flex-col justify-center items-center">
-                        <span className="flex flex-row items-center gap-2 ">
+                        <span className="flex flex-row items-center gap-2">
                             {HomePartner.filter(
                                 (id) => (id.id > 14) & (id.id <= 19)
                             ).map((data, idx) => (
@@ -81,7 +81,7 @@ const Partner = () => {
                                 </span>
                             ))}
                         </span>
-                        <span className="flex flex-row items-center justify-center gap-2">
+                        <span className="flex flex-row justify-center items-center gap-2">
                             {HomePartner.filter(
                                 (id) => (id.id > 19) & (id.id <= 24)
                             ).map((data, idx) => (
@@ -106,12 +106,12 @@ const Partner = () => {
                             ))}
                         </span>
                     </div>
-                    <span className=" max-w-[100px] scale-[0.8] md:scale-[1]  ">
+                    <span className="max-w-[100px] scale-[0.8] md:scale-[1]">
                         <img
                             src={HomePartner[24]?.url}
                             alt={HomePartner[24]?.alt}
                             loading="lazy"
-                            className="w-full md:max-w-[80px] max-w-[90px]"
+                            className="w-full max-w-[90px] md:max-w-[80px]"
                         />
                     </span>
                 </div>

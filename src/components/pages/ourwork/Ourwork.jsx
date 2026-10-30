@@ -2,10 +2,17 @@ import { scrollTo } from "../../utils";
 import { Title } from "../../";
 import { Link } from "react-router-dom";
 import { workData } from "./WorkData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+let hasVisitedOurwork = false;
 
 const Ourwork = () => {
     const [highlight, setHighlight] = useState(null);
+    const [animateEntrance] = useState(() => !hasVisitedOurwork);
+
+    useEffect(() => {
+        hasVisitedOurwork = true;
+    }, []);
 
     const moveHighlight = (event) => {
         const item = event.currentTarget;
@@ -24,11 +31,11 @@ const Ourwork = () => {
     };
 
     return (
-        <div className=" min-h-[60vh] px-4 mb-10 max-w-[1920px] mx-auto flex flex-col items-center justify-center">
+        <div className="flex flex-col justify-center items-center mx-auto mb-10 px-4 max-w-[1920px] min-h-[60vh]">
             <Title title="Our Work" />
             <div
                 data-work-grid
-                className="relative grid grid-cols-2 lg:grid-cols-5 gap-12 mt-10"
+                className="relative gap-12 grid grid-cols-2 lg:grid-cols-5 mt-10"
                 onMouseLeave={() => setHighlight(null)}
                 onBlur={(event) => {
                     if (!event.currentTarget.contains(event.relatedTarget)) setHighlight(null);
@@ -36,7 +43,7 @@ const Ourwork = () => {
             >
                 <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute left-0 top-0 rounded-2xl bg-[#00862f] transition-[transform,width,height,opacity] duration-300 ease-out motion-reduce:transition-none"
+                    className="top-0 left-0 absolute bg-[#00862f] rounded-2xl transition-[transform,width,height,opacity] motion-reduce:transition-none duration-300 ease-out pointer-events-none"
                     style={{
                         width: highlight ? highlight.width + 16 : 0,
                         height: highlight ? highlight.height + 16 : 0,
@@ -45,10 +52,11 @@ const Ourwork = () => {
                     }}
                 />
                 {workData.map((work) => (
-                    <div key={work.id} className="relative">
-                        <Link to={work.link} onClick={scrollToEven} onMouseEnter={moveHighlight} onFocus={moveHighlight} className="inline-block rounded-2xl">
+                    <div key={work.id} className={animateEntrance ? "relative animate-fadeInUp motion-reduce:animate-none" : "relative"}>
+                        <Link to={work.link} viewTransition onClick={scrollToEven} onMouseEnter={moveHighlight} onFocus={moveHighlight} className="inline-block rounded-2xl">
                             <img
-                                className="h-auto max-w-full max-h-[300px] rounded-2xl flex items-center justify-center hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer hover:shadow-2xl hover:shadow-green-400 shadow-md shadow-gray-600 ring-4 ring-transparent hover:ring-[#00862f] hover:ring-opacity-50 animate-fadeInUp"
+                                style={{ viewTransitionName: `work-poster-${work.id}` }}
+                                className="flex justify-center items-center hover:ring-opacity-50 shadow-gray-600 shadow-md hover:shadow-2xl hover:shadow-green-400 rounded-2xl ring-4 ring-transparent hover:ring-[#00862f] max-w-full h-auto max-h-[300px] hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer"
                                 src={work.img}
                                 alt={work.title}
                                 loading="lazy"

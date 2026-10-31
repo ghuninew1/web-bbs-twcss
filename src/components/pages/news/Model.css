@@ -59,17 +59,18 @@
     transition: all 0.2s ease-in-out;
 }
 .news-modal span.swiper-pagination-bullet {
-    width: 10px !important;
-    height: 10px !important;
+    width: 7px !important;
+    height: 7px !important;
     color: #454444da !important;
-    background: #00b725 !important;
+    background: #64b474f8 !important;
     opacity: 0.6 !important;
     margin-left: 4px !important;
 }
 .news-modal span.swiper-pagination-bullet-active {
     opacity: 1 !important;
-    color: #bfbaba !important;
-    background: #00b725 !important;
+    width: 9px !important;
+    height: 9px !important;
+    background: #a6813bd0 !important;
 }
 
 @media screen and (max-width: 767px) {

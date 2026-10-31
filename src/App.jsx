@@ -92,14 +92,15 @@ const CachedPages = () => {
 
 const App = () => {
     const pages = [
-        { path: "/" },
+        { path: "/", element: <></> },
         { path: "/studio", element: <Studio /> },
-        { path: "/jobs" },
-        { path: "/service" },
-        { path: "/news" },
-        { path: "/annoucement" },
-        { path: "/contact" },
+        { path: "/jobs", element: <></> },
+        { path: "/service", element: <></> },
+        { path: "/news", element: <></> },
+        { path: "/annoucement", element: <></> },
+        { path: "/contact", element: <></> },
         { path: "/ourwork", children: [
+        { index: true, element: <></> },
         { path: "/ourwork/blinkblink", element: <OurworkBlinkblink /> },
         { path: "/ourwork/giftoftheland", element: <OurworkGiftofTheLand /> },
         { path: "/ourwork/rpf", element: <OurworkRpf /> },

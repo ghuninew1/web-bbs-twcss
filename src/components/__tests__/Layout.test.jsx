@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Layout from "../Layout";
 
@@ -24,20 +24,28 @@ vi.mock("../Fallback", () => ({
     default: () => <div>Loading...</div>,
 }));
 
+const observer = vi.hoisted(() => ({ setVisible: null }));
+
 // Mock IntersectionObserver hook
-vi.mock("../../hook/useIntersectionObserver", () => ({
-    useIntersectionObserver: () => [
-        vi.fn(),
-        {
-            isIntersecting: true,
+vi.mock("../../hook/useIntersectionObserver", async () => {
+    const { useState } = await import("react");
+    return {
+        useIntersectionObserver: () => {
+            const [visible, setVisible] = useState(true);
+            observer.setVisible = setVisible;
+            return [vi.fn(), { isIntersecting: visible }];
         },
-    ],
-}));
+    };
+});
 
 describe("Layout Component", () => {
     beforeEach(() => {
         vi.clearAllMocks();
+        vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue();
+        vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(() => {});
     });
+
+    afterEach(() => vi.restoreAllMocks());
 
     const renderLayout = () => {
         return render(
@@ -77,6 +85,17 @@ describe("Layout Component", () => {
         expect(video).toHaveAttribute("loop");
         expect(video.muted).toBe(true);
         expect(video).toHaveAttribute("playsinline");
+    });
+
+    it("pauses the logo when it leaves the screen and resumes when it returns", () => {
+        renderLayout();
+        expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
+
+        act(() => observer.setVisible(false));
+        expect(HTMLMediaElement.prototype.pause).toHaveBeenCalledTimes(1);
+
+        act(() => observer.setVisible(true));
+        expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
     });
 
     it("renders Layout without crashing", () => {

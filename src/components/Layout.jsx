@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { Navbar, Fallback, Footer, Header } from "./";
-import { Suspense, useEffect, useState, memo } from "react";
+import { Suspense, useEffect, useRef, useState, memo } from "react";
 import Scroll from "./utils/ScrollListener";
 import { cx } from "./utils";
 import { useIntersectionObserver } from "../hook/useIntersectionObserver";
@@ -10,6 +10,7 @@ const Layout = () => {
     const { pathname } = useLocation();
     const bottomAlignedFooter = ["/", "/contact", "/jobs", "/annoucement", "/service"].includes(pathname.replace(/\/+$/, "") || "/");
     const scroll = Scroll();
+    const videoRef = useRef(null);
 
     const [ref, entry] = useIntersectionObserver({
         threshold: 0,
@@ -17,6 +18,17 @@ const Layout = () => {
         rootMargin: "0px",
     });
     const onScreen = entry?.isIntersecting;
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video || onScreen === undefined) return;
+
+        if (onScreen) {
+            video.play().catch(() => {});
+        } else {
+            video.pause();
+        }
+    }, [onScreen]);
 
     useEffect(() => {
         if (window.innerWidth < 768) {
@@ -46,6 +58,7 @@ const Layout = () => {
                 ref={ref}
             >
                 <video
+                    ref={videoRef}
                     autoPlay
                     loop
                     muted

@@ -1,11 +1,11 @@
-import { lazy, memo, Suspense, useLayoutEffect, useRef, useState } from "react";
+import { Fragment, lazy, memo, Suspense, useLayoutEffect, useRef, useState } from "react";
 import { dataNews } from "./NewsData";
 import { cx } from "../../utils";
 import { Title, ToTop, Fallback } from "../../";
+import NewsConnector from "./NewsConnector";
 
 const NewsIframe = lazy(() => import("./NewsIframe"));
 const Model = lazy(() => import("./Model"));
-
 const NewsItem = lazy(() => import("./NewsItem"));
 
 const News = ({ active = true }) => {
@@ -90,7 +90,7 @@ const News = ({ active = true }) => {
             </div>
 
             {/* News */}
-            <div className="relative flex flex-col items-center w-full" onMouseLeave={hideHighlight} onBlur={(event) => {
+            <div className="relative flex flex-col items-center pb-[150px] md:pb-[200px] w-full" onMouseLeave={hideHighlight} onBlur={(event) => {
                 if (!event.currentTarget.contains(event.relatedTarget)) hideHighlight();
             }}>
                 <span aria-hidden="true" className="top-0 left-0 absolute bg-[#123b24]/40 rounded-lg transition-[transform,width,height,opacity] motion-reduce:transition-none duration-300 ease-out pointer-events-none" style={{
@@ -100,13 +100,15 @@ const News = ({ active = true }) => {
                     opacity: highlight?.visible ? 1 : 0,
                 }} />
                 {dataNews.map((item, index) => (
+                    <Fragment key={item.id}>
                     <NewsItem
-                        key={item.id}
                         item={item}
                         index={index}
                         onReadMore={handleImage}
                         onHighlight={moveHighlight}
                     />
+                    {index < dataNews.length - 1 && <NewsConnector index={index} />}
+                    </Fragment>
                 ))}
             </div>
         </div>

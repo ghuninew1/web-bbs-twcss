@@ -16,7 +16,6 @@ const NewsItem = ({ item, index, onReadMore, onHighlight }) => {
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0",
                 "transition-all duration-[500ms] ease-in-out",
                 "relative flex border-2 border-[#ffffff1b]",
-                "mb-[150px] md:mb-[200px]",
                 "overflow-hidden md:max-h-[500px]",
                 "p-1 pb-16 shadow-lg rounded-lg",
                 index % 2 === 0 ? "flex-col md:flex-row-reverse" : "flex-col md:flex-row",

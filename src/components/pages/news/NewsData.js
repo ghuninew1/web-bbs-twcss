@@ -746,16 +746,16 @@ export const dataNews = [
         date: "July 22, 2026",
         title: "Thailand Content Market 2026",
         src: "/img/news2/16.avif",
-        content: `That’s a wrap on Thailand Content Market 2026! 🎉`,   
-        content2: `We’re truly grateful for the amazing support, conversations, and connections from everyone, both at our booth and during the Business Matching sessions throughout all 3 days.`,   
+        content: `That’s a wrap on Thailand Content Market 2026! 🎉`,
+        content2: `We’re truly grateful for the amazing support, conversations, and connections from everyone, both at our booth and during the Business Matching sessions throughout all 3 days.`,
         content3: `Thank you to everyone who stopped by to chat, connect with us, exchange ideas, and join in on our activities.`,
         content4: `Thank you from the bottom of our hearts, and we hope to see you all again next year! 🤝✨`,
         content5: `.`,
         content6: `ปิดฉากไปอย่างสวยงามสำหรับ Thailand Content Market 2026! 🎉`,
         content7: `ขอบคุณสำหรับการตอบรับที่ดีมากๆ จากทุกคน ทั้งที่บู๊ทของเรา และ Business Matching ตลอดทั้ง3วัน`,
         content8: `ขอขอบคุณทุกคนที่แวะมาพูดคุย ทำความรู้จัก แลกเปลี่ยนไอเดีย และร่วมสนุกกับกิจกรรมของเรา `,
-        content9: `ขอบคุณจากใจจริงและหวังว่าจะได้พบทุกคนอีกครั้งในปีหน้าครับ! 🤝✨`,   
-        content10: `.`,   
+        content9: `ขอบคุณจากใจจริงและหวังว่าจะได้พบทุกคนอีกครั้งในปีหน้าครับ! 🤝✨`,
+        content10: `.`,
         content11: `#BigBrainStudio #ThailandContentMarket2026 #TCM2026 #BusinessMatching #Animation`,
         to: dataNews16,
         swap: false,
@@ -940,8 +940,7 @@ export const dataNews = [
         title: "Covid Pandemic ของ Big Brain Pictures คว้ารางวัล Best Animated Short สาขา Animation & Visual Effect",
         src: "/img/news/01.avif",
         content: null,
-        to: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbidc.fest%2Fvideos%2F626999371281434%2F",
-        // to: "https://www.facebook.com/bidc.fest/videos/626999371281434/?redirect=false",
+        to: "https://www.facebook.com/watch/?v=626999371281434",
         swap: false,
     },
     {
@@ -950,9 +949,8 @@ export const dataNews = [
         title: "BidcAward สาขา Animation & Visual Effect Best VFX in TV Commercial",
         src: "/img/news/02.avif",
         content: null,
-        to: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbidc.fest%2Fposts%2Fpfbid0XmJaYYomXbchhMzwoGaNjGuqitS2FJcjGafPH8Et5AyZLn3idGanRvtRMBhyWqbAl",
+        to: "https://www.facebook.com/bidc.fest/posts/3281749348581941?ref=embed_post",
 
-        // to: "https://www.facebook.com/823379977752236/posts/3281749348581941/?d=n",
         swap: true,
     },
     {
@@ -970,7 +968,7 @@ export const dataNews = [
         title: "VMware ผู้ให้บริการเทคโนโยลีชั้นนำและบริการระบบเสมือนจริงแบบ Cloud  จัดงานประกาศรางวัลพันธมิตรยอดเยี่ยม ที่สยามสมาคมในพระบรมราชูปถัมป์",
         src: "/img/news/04.avif",
         content: null,
-        to: false,
+        to: "https://www.bigbrain-studio.com/news",
         swap: true,
     },
     {
@@ -979,8 +977,7 @@ export const dataNews = [
         title: "AIS Business Solutions ได้จัดงานสัมมนาในหัวข้อ “AIS Cloud Solutions for Animation Industry” ซึ่งเน้นให้ความรู้เกี่ยวกับเทคโนโลยี พร้อมเจาะลึกเรื่องการนำเทคโนโลยี Cloud มาใช้ประโยชน์ในธุรกิจผู้ผลิต Animation ในเมืองไทย",
         src: "/img/news/05.avif",
         content: null,
-
-        to: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FAISBusinessSolution%2Fposts%2Fpfbid0wp2ULpXXjYictoWsQrcPHNsjTn3aKcK2eS6dHN4NovH2JwvM4rvpAHYiJ2yM6kATl",
+        to: "https://www.facebook.com/AISBusinessSolution/posts/858467487648190?ref=embed_post",
         swap: false,
     },
     {
@@ -998,7 +995,7 @@ export const dataNews = [
         title: `ทีมผู้สร้างชวนดู "ของขวัญจากดิน" ภาพยนตร์อนิเมชั่นเพื่อคนไทย`,
         src: "/img/news/07.avif",
         content: null,
-        to: "https://www.youtube.com/embed/At60iuM6EvE",
+        to: "https://www.youtube.com/watch?v=At60iuM6EvE",
         swap: false,
     },
     {
@@ -1007,8 +1004,7 @@ export const dataNews = [
         title: "ของขวัญจากดิน แอนิเมชั่นเทิดพระเกียรติตามรอยแนวคิดศาสตร์พระราชา",
         src: "/img/news/08.avif",
         content: null,
-        // to: "https://mono29.com/episode/181888.html",
-        to: "https://seeme.me/ch/entertainmentnow/embed/kp2QmM",
+        to: "https://mono29.com/episode/181888.html",
         swap: true,
     },
     {
@@ -1017,7 +1013,7 @@ export const dataNews = [
         title: `แอนิเมชั่นเล่าศาสตร์พระราชา "ของขวัญจากดิน"ฉายทางทีวีทั่วประเทศ`,
         src: "/img/news/09.avif",
         content: null,
-        to: "https://www.youtube.com/embed/bU5_w4PuH1A",
+        to: "https://www.youtube.com/watch?v=bU5_w4PuH1A",
         swap: false,
     },
     {
@@ -1026,7 +1022,7 @@ export const dataNews = [
         title: "แถลงข่าวเปิดตัวภาพยนตร์แอนิเมชั่นเทิดพระเกียรติ “ของขวัญจากดิน”",
         src: "/img/news/10.avif",
         content: null,
-        to: "https://www.youtube.com/embed/vRrbwB9I0Zo",
+        to: "https://www.youtube.com/watch?v=vRrbwB9I0Zo",
         swap: true,
     },
     {
@@ -1044,7 +1040,7 @@ export const dataNews = [
         title: `แถลงข่าวเปิดตัวภาพยนตร์แอนิเมชั่นเทิดพระเกียรติ “ของขวัญจากดิน"`,
         src: "/img/news/12.avif",
         content: null,
-        to: "https://www.youtube.com/embed/vRrbwB9I0Zo",
+        to: "https://www.youtube.com/watch?v=vRrbwB9I0Zo",
         swap: true,
     },
     {
@@ -1062,7 +1058,7 @@ export const dataNews = [
         title: `เยี่ยมโครงการส่วนพระองค์ สวนจิตรลดา แหล่งทดลองและจุดกำเนิดของโครงการพระราชดำริในพระบาทสมเด็จพระปรมินทรมหาภูมิพลอดุลยเดชบรมนาถบพิตร`,
         src: "/img/news/14.avif",
         content: null,
-        to: false,
+        to: "https://www.bigbrain-studio.com/news",
         swap: true,
     },
     {
@@ -1071,7 +1067,7 @@ export const dataNews = [
         title: `ศึกษาดูงาน “ประเพณีบุญบั้งไฟ” บูชาพญาแถนขอฝน จังหวัดชัยภูมิ`,
         src: "/img/news/15.avif",
         content: null,
-        to: false,
+        to: "https://www.bigbrain-studio.com/news",
         swap: false,
     },
     {
@@ -1080,7 +1076,7 @@ export const dataNews = [
         title: `เยี่ยมโครงการโรงเรียนกาสรกสิวิทย์ จังหวัดสระแก้ว โรงเรียนที่ฝึกกระบือให้เชื่องและไถนาได้อย่างชำนาญ`,
         src: "/img/news/16.avif",
         content: null,
-        to: false,
+        to: "https://www.bigbrain-studio.com/news",
         swap: true,
     },
     {
@@ -1089,7 +1085,7 @@ export const dataNews = [
         title: `ศึกษาดูงานสถาปัตยกรรมของภาคอีสาน “หมู่บ้านอีสาน จิม ทอมป์สัน ฟาร์ม” จังหวัดนครราชสีมา`,
         src: "/img/news/17.avif",
         content: null,
-        to: false,
+        to: "https://www.bigbrain-studio.com/news",
         swap: false,
     },
     {

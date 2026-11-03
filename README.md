@@ -30,7 +30,7 @@
 
 **web-bbs-twcss** เป็นเว็บแอปพลิเคชันอย่างเป็นทางการของ **Big Brain Studio** (เดิมชื่อ *Big Brain Pictures* ก่อตั้งขึ้นเมื่อปี 2013 )
 
-เว็บไซต์นี้พัฒนาขึ้นใหม่โดยใช้ **React 19**, **Vite**, **Tailwind CSS**, **React Router v7** และเสริมความมั่นใจด้านเสถียรภาพด้วยการทดสอบอัตโนมัติผ่าน **Vitest** และ **React Testing Library** เพื่อนำเสนอผลงานระดับมาสเตอร์พีซ, แนะนำสตูดิโอและบริการ, อัปเดตข่าวสารกิจกรรม, ประกาศรับสมัครงาน รวมถึงระบบนามบัตรดิจิทัล (Digital Name Cards) พร้อมประสิทธิภาพความเร็วสูงและ Responsive Design ที่รองรับทุกขนาดหน้าจอ
+เว็บไซต์นี้พัฒนาขึ้นใหม่โดยใช้ **React 19**, **Vite**, **Tailwind CSS**, **React Router v8** และเสริมความมั่นใจด้านเสถียรภาพด้วยการทดสอบอัตโนมัติผ่าน **Vitest** และ **React Testing Library** เพื่อนำเสนอผลงานระดับมาสเตอร์พีซ, แนะนำสตูดิโอและบริการ, อัปเดตข่าวสารกิจกรรม, ประกาศรับสมัครงาน รวมถึงระบบนามบัตรดิจิทัล (Digital Name Cards) พร้อมประสิทธิภาพความเร็วสูงและ Responsive Design ที่รองรับทุกขนาดหน้าจอ
 
 🔗 **เว็บไซต์หลัก**: [https://www.bigbrain-studio.com](https://www.bigbrain-studio.com)
 
@@ -61,7 +61,7 @@
 | หมวดหมู่ | เทคโนโลยี / ไลบรารี | คำอธิบาย |
 | :--- | :--- | :--- |
 | **Frontend Framework** | [React 19](https://react.dev/) | ไลบรารีหลักในการสร้างส่วนติดต่อผู้ใช้ (UI) |
-| **Routing** | [React Router v7](https://reactrouter.com/) | จัดการเส้นทาง URL และการสลับหน้า (Data API & Nested Routes) |
+| **Routing** | [React Router v8](https://reactrouter.com/) | จัดการเส้นทาง URL และการสลับหน้า (Data API & Nested Routes) |
 | **Build Tool & Bundler** | [Vite](https://vitejs.dev/) | โมดูลบันเดิลเลอร์ความเร็วสูงสำหรับการพัฒนาและสร้าง Production Build |
 | **Styling** | [Tailwind CSS 3](https://tailwindcss.com/) | Utility-First CSS Framework พร้อมปรับแต่ง Custom Animations & Keyframes |
 | **Post-Processing** | [PostCSS](https://postcss.org/) & [Autoprefixer](https://github.com/postcss/autoprefixer) | จัดการคอมไพล์ CSS และใส่ Vendor Prefixes อัตโนมัติ |
@@ -161,7 +161,7 @@ web-bbs-twcss/
 
 ### ความต้องการของระบบ (Prerequisites)
 
-- [Node.js](https://nodejs.org/) (เวอร์ชัน 18.0.0 หรือสูงกว่า)
+- [Node.js](https://nodejs.org/) (เวอร์ชัน 22.22.2 หรือสูงกว่า)
 - [pnpm](https://pnpm.io/) (แนะนำ) หรือ `npm` / `yarn`
 
 ### ขั้นตอนการรันโปรเจกต์

@@ -1,7 +1,8 @@
 import { Layout, Fallback } from "./components";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import { Activity, useLayoutEffect, useRef, useState } from "react";
-import { Outlet, useLocation, useViewTransitionState } from "react-router-dom";
+import { Outlet, useLocation, useViewTransitionState } from "react-router";
 import { restoreOurworkScroll } from "./components/pages/ourwork/scrollPosition";
 import {
     Home,

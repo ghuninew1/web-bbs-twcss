@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router";
 import { Navbar, Fallback, Footer, Header } from "./";
 import { Suspense, useEffect, useRef, useState, memo } from "react";
 import Scroll from "./utils/ScrollListener";

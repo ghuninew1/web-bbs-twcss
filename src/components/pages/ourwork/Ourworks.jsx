@@ -1,5 +1,5 @@
 import { Title, Fallback } from "../..";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { workData } from "./WorkData";
 import { ImageZoom } from "./ImageZoom";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";

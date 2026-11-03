@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link } from "react-router";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { cx, scrollTo } from "./utils";
 import logo from "../assets/logo.avif";
